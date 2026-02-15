@@ -1,0 +1,315 @@
+{
+"project": "Intersect Mirror",
+"version": "1.0",
+"date": "2026-02-15",
+"overview": "This task.json defines the breakdown of work for AI agents to implement the Intersect Mirror MVP based on PRD v1.0. Tasks are prioritized by phase, with subtasks for execution. Agents should reference /system for architecture, /SOPs for procedures, and /skills for relevant operators. Use /workflows for build/test/deploy steps. Update this file with progress (e.g., add 'status': 'completed' to tasks).",
+"phases": [
+{
+"phase": "Phase 1 - Setup & Foundation",
+"priority": "High",
+"estimated_duration": "1 week",
+"tasks": [
+{
+"id": "setup-001",
+"name": "Initialize Repository Structure",
+"description": "Create the core folder structure mirroring the Moneta agent setup. Ensure compatibility with Next.js, TypeScript, and Tailwind.",
+"subtasks": [
+{
+"step": 1,
+"action": "Create root folders: /system, /task, /SOPs, /skills, /workflows, /data (for initial datasets), /src (frontend), /docs.",
+"dependencies": [],
+"reference": "/system/architecture.md (create if missing)"
+},
+{
+"step": 2,
+"action": "Set up GitHub repo with .gitignore for Next.js (node_modules, .env, etc.). Initialize with README.md based on Moneta template, updating for Intersect Mirror.",
+"dependencies": ["step-1"],
+"reference": "/skills/git-commit-formatter"
+},
+{
+"step": 3,
+"action": "Configure package.json with dependencies: next@15, react@19, typescript, tailwindcss, recharts, react-force-graph, supabase/supabase-js.",
+"dependencies": ["step-2"],
+"reference": "/workflows/frontend.md"
+}
+],
+"status": "pending",
+"assigned_to": "frontend-agent",
+"output": "Updated repo structure committed to main."
+},
+{
+"id": "setup-002",
+"name": "Define Data Model & Database Schema",
+"description": "Create a simple schema for transparency data, budgets, and network nodes. Use Supabase for quick setup.",
+"subtasks": [
+{
+"step": 1,
+"action": "Draft database-schema.md in /system: Tables for budgets (category, amount, transparency_level), people (name, role, affiliations), relationships (from_entity, to_entity, type). Include JSON fields for metadata.",
+"dependencies": [],
+"reference": "/system/database-schema.md"
+},
+{
+"step": 2,
+"action": "Set up Supabase project (free tier). Create tables via SQL or dashboard: budgets, people, relationships, transparency_scores. Add indexes on category/role.",
+"dependencies": ["step-1"],
+"reference": "/SOPs/supabase-setup"
+},
+{
+"step": 3,
+"action": "Create TypeScript interfaces in /src/types: e.g., interface Budget { category: string; adaAmount: number; status: 'verified' | 'partial' | 'missing'; }.",
+"dependencies": ["step-2"],
+"reference": "/workflows/database.md"
+}
+],
+"status": "pending",
+"assigned_to": "backend-agent",
+"output": "Schema file + Supabase project URL (add to .env.example)."
+},
+{
+"id": "setup-003",
+"name": "Collect & Structure Initial Data",
+"description": "Manually populate seed data from PRD sources (budget proposal, Google Sheet). Focus on 2025 budget and basic network nodes.",
+"subtasks": [
+{
+"step": 1,
+"action": "Download/parse Google Sheet into CSV/JSON. Extract categories, amounts (~180M ADA).",
+"dependencies": [],
+"reference": "/skills/data-parsing (use pandas if needed)"
+},
+{
+"step": 2,
+"action": "Hardcode initial people/network data: e.g., Jack Briggs (Exec Dir), committee chairs. Add affiliations (IOG, Emurgo, CF). Sources: Intersect docs, LinkedIn/X searches.",
+"dependencies": ["step-1"],
+"reference": "/data/initial-budget.json, /data/network-nodes.json"
+},
+{
+"step": 3,
+"action": "Seed Supabase with data. Calculate initial transparency scores (e.g., Budget Flow: 70% based on on-chain visibility).",
+"dependencies": ["step-2"],
+"reference": "/workflows/database.md"
+}
+],
+"status": "pending",
+"assigned_to": "data-agent",
+"output": "Seed scripts + JSON files committed. Initial score: ~60%."
+}
+]
+},
+{
+"phase": "Phase 1 - Core MVP Features",
+"priority": "High",
+"estimated_duration": "3 weeks",
+"tasks": [
+{
+"id": "mvp-001",
+"name": "Build Hero Dashboard - Transparency Meter",
+"description": "Create the eye-catcher: Radial gauge for overall score + segmented bars for categories. Pull from Supabase.",
+"subtasks": [
+{
+"step": 1,
+"action": "Design component in /src/components/TransparencyMeter.tsx: Use Recharts RadialBarChart for score, BarChart for breakdowns (weights from PRD).",
+"dependencies": ["setup-002", "setup-003"],
+"reference": "/skills/recharts-usage"
+},
+{
+"step": 2,
+"action": "Integrate Supabase query: Fetch scores, display 'Data Points: X/Y'. Add CTA button: 'Contribute Data' (links to form placeholder).",
+"dependencies": ["step-1"],
+"reference": "/workflows/frontend.md"
+},
+{
+"step": 3,
+"action": "Style with Tailwind: Dark mode default, responsive (mobile-first). Add animation for score load.",
+"dependencies": ["step-2"],
+"reference": "/SOPs/tailwind-design-system"
+}
+],
+"status": "completed",
+"completed_date": "2026-02-15",
+"assigned_to": "frontend-agent",
+"output": "Live component on /pages/index.tsx. Test: npm run dev."
+},
+{
+"id": "mvp-002",
+"name": "Implement 2025 Budget Overview with Sankey Diagram",
+"description": "Visualize flow: Total ₳263M, breakdowns. Use Recharts Sankey for money paths.",
+"subtasks": [
+{
+"step": 1,
+"action": "Create /src/components/BudgetSankey.tsx: Nodes for Treasury/CDH/Committees, links with ADA values from seed data.",
+"dependencies": ["setup-003"],
+"reference": "/skills/recharts-sankey"
+},
+{
+"step": 2,
+"action": "Add table below: Category | Amount | Status (color-coded). Fetch from Supabase, export CSV button.",
+"dependencies": ["step-1"],
+"reference": "/workflows/frontend.md"
+},
+{
+"step": 3,
+"action": "Page: /pages/budget.tsx. Include discrepancy note (180M vs 263M) with source links.",
+"dependencies": ["step-2"],
+"reference": "/docs/PRD-intersect-mirror.md"
+}
+],
+"status": "pending",
+"assigned_to": "frontend-agent",
+"output": "Interactive Sankey on budget page."
+},
+{
+"id": "mvp-003",
+"name": "Build Network & Influence Graph",
+"description": "Force-directed graph for people/org connections. Highlight IOG/Emurgo/CF overlaps.",
+"subtasks": [
+{
+"step": 1,
+"action": "Use react-force-graph in /src/components/InfluenceGraph.tsx: Nodes (people/orgs), edges (roles/affiliations) from /data/network-nodes.json.",
+"dependencies": ["setup-003"],
+"reference": "/skills/react-force-graph"
+},
+{
+"step": 2,
+"action": "Add tooltips: Click node → Show bio/role. Color-code: Intersect (blue), Founders (red).",
+"dependencies": ["step-1"],
+"reference": "/workflows/frontend.md"
+},
+{
+"step": 3,
+"action": "Page: /pages/network.tsx. Note: 'Neutrality Check: Track overlapping influence.'",
+"dependencies": ["step-2"],
+"reference": "/docs/PRD-intersect-mirror.md"
+}
+],
+"status": "pending",
+"assigned_to": "frontend-agent",
+"output": "Interactive graph demo."
+},
+{
+"id": "mvp-004",
+"name": "Create Transparency Table",
+"description": "Overview table: Category | Status | Level | Updated | Source | Notes. Color-coded rows.",
+"subtasks": [
+{
+"step": 1,
+"action": "/src/components/TransparencyTable.tsx: Use React Table or simple . Fetch all categories from DB.",
+"dependencies": ["setup-002"],
+"reference": "/skills/react-table"
+},
+{
+"step": 2,
+"action": "Add filters: By category/score. Red/Yellow/Green badges.",
+"dependencies": ["step-1"],
+"reference": "/workflows/frontend.md"
+},
+{
+"step": 3,
+"action": "Integrate into /pages/dashboard.tsx (under Hero).",
+"dependencies": ["step-2"],
+"reference": "/docs/PRD-intersect-mirror.md"
+}
+],
+"status": "pending",
+"assigned_to": "frontend-agent",
+"output": "Sortable table on dashboard."
+},
+{
+"id": "mvp-005",
+"name": "Add About/Methodology Page",
+"description": "Static page explaining PRD, sources, neutrality. Include Intersect values quote + gaps.",
+"subtasks": [
+{
+"step": 1,
+"action": "Create /pages/about.tsx: MDX for content from PRD sections 1-4,9. Embed sources as links.",
+"dependencies": [],
+"reference": "/docs/PRD-intersect-mirror.md"
+},
+{
+"step": 2,
+"action": "Add footer nav: Home | Budget | Network | About.",
+"dependencies": ["step-1"],
+"reference": "/workflows/frontend.md"
+}
+],
+"status": "pending",
+"assigned_to": "frontend-agent",
+"output": "About page live."
+}
+]
+},
+{
+"phase": "Phase 1 - Testing & Deploy",
+"priority": "High",
+"estimated_duration": "1 week",
+"tasks": [
+{
+"id": "deploy-001",
+"name": "Testing & QA",
+"description": "Unit/integration tests for components. Manual review for professionalism.",
+"subtasks": [
+{
+"step": 1,
+"action": "Add Jest/RTL tests: e.g., render TransparencyMeter, assert score display.",
+"dependencies": ["mvp-001", "mvp-002", "mvp-003", "mvp-004", "mvp-005"],
+"reference": "/workflows/test.md"
+},
+{
+"step": 2,
+"action": "Manual QA: Mobile resp, dark mode, data updates trigger re-render.",
+"dependencies": ["step-1"],
+"reference": "/SOPs/qa-checklist"
+}
+],
+"status": "pending",
+"assigned_to": "qa-agent",
+"output": "Test coverage >80%. Bug report if any."
+},
+{
+"id": "deploy-002",
+"name": "Deploy to Vercel",
+"description": "Connect GitHub, set env vars (Supabase keys). Custom domain later.",
+"subtasks": [
+{
+"step": 1,
+"action": "npm run build && npm run export (if static). Deploy via Vercel CLI.",
+"dependencies": ["deploy-001"],
+"reference": "/workflows/build.md"
+},
+{
+"step": 2,
+"action": "Add analytics (optional: Vercel Analytics). Monitor for errors.",
+"dependencies": ["step-1"],
+"reference": "/SOPs/vercel-deploy"
+}
+],
+"status": "pending",
+"assigned_to": "devops-agent",
+"output": "Live URL: https://intersect-mirror.vercel.app"
+}
+]
+},
+{
+"phase": "Phase 2 - Enhancements (Post-MVP)",
+"priority": "Medium",
+"estimated_duration": "Ongoing",
+"tasks": [
+{
+"id": "enhance-001",
+"name": "Community Submission Form",
+"description": "Form for data tips (e.g., salary leaks). Verify via email/wallet sig.",
+"subtasks": [
+{"step": 1, "action": "Build /src/components/SubmitDataForm.tsx with React Hook Form.", "dependencies": ["mvp-001"], "reference": "/workflows/frontend.md"}
+],
+"status": "pending",
+"assigned_to": "frontend-agent"
+}
+]
+}
+],
+"global_notes": [
+"All commits: Use conventional format (feat:, fix:, docs:).",
+"Data Sensitivity: No real secrets; flag gaps as 'missing' without speculation.",
+"Updates: Agents run /update-doc workflow after tasks.",
+"Success Criteria: MVP deployable, scores calculated, graphs interactive."
+]
+}

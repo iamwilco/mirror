@@ -1,0 +1,26 @@
+[
+  {
+    "category": "Treasury",
+    "subcategory": "2025 Total",
+    "adaAmount": 263600000,
+    "status": "verified",
+    "sourceUrl": "https://intersectmbo.org",
+    "notes": "Intersect 2025 budget proposal total"
+  },
+  {
+    "category": "Operations",
+    "subcategory": "Intersect Ops Funding",
+    "adaAmount": 20000000,
+    "status": "partial",
+    "sourceUrl": "https://intersectmbo.org",
+    "notes": "Ops funding referenced in PRD"
+  },
+  {
+    "category": "Committees",
+    "subcategory": "Work Packages (Aggregate)",
+    "adaAmount": 180000000,
+    "status": "partial",
+    "sourceUrl": "https://intersectmbo.org",
+    "notes": "PRD mentions ~180M subset for Sankey"
+  }
+]

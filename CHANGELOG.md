@@ -1,0 +1,7 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+## [Unreleased]
+- Initialize project structure and base UI shell.
+- Build Transparency Meter component with Supabase-ready data fetching and homepage integration.

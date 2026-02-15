@@ -1,0 +1,17 @@
+{
+  "nodes": [
+    { "id": "intersect", "type": "org", "label": "Intersect MBO" },
+    { "id": "iog", "type": "org", "label": "IOG" },
+    { "id": "emurgo", "type": "org", "label": "Emurgo" },
+    { "id": "cardano-foundation", "type": "org", "label": "Cardano Foundation" },
+    { "id": "midnight-foundation", "type": "org", "label": "Midnight Foundation" },
+    { "id": "jack-briggs", "type": "person", "label": "Jack Briggs", "role": "Executive Director" }
+  ],
+  "links": [
+    { "source": "jack-briggs", "target": "intersect", "type": "role" },
+    { "source": "intersect", "target": "iog", "type": "founding-entity" },
+    { "source": "intersect", "target": "emurgo", "type": "founding-entity" },
+    { "source": "intersect", "target": "cardano-foundation", "type": "founding-entity" },
+    { "source": "intersect", "target": "midnight-foundation", "type": "ecosystem" }
+  ]
+}
