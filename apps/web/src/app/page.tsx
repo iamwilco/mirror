@@ -1,5 +1,6 @@
 import BudgetSankey from "@/components/BudgetSankey";
 import InfluenceGraph from "@/components/InfluenceGraph";
+import TransparencyTable from "@/components/TransparencyTable";
 import TransparencyMeter from "@/components/TransparencyMeter";
 
 export default function Home() {
@@ -96,6 +97,22 @@ export default function Home() {
             </p>
           </div>
           <InfluenceGraph />
+        </section>
+
+        <section className="mt-16 grid gap-6" id="transparency-table">
+          <div>
+            <p className="text-xs uppercase tracking-[0.3em] text-white/60">
+              Transparency Table
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold text-white">
+              Category-Level Visibility
+            </h2>
+            <p className="mt-3 max-w-3xl text-sm text-white/60">
+              Track what is verified, partial, or missing with source references
+              and the latest update status.
+            </p>
+          </div>
+          <TransparencyTable />
         </section>
 
         <section className="mt-16 grid gap-6" id="about">
