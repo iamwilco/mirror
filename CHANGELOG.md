@@ -10,3 +10,4 @@ All notable changes to this project will be documented in this file.
 - Add Transparency Table component with category status overview.
 - Add About/Methodology page and footer navigation.
 - Add Jest/RTL testing setup and basic TransparencyMeter test.
+- Mark Vercel deployment as handled via GitHub auto-deploy.
