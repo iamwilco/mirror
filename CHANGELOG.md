@@ -8,3 +8,4 @@ All notable changes to this project will be documented in this file.
 - Add Budget Sankey visualization with table and source notes.
 - Add Influence Graph visualization and network narrative copy.
 - Add Transparency Table component with category status overview.
+- Add About/Methodology page and footer navigation.
