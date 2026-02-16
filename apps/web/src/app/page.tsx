@@ -1,4 +1,5 @@
 import BudgetSankey from "@/components/BudgetSankey";
+import InfluenceGraph from "@/components/InfluenceGraph";
 import TransparencyMeter from "@/components/TransparencyMeter";
 
 export default function Home() {
@@ -89,10 +90,12 @@ export default function Home() {
             <h2 className="mt-3 text-3xl font-semibold text-white">
               Influence & Overlap
             </h2>
+            <p className="mt-3 max-w-3xl text-sm text-white/60">
+              Relationships map Intersect leadership, committees, and founding
+              entities to reveal overlap without assigning intent.
+            </p>
           </div>
-          <div className="rounded-[28px] border border-white/10 bg-white/5 p-8">
-            <div className="h-72 rounded-3xl border border-dashed border-white/20 bg-black/30" />
-          </div>
+          <InfluenceGraph />
         </section>
 
         <section className="mt-16 grid gap-6" id="about">
