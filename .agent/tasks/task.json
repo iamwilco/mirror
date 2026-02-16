@@ -264,7 +264,8 @@
 "reference": "/SOPs/qa-checklist"
 }
 ],
-"status": "pending",
+"status": "completed",
+"completed_date": "2026-02-16",
 "assigned_to": "qa-agent",
 "output": "Test coverage >80%. Bug report if any."
 },

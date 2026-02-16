@@ -27,4 +27,4 @@ When writing a git commit message, you MUST follow the Conventional Commits spec
 4. If there are breaking changes, add a footer starting with `BREAKING CHANGE:`.
 
 ## Example
-`feat(auth): implement login with google`
+`feat(auth): implement login with google`continue
