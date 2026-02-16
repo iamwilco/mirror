@@ -1,3 +1,4 @@
+import BudgetSankey from "@/components/BudgetSankey";
 import TransparencyMeter from "@/components/TransparencyMeter";
 
 export default function Home() {
@@ -6,7 +7,7 @@ export default function Home() {
       <header className="border-b border-white/10 bg-black/20 backdrop-blur">
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-5">
           <div className="flex items-center gap-3">
-            <div className="h-10 w-10 rounded-2xl bg-[radial-gradient(circle_at_top,_#5eead4,_#0f766e)]" />
+            <div className="h-10 w-10 rounded-2xl bg-[radial-gradient(circle_at_top,#5eead4,#0f766e)]" />
             <div>
               <p className="text-xs uppercase tracking-[0.3em] text-white/60">
                 Intersect Mirror
@@ -66,10 +67,20 @@ export default function Home() {
             <h2 className="mt-3 text-3xl font-semibold text-white">
               ₳263.6M Treasury Flow
             </h2>
+            <p className="mt-4 max-w-3xl text-sm text-white/60">
+              Current Sankey highlights the subset of public work package data
+              (~₳180M) versus the full ₳263.6M proposal. Sources: {" "}
+              <a className="underline" href="https://intersectmbo.org" target="_blank" rel="noreferrer">
+                Intersect budget docs
+              </a>
+              ,{" "}
+              <a className="underline" href="https://gov.tools" target="_blank" rel="noreferrer">
+                gov.tools
+              </a>
+              .
+            </p>
           </div>
-          <div className="rounded-[28px] border border-white/10 bg-white/5 p-8">
-            <div className="h-72 rounded-3xl border border-dashed border-white/20 bg-black/30" />
-          </div>
+          <BudgetSankey />
         </section>
 
         <section className="mt-16 grid gap-6" id="network">

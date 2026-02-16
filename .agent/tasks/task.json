@@ -153,7 +153,8 @@
 "reference": "/docs/PRD-intersect-mirror.md"
 }
 ],
-"status": "pending",
+"status": "completed",
+"completed_date": "2026-02-16",
 "assigned_to": "frontend-agent",
 "output": "Interactive Sankey on budget page."
 },
