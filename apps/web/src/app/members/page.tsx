@@ -1,0 +1,221 @@
+"use client";
+
+import { useEffect, useMemo, useState } from "react";
+
+import { supabase } from "@/lib/supabaseClient";
+
+interface MemberEntry {
+  name: string;
+  role: string;
+  affiliations: string[];
+  bio: string;
+  transparency: string;
+  source: string;
+  notes: string;
+}
+
+const DEFAULT_TRANSPARENCY = "partial";
+
+export default function MembersPage() {
+  const [query, setQuery] = useState("");
+  const [filter, setFilter] = useState("All");
+  const [members, setMembers] = useState<MemberEntry[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    const loadMembers = async () => {
+      if (!supabase) {
+        setLoading(false);
+        return;
+      }
+
+      const { data, error: fetchError } = await supabase
+        .from("people")
+        .select("name, role, affiliation, source_url, verified_by")
+        .order("name", { ascending: true });
+
+      if (!isMounted) return;
+
+      if (fetchError) {
+        setError(fetchError.message);
+        setLoading(false);
+        return;
+      }
+
+      const mapped = (data || []).map((row) => ({
+        name: row.name,
+        role: row.role ?? "",
+        affiliations: row.affiliation
+          ? row.affiliation
+              .split(",")
+              .map((value: string) => value.trim())
+              .filter(Boolean)
+          : [],
+        bio: "",
+        transparency: DEFAULT_TRANSPARENCY,
+        source: row.source_url ?? "",
+        notes: row.verified_by ? `Verified by ${row.verified_by}` : "",
+      }));
+
+      setMembers(mapped);
+      setLoading(false);
+    };
+
+    loadMembers();
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  const filters = useMemo(() => {
+    const unique = new Set<string>();
+    members.forEach((member) => {
+      member.affiliations.forEach((affiliation) => unique.add(affiliation));
+    });
+    return ["All", ...Array.from(unique).sort()];
+  }, [members]);
+
+  const filteredMembers = useMemo(() => {
+    const normalized = query.trim().toLowerCase();
+
+    return members.filter((member) => {
+      const matchesQuery =
+        !normalized ||
+        member.name.toLowerCase().includes(normalized) ||
+        member.role.toLowerCase().includes(normalized) ||
+        member.affiliations.some((affiliation) =>
+          affiliation.toLowerCase().includes(normalized)
+        );
+
+      const matchesFilter =
+        filter === "All" ||
+        member.affiliations.some((affiliation) => affiliation === filter);
+
+      return matchesQuery && matchesFilter;
+    });
+  }, [members, query, filter]);
+
+  return (
+    <main className="min-h-screen bg-[#080c14] px-6 py-20 text-white">
+      <div className="mx-auto max-w-6xl space-y-8">
+        <div className="flex flex-wrap items-end justify-between gap-6">
+          <div>
+            <p className="text-xs uppercase tracking-[0.3em] text-white/50">
+              Member Directory
+            </p>
+            <h1 className="mt-3 text-3xl font-semibold">Intersect Network Map</h1>
+            <p className="mt-3 max-w-2xl text-sm text-white/60">
+              Community-sourced roster of leadership, board members, and ecosystem partners. Flags indicate where salary
+              transparency is missing.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            {filters.map((option) => (
+              <button
+                key={option}
+                type="button"
+                onClick={() => setFilter(option)}
+                className={`rounded-full border px-4 py-2 text-xs uppercase tracking-[0.2em] transition ${
+                  filter === option
+                    ? "border-emerald-400/60 bg-emerald-500/20 text-emerald-200"
+                    : "border-white/10 bg-white/5 text-white/60 hover:border-white/30"
+                }`}
+              >
+                {option}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex flex-wrap items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4">
+          <input
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            placeholder="Search by name, role, or affiliation"
+            className="flex-1 bg-transparent text-sm text-white placeholder:text-white/40 focus:outline-none"
+          />
+          <span className="text-xs uppercase tracking-[0.2em] text-white/40">
+            {loading ? "Loading..." : `${filteredMembers.length} results`}
+          </span>
+        </div>
+
+        {error && (
+          <div className="rounded-2xl border border-red-500/30 bg-red-500/10 p-4 text-sm text-red-200">
+            Failed to load members: {error}
+          </div>
+        )}
+
+        <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b border-white/10 text-left text-xs uppercase tracking-[0.15em] text-white/50">
+                <th className="pb-3 pr-4">Member</th>
+                <th className="pb-3 pr-4">Role</th>
+                <th className="pb-3 pr-4">Affiliations</th>
+                <th className="pb-3 pr-4">Transparency</th>
+                <th className="pb-3">Salary</th>
+              </tr>
+            </thead>
+            <tbody className="text-white/80">
+              {filteredMembers.map((member) => {
+                const salaryMissing =
+                  member.notes.toLowerCase().includes("salary") ||
+                  member.notes.toLowerCase().includes("pay") ||
+                  member.notes.toLowerCase().includes("comp") ||
+                  member.notes.toLowerCase().includes("gap");
+
+                return (
+                  <tr key={member.name} className="border-b border-white/5">
+                    <td className="py-4 pr-4">
+                      <div className="font-medium text-white">{member.name}</div>
+                      <div className="text-xs text-white/50">{member.bio}</div>
+                    </td>
+                    <td className="py-4 pr-4 text-white/70">{member.role}</td>
+                    <td className="py-4 pr-4">
+                      <div className="flex flex-wrap gap-2">
+                        {member.affiliations.map((affiliation) => (
+                          <span
+                            key={affiliation}
+                            className="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-[11px] uppercase tracking-[0.15em] text-white/60"
+                          >
+                            {affiliation}
+                          </span>
+                        ))}
+                      </div>
+                    </td>
+                    <td className="py-4 pr-4">
+                      <span
+                        className={`inline-flex items-center gap-2 rounded-full px-2.5 py-1 text-xs uppercase tracking-[0.2em] ${
+                          member.transparency === "verified"
+                            ? "bg-emerald-500/15 text-emerald-200"
+                            : member.transparency === "partial"
+                            ? "bg-amber-500/15 text-amber-200"
+                            : "bg-red-500/15 text-red-200"
+                        }`}
+                      >
+                        {member.transparency}
+                      </span>
+                    </td>
+                    <td className="py-4">
+                      {salaryMissing ? (
+                        <span className="inline-flex items-center rounded-full border border-red-400/40 bg-red-500/10 px-2.5 py-1 text-xs uppercase tracking-[0.2em] text-red-300">
+                          Salary: Missing
+                        </span>
+                      ) : (
+                        <span className="text-white/40">—</span>
+                      )}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  );
+}
