@@ -1,0 +1,103 @@
+{
+  "people": [
+    {
+      "name": "Jack Briggs",
+      "role": "Interim Executive Director, Intersect",
+      "affiliations": ["Intersect MBO"],
+      "bio": "Leads ecosystem development; keynote speaker on governance.",
+      "transparency": "verified",
+      "source": "Intersect site, Cardano Foundation blog",
+      "notes": "No salary info—gap."
+    },
+    {
+      "name": "Nikhil Joshi",
+      "role": "Non-Exec Director, Intersect / COO, EMURGO",
+      "affiliations": ["Intersect MBO", "EMURGO"],
+      "bio": "20+ years in finance/banking; advises Web3 startups.",
+      "transparency": "verified",
+      "source": "Intersect team page",
+      "notes": "Clear overlap with founding entity."
+    },
+    {
+      "name": "Gerard Moroney",
+      "role": "Non-Exec Director, Intersect / COO, IOHK (IOG)",
+      "affiliations": ["Intersect MBO", "IOG"],
+      "bio": "Operations lead with blockchain focus.",
+      "transparency": "verified",
+      "source": "Intersect team page",
+      "notes": "Influence from IOG founding."
+    },
+    {
+      "name": "Adam Rusch",
+      "role": "Non-Exec Director, Intersect",
+      "affiliations": ["Intersect MBO"],
+      "bio": "Facilitates workshops; governance expert.",
+      "transparency": "verified",
+      "source": "Cardano Summit recap",
+      "notes": ""
+    },
+    {
+      "name": "Frederik Gregaard",
+      "role": "CEO, Cardano Foundation",
+      "affiliations": ["Cardano Foundation", "Intersect Member (Org)"],
+      "bio": "Leads CF; emphasizes decentralized future.",
+      "transparency": "verified",
+      "source": "CF blog on joining Intersect",
+      "notes": "CF joined Intersect Sep 2024."
+    },
+    {
+      "name": "Sricharan Ganta",
+      "role": "Founder, Nucast (Intersect Member)",
+      "affiliations": ["Nucast", "Intersect MBO"],
+      "bio": "Testimonial contributor.",
+      "transparency": "partial",
+      "source": "Intersect site testimonials",
+      "notes": ""
+    },
+    {
+      "name": "Andreas Sosilo",
+      "role": "Cardano Ambassador (Indonesia), Intersect Member",
+      "affiliations": ["Intersect MBO"],
+      "bio": "Community ambassador.",
+      "transparency": "partial",
+      "source": "Intersect site testimonials",
+      "notes": ""
+    },
+    {
+      "name": "Kavinda Kariyapperuma",
+      "role": "Founder, CoinCeylon (Intersect Member)",
+      "affiliations": ["CoinCeylon", "Intersect MBO"],
+      "bio": "Sri Lanka-based Cardano ecosystem builder.",
+      "transparency": "partial",
+      "source": "Intersect site testimonials",
+      "notes": ""
+    },
+    {
+      "name": "Yuri Kuriyama",
+      "role": "Kyoso DAO (Intersect Member)",
+      "affiliations": ["Kyoso DAO", "Intersect MBO"],
+      "bio": "DAO contributor and governance participant.",
+      "transparency": "partial",
+      "source": "Intersect site testimonials",
+      "notes": ""
+    },
+    {
+      "name": "Rafael Cardoso",
+      "role": "GenWealth (Intersect Member)",
+      "affiliations": ["GenWealth", "Intersect MBO"],
+      "bio": "DeFi and wealth management on Cardano.",
+      "transparency": "partial",
+      "source": "Intersect site testimonials",
+      "notes": ""
+    },
+    {
+      "name": "Georg Link",
+      "role": "Bitergia (Intersect Member)",
+      "affiliations": ["Bitergia", "Intersect MBO"],
+      "bio": "Open source community health analytics.",
+      "transparency": "partial",
+      "source": "Intersect site testimonials",
+      "notes": ""
+    }
+  ]
+}
