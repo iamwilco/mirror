@@ -20,7 +20,7 @@ const CATEGORY_SLUGS: Record<string, string> = {
   "Relationships": "relationships",
 };
 
-const fallbackScore = 62;
+const fallbackScore = 66;
 
 const fallbackBreakdown = [
   { name: "Budget & Money Flow", value: 68, weight: 30 },
@@ -28,7 +28,7 @@ const fallbackBreakdown = [
   { name: "People & Compensation", value: 50, weight: 20 },
   { name: "Results & Deliverables", value: 61, weight: 15 },
   { name: "Procurement & Contracts", value: 42, weight: 10 },
-  { name: "Relationships", value: 35, weight: 5 },
+  { name: "Relationships", value: 70, weight: 5 },
 ];
 
 export default function TransparencyMeter() {

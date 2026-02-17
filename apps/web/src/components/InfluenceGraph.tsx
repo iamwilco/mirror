@@ -15,6 +15,7 @@ type Node = {
   type: "org" | "person";
   label: string;
   role?: string;
+  source?: string;
 };
 
 type Link = {
@@ -38,7 +39,9 @@ export default function InfluenceGraph() {
           nodeRelSize={6}
           nodeLabel={(node: unknown) => {
             const item = node as Node;
-            return `${item.label}${item.role ? ` (${item.role})` : ""}`;
+            const role = item.role ? ` (${item.role})` : "";
+            const source = item.source ? `\nSource: ${item.source}` : "";
+            return `${item.label}${role}${source}`;
           }}
           backgroundColor="rgba(0,0,0,0)"
         />

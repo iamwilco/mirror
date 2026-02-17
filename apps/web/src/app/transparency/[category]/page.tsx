@@ -95,7 +95,7 @@ const CATEGORY_MAP: Record<string, {
   },
   "relationships": {
     displayName: "Relationships",
-    score: 35,
+    score: 70,
     dataKey: "relationships",
     gaps: [
       "Founding entity influence not quantified",
