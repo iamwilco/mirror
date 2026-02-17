@@ -1,3 +1,5 @@
+"use client";
+
 import BudgetSankey from "@/components/BudgetSankey";
 import { useState } from "react";
 import InfluenceGraph from "@/components/InfluenceGraph";
