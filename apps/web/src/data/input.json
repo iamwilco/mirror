@@ -62,6 +62,42 @@
       "transparency": "partial",
       "source": "Intersect site testimonials",
       "notes": ""
+    },
+    {
+      "name": "Kavinda Kariyapperuma",
+      "role": "Founder, CoinCeylon (Intersect Member)",
+      "affiliations": ["CoinCeylon", "Intersect MBO"],
+      "bio": "Sri Lanka-based Cardano ecosystem builder.",
+      "transparency": "partial",
+      "source": "Intersect site testimonials",
+      "notes": ""
+    },
+    {
+      "name": "Yuri Kuriyama",
+      "role": "Kyoso DAO (Intersect Member)",
+      "affiliations": ["Kyoso DAO", "Intersect MBO"],
+      "bio": "DAO contributor and governance participant.",
+      "transparency": "partial",
+      "source": "Intersect site testimonials",
+      "notes": ""
+    },
+    {
+      "name": "Rafael Cardoso",
+      "role": "GenWealth (Intersect Member)",
+      "affiliations": ["GenWealth", "Intersect MBO"],
+      "bio": "DeFi and wealth management on Cardano.",
+      "transparency": "partial",
+      "source": "Intersect site testimonials",
+      "notes": ""
+    },
+    {
+      "name": "Georg Link",
+      "role": "Bitergia (Intersect Member)",
+      "affiliations": ["Bitergia", "Intersect MBO"],
+      "bio": "Open source community health analytics.",
+      "transparency": "partial",
+      "source": "Intersect site testimonials",
+      "notes": ""
     }
   ],
   "relationships": [
@@ -116,6 +152,53 @@
       "elections": "Community-elected; snap election Nov 2025.",
       "transparency": "verified",
       "source": "Intersect X, CF"
+    },
+    {
+      "name": "Open Source Committee (OSC)",
+      "description": "Oversees open-source strategy and contributions.",
+      "elections": "Appointed; community nominations.",
+      "transparency": "partial",
+      "source": "Intersect site",
+      "gaps": "No public member list or meeting minutes."
+    },
+    {
+      "name": "Growth & Marketing Committee (GMC)",
+      "description": "Drives ecosystem growth and marketing initiatives.",
+      "elections": "Appointed.",
+      "transparency": "partial",
+      "source": "Intersect site",
+      "gaps": "Budget allocation per initiative not disclosed."
+    },
+    {
+      "name": "Budget Committee",
+      "description": "Reviews and approves budget proposals.",
+      "elections": "Appointed by board.",
+      "transparency": "partial",
+      "source": "Intersect site, quarterly reports",
+      "gaps": "Detailed vote records not public."
+    },
+    {
+      "name": "Oversight Committee",
+      "description": "Monitors compliance and accountability.",
+      "elections": "Appointed.",
+      "transparency": "missing",
+      "source": "Intersect site",
+      "gaps": "No public reports or member list."
+    },
+    {
+      "name": "Membership & Community Committee (MCC)",
+      "description": "Manages membership tiers and community engagement.",
+      "elections": "Community-elected.",
+      "transparency": "partial",
+      "source": "Intersect site",
+      "gaps": "Membership revenue not disclosed."
+    },
+    {
+      "name": "Parameter Committee (PC)",
+      "description": "Recommends protocol parameter changes.",
+      "elections": "Technical appointments.",
+      "transparency": "verified",
+      "source": "Intersect site, on-chain governance actions"
     }
   ],
   "working_groups": [
