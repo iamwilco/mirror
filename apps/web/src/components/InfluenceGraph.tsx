@@ -49,6 +49,12 @@ export default function InfluenceGraph() {
     return "rgba(255,255,255,0.25)";
   };
 
+  const handleNodeClick = (node: Node) => {
+    if (node.decision_power === "High") {
+      window.location.hash = "#contribute";
+    }
+  };
+
   return (
     <div className="max-w-full overflow-hidden rounded-[28px] border border-white/10 bg-white/5 p-6 md:p-8">
       <div className="h-[420px] w-full overflow-hidden">
@@ -67,6 +73,7 @@ export default function InfluenceGraph() {
             const gapPrompt = item.decision_power === "High" ? "\nGap: No salary disclosed—submit evidence?" : "";
             return `${item.label}${role}${source}${gapPrompt}`;
           }}
+          onNodeClick={(node: unknown) => handleNodeClick(node as Node)}
           backgroundColor="rgba(0,0,0,0)"
         />
       </div>
