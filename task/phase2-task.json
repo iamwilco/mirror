@@ -97,6 +97,147 @@
       ]
     },
     {
+      "phase": "Phase 2 - Dashboard Upgrades",
+      "priority": "High",
+      "estimated_duration": "2 weeks",
+      "tasks": [
+        {
+          "id": "enhance-006",
+          "name": "Member Directory v2 — Structure & Power",
+          "description": "Searchable table: Name | Role | Affil | Responsibilities | Paid? | Power Level | Source. Sort by influence; founder overlaps red-flagged.",
+          "subtasks": [
+            {
+              "step": 1,
+              "action": "Update /data/people.json schema: add paid, decision_power, responsibilities fields (done in data).",
+              "dependencies": ["data-001"],
+              "reference": "/data/people.json"
+            },
+            {
+              "step": 2,
+              "action": "Update /pages/members.tsx: Add columns for Paid, Decision Power, Responsibilities. Red badge for 'Salary: Missing'. Sort by decision_power desc.",
+              "dependencies": ["step-1"],
+              "reference": "/skills/react-table"
+            },
+            {
+              "step": 3,
+              "action": "Add filter controls: 'Show Paid Only', affiliation filter, power level filter.",
+              "dependencies": ["step-2"]
+            }
+          ],
+          "status": "pending",
+          "assigned_to": "frontend-agent",
+          "output": "Member directory with full structure, power levels, and pay transparency flags."
+        },
+        {
+          "id": "enhance-007",
+          "name": "Committee Breakdowns — Sub-pages/Modals",
+          "description": "Detailed committee views from table/graph. Org chart: managers → secretaries → members with responsibility bubbles.",
+          "subtasks": [
+            {
+              "step": 1,
+              "action": "Create /pages/committees/[slug].tsx: Show members, roles, paid status, decision_power, gaps per committee.",
+              "dependencies": ["enhance-006"],
+              "reference": "/workflows/frontend.md"
+            },
+            {
+              "step": 2,
+              "action": "Add org-chart viz (react-organizational-chart or custom): Board → Committees → WGs hierarchy.",
+              "dependencies": ["step-1"],
+              "reference": "/skills/recharts-usage"
+            },
+            {
+              "step": 3,
+              "action": "Link committee cards from Transparency Detail and main table to sub-pages.",
+              "dependencies": ["step-2"]
+            }
+          ],
+          "status": "pending",
+          "assigned_to": "frontend-agent",
+          "output": "Navigable committee breakdowns with org chart visualization."
+        },
+        {
+          "id": "enhance-008",
+          "name": "Power Map Enhancement — Influence Graph v2",
+          "description": "Add 'reports_to' edges (committees→board), node sizes by decision_power. Tooltips: 'Gap: No salary—submit evidence?'",
+          "subtasks": [
+            {
+              "step": 1,
+              "action": "Enrich network-nodes.json: Add 'reports_to' link type, 'decision_power' field per node.",
+              "dependencies": ["data-001"],
+              "reference": "/data/network-nodes.json"
+            },
+            {
+              "step": 2,
+              "action": "Update InfluenceGraph.tsx: Scale node size by decision_power. Color-code by type (board=red, staff=blue, member=gray).",
+              "dependencies": ["step-1"],
+              "reference": "/skills/react-force-graph"
+            },
+            {
+              "step": 3,
+              "action": "Add interactive tooltips with gap prompts: 'No salary disclosed—submit evidence?' linking to form.",
+              "dependencies": ["step-2"]
+            }
+          ],
+          "status": "pending",
+          "assigned_to": "frontend-agent",
+          "output": "Influence graph with power-weighted nodes and gap-aware tooltips."
+        },
+        {
+          "id": "enhance-009",
+          "name": "Gaps Dashboard — Transparency Debt Meter",
+          "description": "Dynamic gap list with 'Transparency Debt' progress meter. Community can upvote gaps for priority. Integrated with submission form.",
+          "subtasks": [
+            {
+              "step": 1,
+              "action": "Create /components/GapsDashboard.tsx: Render gaps from input.json with severity badges and upvote counts.",
+              "dependencies": ["enhance-002"],
+              "reference": "/skills/recharts-usage"
+            },
+            {
+              "step": 2,
+              "action": "Add Transparency Debt meter (progress bar): total gaps vs resolved. Hook to Supabase for persistence.",
+              "dependencies": ["step-1"],
+              "reference": "/workflows/database.md"
+            },
+            {
+              "step": 3,
+              "action": "Wire upvote to Supabase; sort by votes. Link 'Submit Evidence' to community form per gap.",
+              "dependencies": ["step-2"]
+            }
+          ],
+          "status": "pending",
+          "assigned_to": "frontend-agent",
+          "output": "Gaps dashboard with community-driven prioritization."
+        },
+        {
+          "id": "enhance-010",
+          "name": "Filters & Dynamic Score Recalculation",
+          "description": "Add UI filters (e.g., Show Paid Only). Recalculate transparency scores dynamically based on verified data points post-seed.",
+          "subtasks": [
+            {
+              "step": 1,
+              "action": "Add filter UI to Member Directory, Transparency Table: paid status, affiliation, power level.",
+              "dependencies": ["enhance-006"]
+            },
+            {
+              "step": 2,
+              "action": "Implement score recalculation engine: count verified/partial/missing per category, recompute weighted score.",
+              "dependencies": ["step-1"],
+              "reference": "/skills/data-parsing"
+            },
+            {
+              "step": 3,
+              "action": "Update TransparencyMeter to use dynamic scores from recalculation instead of fallback constants.",
+              "dependencies": ["step-2"]
+            }
+          ],
+          "status": "pending",
+          "assigned_to": "data-agent",
+          "output": "Scores update automatically as data is verified; filters enable focused exploration."
+        }
+      ]
+    },
+    {
       "phase": "Phase 2 - Data Integration",
       "priority": "Medium",
       "estimated_duration": "1 week",
