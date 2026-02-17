@@ -307,7 +307,8 @@
 "subtasks": [
 {"step": 1, "action": "Build /src/components/SubmitDataForm.tsx with React Hook Form.", "dependencies": ["mvp-001"], "reference": "/workflows/frontend.md"}
 ],
-"status": "pending",
+"status": "completed",
+"completed_date": "2026-02-17",
 "assigned_to": "frontend-agent"
 }
 ]

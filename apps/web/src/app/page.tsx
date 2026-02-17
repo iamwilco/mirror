@@ -1,5 +1,6 @@
 import BudgetSankey from "@/components/BudgetSankey";
 import InfluenceGraph from "@/components/InfluenceGraph";
+import SubmitDataForm from "@/components/SubmitDataForm";
 import TransparencyTable from "@/components/TransparencyTable";
 import TransparencyMeter from "@/components/TransparencyMeter";
 
@@ -31,9 +32,12 @@ export default function Home() {
               About
             </a>
           </nav>
-          <button className="rounded-full border border-white/20 px-4 py-2 text-xs uppercase tracking-[0.2em] text-white/80 transition hover:border-white/50">
+          <a
+            className="rounded-full border border-white/20 px-4 py-2 text-xs uppercase tracking-[0.2em] text-white/80 transition hover:border-white/50"
+            href="#contribute"
+          >
             Contribute Data
-          </button>
+          </a>
         </div>
       </header>
 
@@ -113,6 +117,22 @@ export default function Home() {
             </p>
           </div>
           <TransparencyTable />
+        </section>
+
+        <section className="mt-16 grid gap-6" id="contribute">
+          <div>
+            <p className="text-xs uppercase tracking-[0.3em] text-white/60">
+              Community Submissions
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold text-white">
+              Help surface what&apos;s missing
+            </h2>
+            <p className="mt-3 max-w-3xl text-sm text-white/60">
+              If you have documents, budget notes, or leads worth verifying, send
+              them here. We will follow up and cross-reference sources.
+            </p>
+          </div>
+          <SubmitDataForm />
         </section>
 
         <section className="mt-16 grid gap-6" id="about">
