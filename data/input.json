@@ -1,0 +1,136 @@
+{
+  "people": [
+    {
+      "name": "Jack Briggs",
+      "role": "Interim Executive Director, Intersect",
+      "affiliations": ["Intersect MBO"],
+      "bio": "Leads ecosystem development; keynote speaker on governance.",
+      "transparency": "verified",
+      "source": "Intersect site, Cardano Foundation blog",
+      "notes": "No salary info—gap."
+    },
+    {
+      "name": "Nikhil Joshi",
+      "role": "Non-Exec Director, Intersect / COO, EMURGO",
+      "affiliations": ["Intersect MBO", "EMURGO"],
+      "bio": "20+ years in finance/banking; advises Web3 startups.",
+      "transparency": "verified",
+      "source": "Intersect team page",
+      "notes": "Clear overlap with founding entity."
+    },
+    {
+      "name": "Gerard Moroney",
+      "role": "Non-Exec Director, Intersect / COO, IOHK (IOG)",
+      "affiliations": ["Intersect MBO", "IOG"],
+      "bio": "Operations lead with blockchain focus.",
+      "transparency": "verified",
+      "source": "Intersect team page",
+      "notes": "Influence from IOG founding."
+    },
+    {
+      "name": "Adam Rusch",
+      "role": "Non-Exec Director, Intersect",
+      "affiliations": ["Intersect MBO"],
+      "bio": "Facilitates workshops; governance expert.",
+      "transparency": "verified",
+      "source": "Cardano Summit recap",
+      "notes": ""
+    },
+    {
+      "name": "Frederik Gregaard",
+      "role": "CEO, Cardano Foundation",
+      "affiliations": ["Cardano Foundation", "Intersect Member (Org)"],
+      "bio": "Leads CF; emphasizes decentralized future.",
+      "transparency": "verified",
+      "source": "CF blog on joining Intersect",
+      "notes": "CF joined Intersect Sep 2024."
+    },
+    {
+      "name": "Sricharan Ganta",
+      "role": "Founder, Nucast (Intersect Member)",
+      "affiliations": ["Nucast", "Intersect MBO"],
+      "bio": "Testimonial contributor.",
+      "transparency": "partial",
+      "source": "Intersect site testimonials",
+      "notes": ""
+    },
+    {
+      "name": "Andreas Sosilo",
+      "role": "Cardano Ambassador (Indonesia), Intersect Member",
+      "affiliations": ["Intersect MBO"],
+      "bio": "Community ambassador.",
+      "transparency": "partial",
+      "source": "Intersect site testimonials",
+      "notes": ""
+    }
+  ],
+  "_todo_people": "Add: Kavinda Kariyapperuma (CoinCeylon), Yuri Kuriyama (Kyoso DAO), Rafael Cardoso (GenWealth), Georg Link (Bitergia)",
+  "relationships": [
+    {
+      "from": "Intersect MBO",
+      "to": "Cardano Foundation",
+      "type": "founding_member",
+      "details": "CF joined Intersect Sep 2024; collaborates on budgets/governance.",
+      "source": "CF blog, EMURGO posts"
+    },
+    {
+      "from": "Intersect MBO",
+      "to": "IOG",
+      "type": "founding_collaborator",
+      "details": "Independent but close collab; Gerard Moroney overlap.",
+      "source": "Intersect KB, EMURGO"
+    },
+    {
+      "from": "Intersect MBO",
+      "to": "EMURGO",
+      "type": "founding_collaborator",
+      "details": "Nikhil Joshi overlap; supports governance.",
+      "source": "Intersect team, EMURGO blogs"
+    },
+    {
+      "from": "Intersect MBO",
+      "to": "Midnight Foundation",
+      "type": "enterprise_member",
+      "details": "Joined Dec 2025.",
+      "source": "Intersect X post"
+    },
+    {
+      "from": "Intersect MBO",
+      "to": "Serviceplan Group",
+      "type": "enterprise_member",
+      "details": "Joined Dec 2025; focuses on marketing/decentralized governance.",
+      "source": "Intersect X post"
+    }
+  ],
+  "committees": [
+    {
+      "name": "Technical Steering Committee (TSC)",
+      "description": "Endorses parameter updates, forms incident groups.",
+      "elections": "Q1/Q4 2025; 50% seats filled.",
+      "transparency": "partial",
+      "source": "Intersect site, X updates",
+      "gaps": "No full member list/salaries."
+    },
+    {
+      "name": "Civics Committee",
+      "description": "Handles elections, treasury actions.",
+      "elections": "Community-elected; snap election Nov 2025.",
+      "transparency": "verified",
+      "source": "Intersect X, CF"
+    }
+  ],
+  "_todo_committees": "Add: Open Source (OSC), Growth & Marketing (GMC), Budget, Oversight, Membership & Community (MCC), Parameter (PC)",
+  "working_groups": [
+    {
+      "name": "Chain Partition Incident Analysis",
+      "description": "Formed Dec 2025 by TSC.",
+      "transparency": "partial",
+      "source": "Intersect site"
+    }
+  ],
+  "transparency_gaps": [
+    "No public salary ranges for paid roles (e.g., Exec Dir, committee leads).",
+    "Partial board/committee bios; no vote tallies per member.",
+    "Decision logs: Quarterly reports exist, but granular influence metrics missing."
+  ]
+}
