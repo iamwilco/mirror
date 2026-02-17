@@ -5,6 +5,7 @@ import { useParams } from "next/navigation";
 import { useMemo } from "react";
 
 import inputData from "@/data/input.json";
+import peopleData from "@/data/people.json";
 
 interface Committee {
   name: string;
@@ -37,6 +38,10 @@ const slugify = (value: string) =>
 
 const committees = inputData.committees as Committee[];
 const workingGroups = inputData.working_groups as WorkingGroup[];
+const boardMembers = (peopleData.board_members ?? []).map((member) => ({
+  name: member.name,
+  role: member.role,
+}));
 
 export default function CommitteeDetailPage() {
   const params = useParams();
@@ -157,12 +162,34 @@ export default function CommitteeDetailPage() {
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             <div className="rounded-2xl border border-white/10 bg-black/30 p-4">
               <p className="text-xs uppercase tracking-[0.2em] text-white/40">Board</p>
-              <p className="mt-2 text-sm text-white/70">Intersect Board</p>
+              <div className="mt-3 space-y-2 text-sm text-white/70">
+                {boardMembers.length > 0 ? (
+                  boardMembers.map((member) => (
+                    <div key={member.name} className="rounded-xl border border-white/5 bg-black/40 px-3 py-2">
+                      <p className="text-sm text-white">{member.name}</p>
+                      <p className="text-xs text-white/50">{member.role}</p>
+                    </div>
+                  ))
+                ) : (
+                  <p className="text-sm text-white/60">Board roster pending.</p>
+                )}
+              </div>
             </div>
             <div className="rounded-2xl border border-emerald-400/30 bg-emerald-500/10 p-4">
               <p className="text-xs uppercase tracking-[0.2em] text-emerald-200/70">Committee</p>
               <p className="mt-2 text-sm text-white">{committee.name}</p>
               <p className="mt-2 text-xs text-white/60">{committee.description}</p>
+              <div className="mt-3 space-y-2 text-xs text-white/70">
+                {(committee.members ?? []).length > 0 ? (
+                  committee.members?.map((member) => (
+                    <div key={member} className="rounded-lg border border-emerald-400/20 bg-black/20 px-3 py-2">
+                      {member}
+                    </div>
+                  ))
+                ) : (
+                  <p className="text-xs text-white/60">Member roster not yet published.</p>
+                )}
+              </div>
             </div>
             <div className="rounded-2xl border border-white/10 bg-black/30 p-4">
               <p className="text-xs uppercase tracking-[0.2em] text-white/40">Working Groups</p>
