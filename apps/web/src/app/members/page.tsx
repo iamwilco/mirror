@@ -1,14 +1,16 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 
-import { supabase } from "@/lib/supabaseClient";
+import peopleData from "@/data/people.json";
 
 interface MemberEntry {
   name: string;
   role: string;
   affiliations: string[];
-  bio: string;
+  responsibilities: string;
+  paid: string;
+  decisionPower: "High" | "Medium" | "Low" | "Unknown";
   transparency: string;
   source: string;
   notes: string;
@@ -16,59 +18,35 @@ interface MemberEntry {
 
 const DEFAULT_TRANSPARENCY = "partial";
 
+const POWER_RANK: Record<MemberEntry["decisionPower"], number> = {
+  High: 3,
+  Medium: 2,
+  Low: 1,
+  Unknown: 0,
+};
+
 export default function MembersPage() {
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState("All");
-  const [members, setMembers] = useState<MemberEntry[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [paidOnly, setPaidOnly] = useState(false);
+  const [powerFilter, setPowerFilter] = useState("All");
 
-  useEffect(() => {
-    let isMounted = true;
+  const members = useMemo<MemberEntry[]>(() => {
+    const leadership = peopleData.leadership ?? [];
+    const board = peopleData.board_members ?? [];
+    const members = peopleData.members ?? [];
 
-    const loadMembers = async () => {
-      if (!supabase) {
-        setLoading(false);
-        return;
-      }
-
-      const { data, error: fetchError } = await supabase
-        .from("people")
-        .select("name, role, affiliation, source_url, verified_by")
-        .order("name", { ascending: true });
-
-      if (!isMounted) return;
-
-      if (fetchError) {
-        setError(fetchError.message);
-        setLoading(false);
-        return;
-      }
-
-      const mapped = (data || []).map((row) => ({
-        name: row.name,
-        role: row.role ?? "",
-        affiliations: row.affiliation
-          ? row.affiliation
-              .split(",")
-              .map((value: string) => value.trim())
-              .filter(Boolean)
-          : [],
-        bio: "",
-        transparency: DEFAULT_TRANSPARENCY,
-        source: row.source_url ?? "",
-        notes: row.verified_by ? `Verified by ${row.verified_by}` : "",
-      }));
-
-      setMembers(mapped);
-      setLoading(false);
-    };
-
-    loadMembers();
-
-    return () => {
-      isMounted = false;
-    };
+    return [...leadership, ...board, ...members].map((person) => ({
+      name: person.name,
+      role: person.role ?? "",
+      affiliations: person.affiliations ?? [],
+      responsibilities: person.responsibilities ?? "",
+      paid: person.paid ?? "unknown",
+      decisionPower: (person.decision_power as MemberEntry["decisionPower"]) ?? "Unknown",
+      transparency: person.transparency ?? DEFAULT_TRANSPARENCY,
+      source: person.source ?? "",
+      notes: person.notes ?? "",
+    }));
   }, []);
 
   const filters = useMemo(() => {
@@ -82,7 +60,8 @@ export default function MembersPage() {
   const filteredMembers = useMemo(() => {
     const normalized = query.trim().toLowerCase();
 
-    return members.filter((member) => {
+    return members
+      .filter((member) => {
       const matchesQuery =
         !normalized ||
         member.name.toLowerCase().includes(normalized) ||
@@ -95,9 +74,15 @@ export default function MembersPage() {
         filter === "All" ||
         member.affiliations.some((affiliation) => affiliation === filter);
 
-      return matchesQuery && matchesFilter;
-    });
-  }, [members, query, filter]);
+      const matchesPaid = !paidOnly || member.paid.toLowerCase().includes("verified");
+      const matchesPower =
+        powerFilter === "All" ||
+        member.decisionPower.toLowerCase() === powerFilter.toLowerCase();
+
+      return matchesQuery && matchesFilter && matchesPaid && matchesPower;
+    })
+      .sort((a, b) => POWER_RANK[b.decisionPower] - POWER_RANK[a.decisionPower]);
+  }, [members, query, filter, paidOnly, powerFilter]);
 
   return (
     <main className="min-h-screen bg-[#080c14] px-6 py-20 text-white">
@@ -138,16 +123,42 @@ export default function MembersPage() {
             placeholder="Search by name, role, or affiliation"
             className="flex-1 bg-transparent text-sm text-white placeholder:text-white/40 focus:outline-none"
           />
+          <button
+            type="button"
+            onClick={() => setPaidOnly((prev) => !prev)}
+            className={`rounded-full border px-3 py-2 text-[11px] uppercase tracking-[0.2em] transition ${
+              paidOnly
+                ? "border-emerald-400/60 bg-emerald-500/20 text-emerald-200"
+                : "border-white/10 bg-white/5 text-white/60 hover:border-white/30"
+            }`}
+          >
+            Show Paid Only
+          </button>
+          <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[11px] uppercase tracking-[0.2em] text-white/60">
+            <span>Power</span>
+            <select
+              value={powerFilter}
+              onChange={(event) => setPowerFilter(event.target.value)}
+              className="bg-transparent text-[11px] uppercase tracking-[0.2em] text-white/70 focus:outline-none"
+            >
+              <option className="bg-[#080c14]" value="All">
+                All
+              </option>
+              <option className="bg-[#080c14]" value="High">
+                High
+              </option>
+              <option className="bg-[#080c14]" value="Medium">
+                Medium
+              </option>
+              <option className="bg-[#080c14]" value="Low">
+                Low
+              </option>
+            </select>
+          </div>
           <span className="text-xs uppercase tracking-[0.2em] text-white/40">
-            {loading ? "Loading..." : `${filteredMembers.length} results`}
+            {`${filteredMembers.length} results`}
           </span>
         </div>
-
-        {error && (
-          <div className="rounded-2xl border border-red-500/30 bg-red-500/10 p-4 text-sm text-red-200">
-            Failed to load members: {error}
-          </div>
-        )}
 
         <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
           <table className="w-full text-sm">
@@ -156,8 +167,10 @@ export default function MembersPage() {
                 <th className="pb-3 pr-4">Member</th>
                 <th className="pb-3 pr-4">Role</th>
                 <th className="pb-3 pr-4">Affiliations</th>
+                <th className="pb-3 pr-4">Responsibilities</th>
+                <th className="pb-3 pr-4">Power</th>
                 <th className="pb-3 pr-4">Transparency</th>
-                <th className="pb-3">Salary</th>
+                <th className="pb-3">Paid</th>
               </tr>
             </thead>
             <tbody className="text-white/80">
@@ -167,12 +180,13 @@ export default function MembersPage() {
                   member.notes.toLowerCase().includes("pay") ||
                   member.notes.toLowerCase().includes("comp") ||
                   member.notes.toLowerCase().includes("gap");
+                const paidLabel = member.paid || "unknown";
 
                 return (
                   <tr key={member.name} className="border-b border-white/5">
                     <td className="py-4 pr-4">
                       <div className="font-medium text-white">{member.name}</div>
-                      <div className="text-xs text-white/50">{member.bio}</div>
+                      <div className="text-xs text-white/50">{member.source}</div>
                     </td>
                     <td className="py-4 pr-4 text-white/70">{member.role}</td>
                     <td className="py-4 pr-4">
@@ -186,6 +200,24 @@ export default function MembersPage() {
                           </span>
                         ))}
                       </div>
+                    </td>
+                    <td className="py-4 pr-4 text-white/60">
+                      {member.responsibilities || "—"}
+                    </td>
+                    <td className="py-4 pr-4">
+                      <span
+                        className={`inline-flex items-center rounded-full px-2.5 py-1 text-xs uppercase tracking-[0.2em] ${
+                          member.decisionPower === "High"
+                            ? "bg-rose-500/15 text-rose-200"
+                            : member.decisionPower === "Medium"
+                            ? "bg-amber-500/15 text-amber-200"
+                            : member.decisionPower === "Low"
+                            ? "bg-sky-500/15 text-sky-200"
+                            : "bg-white/10 text-white/50"
+                        }`}
+                      >
+                        {member.decisionPower}
+                      </span>
                     </td>
                     <td className="py-4 pr-4">
                       <span
@@ -206,7 +238,7 @@ export default function MembersPage() {
                           Salary: Missing
                         </span>
                       ) : (
-                        <span className="text-white/40">—</span>
+                        <span className="text-white/60">{paidLabel}</span>
                       )}
                     </td>
                   </tr>
