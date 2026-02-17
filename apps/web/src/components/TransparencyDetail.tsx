@@ -25,6 +25,12 @@ export interface TransparencyDetailProps {
   gaps: string[];
 }
 
+const slugify = (value: string) =>
+  value
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+
 const STATUS_COLORS = {
   verified: "#22c55e",
   partial: "#eab308",
@@ -150,7 +156,18 @@ export default function TransparencyDetail({
               <tbody className="text-white/80">
                 {items.map((item, idx) => (
                   <tr key={idx} className="border-b border-white/5">
-                    <td className="py-3 pr-4 font-medium">{item.name}</td>
+                    <td className="py-3 pr-4 font-medium">
+                      {category === "Governance & Decisions" ? (
+                        <Link
+                          href={`/committees/${slugify(item.name)}`}
+                          className="transition hover:text-emerald-200"
+                        >
+                          {item.name}
+                        </Link>
+                      ) : (
+                        item.name
+                      )}
+                    </td>
                     <td className="py-3 pr-4">
                       <span
                         className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium"
