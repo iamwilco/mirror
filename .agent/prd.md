@@ -57,13 +57,46 @@ Clean table showing:
 - Category | Status | Transparency Level | Last Updated | Source | Notes
 - Color coding: Green (High), Yellow (Medium), Red (Low)
 
-### Phase 2 Features (After MVP)
-- Member Directory + Paid Positions (with salary ranges if available)
+### Phase 2 Features (Post-MVP)
+
+**1. Transparency Breakdown Detail View (enhance-002)** ✅
+- Clickable drill-down from Hero Meter category bars
+- Detail page per category showing:
+  - Sub-data points (e.g., "Board Members: Verified 4/10", "Salaries: Missing")
+  - Evidence table: Item | Status | Source Link | Verified By | Notes/Gaps
+  - Mini-pie chart for category score distribution
+  - "Transparency Debts" list (red badges for missing info)
+  - CTA: "Submit Update" linking to community form
+- Subtle gamification: users "unlock" higher scores by contributing facts
+
+**2. Verification Workflow Tags (enhance-003)** ✅
+- "Verified by Community" badges on evidence table items
+- Schema support for `verifiedBy` field across all tables
+- Placeholder badge on detail view headers
+
+**3. Member Directory + Paid Positions (enhance-004)** ✅
+- Searchable roster with dynamic affiliation filters
+- Salary-missing flags (red badges)
+- Wired to Supabase `people` table
+
+**4. Historical Budget Comparison (enhance-005)** ✅
+- 2025 vs 2026 toggle on budget section
+- Separate Sankey datasets per year
+- 2026 figures are placeholders pending official releases
+
+**5. Data Integration (data-001)** ✅
+- Expanded network graph with all known people/orgs
+- Seeded Supabase with people, committees, relationships
+- Graph relationships include board, executive, founding, and enterprise links
+
+**Upcoming:**
 - Quarterly Financial Reports tracker
 - Results & Impact KPI dashboard
-- Decision log (How decisions are made inside committees)
-- Community contribution system (Submit data with proof)
-- Historical budget comparison (2025 vs 2026)
+- Decision log (committee decision-making process)
+- On-chain treasury withdrawal tracking (via gov.tools)
+- Score recalculation engine (dynamic based on verified data points)
+- Additional people: Kavinda Kariyapperuma, Yuri Kuriyama, Rafael Cardoso, Georg Link
+- Additional committees: OSC, GMC, Budget, Oversight, MCC, Parameter
 
 ## 4. Transparency Scoring System (Core Mechanic)
 
@@ -85,18 +118,20 @@ Scoring logic:
 
 **Primary (Most Reliable):**
 1. Official Intersect Budget Proposal (₳263.6M)
-2. On-chain Treasury Withdrawals (CardanoScan / Gov.tools)
+2. On-chain Treasury Withdrawals — [CardanoScan](https://cardanoscan.io) / [Gov.tools](https://gov.tools)
 3. Intersect official docs & quarterly reports
 4. Intersect website + GitBook
+5. Intersect Weekly Updates (#93–#98 for 2026 progress)
 
 **Secondary:**
 - Cardano Forum threads
 - Intersect Town Halls / AMAs
 - Community submissions (with strict verification)
+- Intersect X/Twitter posts (elections, membership announcements)
 
 ## 6. Tech Stack Recommendation
 
-- **Frontend**: Next.js 15 + TypeScript + TailwindCSS
+- **Frontend**: Next.js 16 + TypeScript + TailwindCSS 4
 - **Charts & Diagrams**: Recharts + react-force-graph (for network graph)
 - **Database**: Supabase (Postgres) or Firebase
 - **Authentication**: Optional (Cardano wallet sign-in later)
@@ -152,11 +187,25 @@ Nice-to-have:
 - [x] Jest + RTL testing setup
 - [x] Vercel GitHub auto-deploy
 
-### Next Phase (Post-MVP)
-- [ ] Transparency Breakdown Detail View
-- [ ] Verification Workflow Tags
-- [ ] Member Directory + Paid Positions
-- [ ] Historical budget comparison
+### Phase 2 Completed ✅
+- [x] Transparency Breakdown Detail View (enhance-002)
+- [x] Verification Workflow Tags (enhance-003)
+- [x] Member Directory + Paid Positions (enhance-004)
+- [x] Historical Budget Comparison (enhance-005)
+- [x] Data Integration — expanded graph + Supabase seeding (data-001)
+
+### Score Targets (Post Data Integration)
+- **People & Compensation**: ~50% (roles verified, salaries missing)
+- **Organizational Relationships**: ~70% (clear founder links documented)
+- **Governance & Decisions**: ~55% (committees partially documented)
+- **Budget & Money Flow**: ~68% (proposal verified, granular spend missing)
+
+### Next Phase (Phase 3)
+- [ ] Quarterly Financial Reports tracker
+- [ ] Results & Impact KPI dashboard
+- [ ] Decision log (committee process)
+- [ ] On-chain treasury withdrawal tracking
+- [ ] Dynamic score recalculation engine
 
 ---
 
