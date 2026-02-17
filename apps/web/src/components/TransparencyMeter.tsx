@@ -9,7 +9,7 @@ import {
   Tooltip,
 } from "recharts";
 
-import { supabase } from "@/lib/supabaseClient";
+import inputData from "@/data/input.json";
 
 const CATEGORY_SLUGS: Record<string, string> = {
   "Budget & Money Flow": "budget-money-flow",
@@ -22,60 +22,127 @@ const CATEGORY_SLUGS: Record<string, string> = {
 
 const fallbackScore = 66;
 
-const fallbackBreakdown = [
-  { name: "Budget & Money Flow", value: 68, weight: 30 },
-  { name: "Governance & Decisions", value: 55, weight: 20 },
-  { name: "People & Compensation", value: 50, weight: 20 },
-  { name: "Results & Deliverables", value: 61, weight: 15 },
-  { name: "Procurement & Contracts", value: 42, weight: 10 },
-  { name: "Relationships", value: 70, weight: 5 },
+const CATEGORY_WEIGHTS = [
+  { name: "Budget & Money Flow", weight: 30 },
+  { name: "Governance & Decisions", weight: 20 },
+  { name: "People & Compensation", weight: 20 },
+  { name: "Results & Deliverables", weight: 15 },
+  { name: "Procurement & Contracts", weight: 10 },
+  { name: "Relationships", weight: 5 },
 ];
+
+const scoreFromCounts = (verified: number, partial: number, missing: number) => {
+  const total = verified + partial + missing;
+  if (!total) return 0;
+  return Math.round(((verified * 1 + partial * 0.5) / total) * 100);
+};
 
 export default function TransparencyMeter() {
   const [score, setScore] = useState(fallbackScore);
   const [displayScore, setDisplayScore] = useState(0);
-  const [breakdown, setBreakdown] = useState(fallbackBreakdown);
+  const [breakdown, setBreakdown] = useState(
+    CATEGORY_WEIGHTS.map((item) => ({ ...item, value: fallbackScore }))
+  );
   const [dataPoints, setDataPoints] = useState({ verified: 87, total: 142 });
 
   useEffect(() => {
     let isMounted = true;
 
     const loadScores = async () => {
-      if (!supabase) return;
+      const people = inputData.people ?? [];
+      const committees = inputData.committees ?? [];
+      const workingGroups = inputData.working_groups ?? [];
+      const relationships = inputData.relationships ?? [];
 
-      const { data, error } = await supabase
-        .from("transparency_scores")
-        .select("category, score, weight, data_points_verified, data_points_total")
-        .order("weight", { ascending: false });
+      const peopleCounts = people.reduce(
+        (acc, item) => {
+          acc[item.transparency as "verified" | "partial" | "missing"] += 1;
+          return acc;
+        },
+        { verified: 0, partial: 0, missing: 0 }
+      );
 
-      if (error || !data || data.length === 0) return;
+      const committeeCounts = committees.reduce(
+        (acc, item) => {
+          acc[item.transparency as "verified" | "partial" | "missing"] += 1;
+          return acc;
+        },
+        { verified: 0, partial: 0, missing: 0 }
+      );
 
-      const overall = data.reduce(
-        (acc, item) => acc + (item.score || 0) * (item.weight || 0),
+      const workingCounts = workingGroups.reduce(
+        (acc, item) => {
+          acc[item.transparency as "verified" | "partial" | "missing"] += 1;
+          return acc;
+        },
+        { verified: 0, partial: 0, missing: 0 }
+      );
+
+      const relationshipCounts = {
+        verified: relationships.length,
+        partial: 0,
+        missing: 0,
+      };
+
+      const nextBreakdown = CATEGORY_WEIGHTS.map((category) => {
+        switch (category.name) {
+          case "People & Compensation":
+            return {
+              ...category,
+              value: scoreFromCounts(
+                peopleCounts.verified,
+                peopleCounts.partial,
+                peopleCounts.missing
+              ),
+            };
+          case "Governance & Decisions":
+            return {
+              ...category,
+              value: scoreFromCounts(
+                committeeCounts.verified,
+                committeeCounts.partial,
+                committeeCounts.missing
+              ),
+            };
+          case "Results & Deliverables":
+            return {
+              ...category,
+              value: scoreFromCounts(
+                workingCounts.verified,
+                workingCounts.partial,
+                workingCounts.missing
+              ),
+            };
+          case "Relationships":
+            return {
+              ...category,
+              value: scoreFromCounts(
+                relationshipCounts.verified,
+                relationshipCounts.partial,
+                relationshipCounts.missing
+              ),
+            };
+          default:
+            return { ...category, value: fallbackScore };
+        }
+      });
+
+      const overall = nextBreakdown.reduce(
+        (acc, item) => acc + item.value * item.weight,
         0
       );
-      const totalWeight = data.reduce((acc, item) => acc + (item.weight || 0), 0);
+      const totalWeight = nextBreakdown.reduce((acc, item) => acc + item.weight, 0);
       const nextScore = totalWeight ? Math.round(overall / totalWeight) : fallbackScore;
+
+      const verified =
+        peopleCounts.verified + committeeCounts.verified + workingCounts.verified + relationshipCounts.verified;
+      const total =
+        people.length + committees.length + workingGroups.length + relationships.length;
 
       if (!isMounted) return;
 
       setScore(nextScore);
-      setBreakdown(
-        data.map((item) => ({
-          name: item.category,
-          value: Math.round(item.score || 0),
-          weight: item.weight || 0,
-        }))
-      );
-
-      const verified = data.reduce(
-        (acc, item) => acc + (item.data_points_verified || 0),
-        0
-      );
-      const total = data.reduce(
-        (acc, item) => acc + (item.data_points_total || 0),
-        0
-      );
+      setBreakdown(nextBreakdown);
       if (verified && total) {
         setDataPoints({ verified, total });
       }
