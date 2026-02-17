@@ -2,38 +2,101 @@
   "people": [
     {
       "name": "Jack Briggs",
-      "role": "Interim Executive Director, Intersect",
+      "role": "Executive Director (appointed Jan 2026 from Interim)",
       "affiliations": ["Intersect MBO"],
-      "bio": "Leads ecosystem development; keynote speaker on governance.",
+      "bio": "Leads ecosystem development, governance support, community alignment. Oversees staff, board, committees.",
+      "paid": "verified",
+      "decision_power": "High",
       "transparency": "verified",
-      "source": "Intersect site, Cardano Foundation blog",
-      "notes": "No salary info—gap."
+      "source": "Intersect updates, LinkedIn",
+      "notes": "Background: Blockchain since 2012; no salary disclosed—gap."
+    },
+    {
+      "name": "Nick Cook",
+      "role": "Interim Director of Operations",
+      "affiliations": ["Intersect MBO"],
+      "bio": "Back-office ops, planning/delivery coordination.",
+      "paid": "verified",
+      "decision_power": "Medium",
+      "transparency": "verified",
+      "source": "Intersect team page",
+      "notes": ""
+    },
+    {
+      "name": "Rosie Graham",
+      "role": "Head of People & Culture",
+      "affiliations": ["Intersect MBO"],
+      "bio": "HR, hiring, workforce data.",
+      "paid": "verified",
+      "decision_power": "Low",
+      "transparency": "verified",
+      "source": "Intersect update",
+      "notes": "New hire Jan 2026."
+    },
+    {
+      "name": "Sam Leathers",
+      "role": "Special Technical Advisor",
+      "affiliations": ["Intersect MBO"],
+      "bio": "Security coordination, incident response.",
+      "paid": "verified",
+      "decision_power": "Medium",
+      "transparency": "verified",
+      "source": "X update (@therealdisasm)",
+      "notes": "8+ years Cardano contrib."
+    },
+    {
+      "name": "Mike Hornan",
+      "role": "Security Incident Officer/Manager",
+      "affiliations": ["Intersect MBO", "Open Source Office"],
+      "bio": "Vulnerability escalation, incident handling.",
+      "paid": "verified",
+      "decision_power": "Medium",
+      "transparency": "verified",
+      "source": "Intersect updates (@Hornan7)",
+      "notes": "New role for security program."
+    },
+    {
+      "name": "Lally McClay",
+      "role": "Head of Ecosystem & Community",
+      "affiliations": ["Intersect MBO"],
+      "bio": "Governance engagement, community alignment.",
+      "paid": "verified",
+      "decision_power": "Medium",
+      "transparency": "verified",
+      "source": "X update (@LallyMcClay)",
+      "notes": "Promoted from Governance Lead."
     },
     {
       "name": "Nikhil Joshi",
-      "role": "Non-Exec Director, Intersect / COO, EMURGO",
-      "affiliations": ["Intersect MBO", "EMURGO"],
-      "bio": "20+ years in finance/banking; advises Web3 startups.",
+      "role": "Non-Exec Director",
+      "affiliations": ["Intersect MBO", "EMURGO (COO)"],
+      "bio": "Strategic oversight, governance. 20+ years in finance/banking.",
+      "paid": "partial",
+      "decision_power": "High",
       "transparency": "verified",
-      "source": "Intersect team page",
-      "notes": "Clear overlap with founding entity."
+      "source": "Intersect team, LinkedIn",
+      "notes": "Finance/blockchain background; founder overlap."
     },
     {
       "name": "Gerard Moroney",
-      "role": "Non-Exec Director, Intersect / COO, IOHK (IOG)",
-      "affiliations": ["Intersect MBO", "IOG"],
-      "bio": "Operations lead with blockchain focus.",
+      "role": "Non-Exec Director",
+      "affiliations": ["Intersect MBO", "IOG/IOHK (COO)"],
+      "bio": "Ops/strategic guidance.",
+      "paid": "partial",
+      "decision_power": "High",
       "transparency": "verified",
-      "source": "Intersect team page",
-      "notes": "Influence from IOG founding."
+      "source": "Intersect team",
+      "notes": "Founder overlap."
     },
     {
       "name": "Adam Rusch",
-      "role": "Non-Exec Director, Intersect",
+      "role": "Non-Exec Director",
       "affiliations": ["Intersect MBO"],
-      "bio": "Facilitates workshops; governance expert.",
+      "bio": "Governance/workshops.",
+      "paid": "partial",
+      "decision_power": "High",
       "transparency": "verified",
-      "source": "Cardano Summit recap",
+      "source": "Intersect",
       "notes": ""
     },
     {
@@ -65,11 +128,13 @@
     },
     {
       "name": "Kavinda Kariyapperuma",
-      "role": "Founder, CoinCeylon (Intersect Member)",
-      "affiliations": ["CoinCeylon", "Intersect MBO"],
-      "bio": "Sri Lanka-based Cardano ecosystem builder.",
-      "transparency": "partial",
-      "source": "Intersect site testimonials",
+      "role": "Members-Elected Non-Exec Director",
+      "affiliations": ["Intersect MBO", "CoinCeylon"],
+      "bio": "Community rep on board.",
+      "paid": "partial",
+      "decision_power": "High",
+      "transparency": "verified",
+      "source": "Intersect team",
       "notes": ""
     },
     {
@@ -140,78 +205,141 @@
   "committees": [
     {
       "name": "Technical Steering Committee (TSC)",
-      "description": "Endorses parameter updates, forms incident groups.",
-      "elections": "Q1/Q4 2025; 50% seats filled.",
+      "description": "Parameter updates, incident groups (e.g., Chain Partition WG), tech milestones.",
+      "members": ["Adam Dean (member)"],
+      "elections": "50% seats elected Oct 2025/Apr 2026.",
+      "paid": "partial",
+      "decision_power": "High",
       "transparency": "partial",
-      "source": "Intersect site, X updates",
-      "gaps": "No full member list/salaries."
-    },
-    {
-      "name": "Civics Committee",
-      "description": "Handles elections, treasury actions.",
-      "elections": "Community-elected; snap election Nov 2025.",
-      "transparency": "verified",
-      "source": "Intersect X, CF"
+      "source": "Intersect site/KB, Reddit",
+      "gaps": "No full member list—gap; stipends unclear."
     },
     {
       "name": "Open Source Committee (OSC)",
-      "description": "Oversees open-source strategy and contributions.",
+      "description": "Bug bounties, security programs, open-source strategy.",
+      "members": ["Adam Dean (member)", "Elaine (Chair)"],
       "elections": "Appointed; community nominations.",
+      "paid": "partial",
+      "decision_power": "Medium",
       "transparency": "partial",
-      "source": "Intersect site",
-      "gaps": "No public member list or meeting minutes."
+      "source": "GitHub, Intersect updates",
+      "gaps": "Bug Bounty with TxPipe; gaps in member bios."
+    },
+    {
+      "name": "Civics Committee",
+      "description": "Elections, governance topics, constitution.",
+      "members": ["Mike (member, Interim Constitutional Committee crossover)"],
+      "elections": "Community-elected; Vice Chair election Jan 2026; snap election Nov 2025.",
+      "paid": "partial",
+      "decision_power": "High",
+      "transparency": "verified",
+      "source": "Intersect X, CF, FB",
+      "gaps": "Public minutes partial."
+    },
+    {
+      "name": "Budget Committee (CBC)",
+      "description": "Treasury oversight, budget proposals, audits.",
+      "members": ["Elected 50% Oct 2025, 50% Apr 2026"],
+      "elections": "Advisory; consolidates requests from 7 committees.",
+      "paid": "partial",
+      "decision_power": "High",
+      "transparency": "partial",
+      "source": "Forum, KB",
+      "gaps": "No named secretaries; procurement opaque."
     },
     {
       "name": "Growth & Marketing Committee (GMC)",
-      "description": "Drives ecosystem growth and marketing initiatives.",
+      "description": "Marketing strategies, ecosystem growth.",
+      "members": ["TBD"],
       "elections": "Appointed.",
+      "paid": "partial",
+      "decision_power": "Medium",
       "transparency": "partial",
       "source": "Intersect site",
-      "gaps": "Budget allocation per initiative not disclosed."
-    },
-    {
-      "name": "Budget Committee",
-      "description": "Reviews and approves budget proposals.",
-      "elections": "Appointed by board.",
-      "transparency": "partial",
-      "source": "Intersect site, quarterly reports",
-      "gaps": "Detailed vote records not public."
-    },
-    {
-      "name": "Oversight Committee",
-      "description": "Monitors compliance and accountability.",
-      "elections": "Appointed.",
-      "transparency": "missing",
-      "source": "Intersect site",
-      "gaps": "No public reports or member list."
+      "gaps": "Released marketing pulse report; budget allocation per initiative not disclosed."
     },
     {
       "name": "Membership & Community Committee (MCC)",
-      "description": "Manages membership tiers and community engagement.",
+      "description": "Member engagement, hubs (e.g., Brazil, Sri Lanka).",
+      "members": ["TBD"],
       "elections": "Community-elected.",
+      "paid": "partial",
+      "decision_power": "Medium",
       "transparency": "partial",
-      "source": "Intersect site",
-      "gaps": "Membership revenue not disclosed."
+      "source": "X, KB",
+      "gaps": "1,800 paid members, 2,700 associates; gaps in member lists."
+    },
+    {
+      "name": "Product Committee (CPC)",
+      "description": "Roadmap, vision facilitation, R&D oversight.",
+      "members": ["TBD"],
+      "elections": "Appointed.",
+      "paid": "partial",
+      "decision_power": "Medium",
+      "transparency": "partial",
+      "source": "X, KB"
+    },
+    {
+      "name": "Oversight Committee",
+      "description": "Treasury accountability, pause/amend contracts, milestone enforcement.",
+      "members": ["TBD"],
+      "elections": "Independent.",
+      "paid": "partial",
+      "decision_power": "High",
+      "transparency": "missing",
+      "source": "Intersect news",
+      "gaps": "New for accountability; no public reports or member list."
     },
     {
       "name": "Parameter Committee (PC)",
-      "description": "Recommends protocol parameter changes.",
+      "description": "Network params, upgrades.",
+      "members": ["Mike (Governance Parameters WG Head)"],
       "elections": "Technical appointments.",
+      "paid": "partial",
+      "decision_power": "High",
       "transparency": "verified",
-      "source": "Intersect site, on-chain governance actions"
+      "source": "Intersect site, KB, on-chain governance actions"
     }
   ],
   "working_groups": [
     {
-      "name": "Chain Partition Incident Analysis",
-      "description": "Formed Dec 2025 by TSC.",
+      "name": "Chain Partition Incident Analysis WG",
+      "description": "Nov 2025 incident review. Published review Jan 2026.",
+      "members": ["TSC-formed"],
+      "paid": "unknown",
+      "decision_power": "Low",
       "transparency": "partial",
       "source": "Intersect site"
+    },
+    {
+      "name": "Developer Experience WG",
+      "description": "Dev tools/surveys.",
+      "members": ["TBD"],
+      "paid": "unknown",
+      "decision_power": "Low",
+      "transparency": "partial",
+      "source": "Reddit",
+      "notes": "Jan 2026 recording."
+    },
+    {
+      "name": "Constitution Drafting & Ratification WG",
+      "description": "Governance docs.",
+      "members": ["Mike (member)"],
+      "paid": "unknown",
+      "decision_power": "Medium",
+      "transparency": "partial",
+      "source": "Catalyst"
     }
   ],
   "transparency_gaps": [
     "No public salary ranges for paid roles (e.g., Exec Dir, committee leads).",
     "Partial board/committee bios; no vote tallies per member.",
-    "Decision logs: Quarterly reports exist, but granular influence metrics missing."
-  ]
+    "Decision logs: Quarterly reports exist, but granular influence metrics missing.",
+    "No secretaries named across committees.",
+    "Paid details vague—stipends likely for leads, but no ranges.",
+    "Decision logs: Elections (e.g., 522 voters Q1 2025, 27% turnout) but no per-member votes.",
+    "Full member lists incomplete.",
+    "Responsibilities clear at committee level, but individual accountability missing."
+  ],
+  "decision_making_flow": "MBO model—members vote on committees/board (biannual elections). Committees propose (e.g., Budget consolidates from 7 committees), community/DReps ratify on-chain. Oversight can pause funds. Gaps: No veto/power weight details."
 }

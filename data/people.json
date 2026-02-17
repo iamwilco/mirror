@@ -1,46 +1,126 @@
 {
-  "people": [
+  "leadership": [
     {
       "name": "Jack Briggs",
-      "role": "Interim Executive Director, Intersect",
+      "role": "Executive Director (appointed Jan 2026 from Interim)",
       "affiliations": ["Intersect MBO"],
-      "bio": "Leads ecosystem development; keynote speaker on governance.",
+      "responsibilities": "Leads ecosystem development, governance support, community alignment. Oversees staff, board, committees.",
+      "paid": "verified",
+      "decision_power": "High",
       "transparency": "verified",
-      "source": "Intersect site, Cardano Foundation blog",
-      "notes": "No salary info—gap."
+      "source": "Intersect updates, LinkedIn",
+      "notes": "Background: Blockchain since 2012; no salary disclosed—gap."
     },
     {
-      "name": "Nikhil Joshi",
-      "role": "Non-Exec Director, Intersect / COO, EMURGO",
-      "affiliations": ["Intersect MBO", "EMURGO"],
-      "bio": "20+ years in finance/banking; advises Web3 startups.",
+      "name": "Nick Cook",
+      "role": "Interim Director of Operations",
+      "affiliations": ["Intersect MBO"],
+      "responsibilities": "Back-office ops, planning/delivery coordination.",
+      "paid": "verified",
+      "decision_power": "Medium",
       "transparency": "verified",
       "source": "Intersect team page",
-      "notes": "Clear overlap with founding entity."
+      "notes": ""
+    },
+    {
+      "name": "Rosie Graham",
+      "role": "Head of People & Culture",
+      "affiliations": ["Intersect MBO"],
+      "responsibilities": "HR, hiring, workforce data.",
+      "paid": "verified",
+      "decision_power": "Low",
+      "transparency": "verified",
+      "source": "Intersect update",
+      "notes": "New hire Jan 2026."
+    },
+    {
+      "name": "Sam Leathers",
+      "role": "Special Technical Advisor",
+      "affiliations": ["Intersect MBO"],
+      "responsibilities": "Security coordination, incident response.",
+      "paid": "verified",
+      "decision_power": "Medium",
+      "transparency": "verified",
+      "source": "X update (@therealdisasm)",
+      "notes": "8+ years Cardano contrib."
+    },
+    {
+      "name": "Mike Hornan",
+      "role": "Security Incident Officer/Manager",
+      "affiliations": ["Intersect MBO", "Open Source Office"],
+      "responsibilities": "Vulnerability escalation, incident handling.",
+      "paid": "verified",
+      "decision_power": "Medium",
+      "transparency": "verified",
+      "source": "Intersect updates (@Hornan7)",
+      "notes": "New role for security program."
+    },
+    {
+      "name": "Lally McClay",
+      "role": "Head of Ecosystem & Community",
+      "affiliations": ["Intersect MBO"],
+      "responsibilities": "Governance engagement, community alignment.",
+      "paid": "verified",
+      "decision_power": "Medium",
+      "transparency": "verified",
+      "source": "X update (@LallyMcClay)",
+      "notes": "Promoted from Governance Lead."
+    }
+  ],
+  "board_members": [
+    {
+      "name": "Nikhil Joshi",
+      "role": "Non-Exec Director",
+      "affiliations": ["Intersect MBO", "EMURGO (COO)"],
+      "responsibilities": "Strategic oversight, governance.",
+      "paid": "partial",
+      "decision_power": "High",
+      "transparency": "verified",
+      "source": "Intersect team, LinkedIn",
+      "notes": "Finance/blockchain background; founder overlap."
     },
     {
       "name": "Gerard Moroney",
-      "role": "Non-Exec Director, Intersect / COO, IOHK (IOG)",
-      "affiliations": ["Intersect MBO", "IOG"],
-      "bio": "Operations lead with blockchain focus.",
+      "role": "Non-Exec Director",
+      "affiliations": ["Intersect MBO", "IOG/IOHK (COO)"],
+      "responsibilities": "Ops/strategic guidance.",
+      "paid": "partial",
+      "decision_power": "High",
       "transparency": "verified",
-      "source": "Intersect team page",
-      "notes": "Influence from IOG founding."
+      "source": "Intersect team",
+      "notes": "Founder overlap."
     },
     {
       "name": "Adam Rusch",
-      "role": "Non-Exec Director, Intersect",
+      "role": "Non-Exec Director",
       "affiliations": ["Intersect MBO"],
-      "bio": "Facilitates workshops; governance expert.",
+      "responsibilities": "Governance/workshops.",
+      "paid": "partial",
+      "decision_power": "High",
       "transparency": "verified",
-      "source": "Cardano Summit recap",
+      "source": "Intersect",
       "notes": ""
     },
+    {
+      "name": "Kavinda Kariyapperuma",
+      "role": "Members-Elected Non-Exec Director",
+      "affiliations": ["Intersect MBO", "CoinCeylon"],
+      "responsibilities": "Community rep on board.",
+      "paid": "partial",
+      "decision_power": "High",
+      "transparency": "verified",
+      "source": "Intersect team",
+      "notes": ""
+    }
+  ],
+  "members": [
     {
       "name": "Frederik Gregaard",
       "role": "CEO, Cardano Foundation",
       "affiliations": ["Cardano Foundation", "Intersect Member (Org)"],
-      "bio": "Leads CF; emphasizes decentralized future.",
+      "responsibilities": "Leads CF; emphasizes decentralized future.",
+      "paid": "N/A (external org)",
+      "decision_power": "High (CF influence)",
       "transparency": "verified",
       "source": "CF blog on joining Intersect",
       "notes": "CF joined Intersect Sep 2024."
@@ -49,7 +129,9 @@
       "name": "Sricharan Ganta",
       "role": "Founder, Nucast (Intersect Member)",
       "affiliations": ["Nucast", "Intersect MBO"],
-      "bio": "Testimonial contributor.",
+      "responsibilities": "Testimonial contributor.",
+      "paid": "unknown",
+      "decision_power": "Low",
       "transparency": "partial",
       "source": "Intersect site testimonials",
       "notes": ""
@@ -58,16 +140,9 @@
       "name": "Andreas Sosilo",
       "role": "Cardano Ambassador (Indonesia), Intersect Member",
       "affiliations": ["Intersect MBO"],
-      "bio": "Community ambassador.",
-      "transparency": "partial",
-      "source": "Intersect site testimonials",
-      "notes": ""
-    },
-    {
-      "name": "Kavinda Kariyapperuma",
-      "role": "Founder, CoinCeylon (Intersect Member)",
-      "affiliations": ["CoinCeylon", "Intersect MBO"],
-      "bio": "Sri Lanka-based Cardano ecosystem builder.",
+      "responsibilities": "Community ambassador.",
+      "paid": "unknown",
+      "decision_power": "Low",
       "transparency": "partial",
       "source": "Intersect site testimonials",
       "notes": ""
@@ -76,7 +151,9 @@
       "name": "Yuri Kuriyama",
       "role": "Kyoso DAO (Intersect Member)",
       "affiliations": ["Kyoso DAO", "Intersect MBO"],
-      "bio": "DAO contributor and governance participant.",
+      "responsibilities": "DAO contributor and governance participant.",
+      "paid": "unknown",
+      "decision_power": "Low",
       "transparency": "partial",
       "source": "Intersect site testimonials",
       "notes": ""
@@ -85,7 +162,9 @@
       "name": "Rafael Cardoso",
       "role": "GenWealth (Intersect Member)",
       "affiliations": ["GenWealth", "Intersect MBO"],
-      "bio": "DeFi and wealth management on Cardano.",
+      "responsibilities": "DeFi and wealth management on Cardano.",
+      "paid": "unknown",
+      "decision_power": "Low",
       "transparency": "partial",
       "source": "Intersect site testimonials",
       "notes": ""
@@ -94,10 +173,42 @@
       "name": "Georg Link",
       "role": "Bitergia (Intersect Member)",
       "affiliations": ["Bitergia", "Intersect MBO"],
-      "bio": "Open source community health analytics.",
+      "responsibilities": "Open source community health analytics.",
+      "paid": "unknown",
+      "decision_power": "Low",
       "transparency": "partial",
       "source": "Intersect site testimonials",
       "notes": ""
     }
-  ]
+  ],
+  "affiliations_influence": [
+    {
+      "entity": "Cardano Foundation (CF)",
+      "influence": "Founding member; Frederik Gregaard (CEO) as Intersect member. Collaborates on budgets/governance.",
+      "notes": "Joined Sep 2024."
+    },
+    {
+      "entity": "IOG/IOHK",
+      "influence": "Founding collaborator; Gerard Moroney overlap. Core code stewardship.",
+      "notes": "Independent but close."
+    },
+    {
+      "entity": "EMURGO",
+      "influence": "Founding collaborator; Nikhil Joshi overlap. Supports governance.",
+      "notes": ""
+    },
+    {
+      "entity": "Midnight Foundation",
+      "influence": "Enterprise member; joined Dec 2025. Privacy sidechain collab.",
+      "notes": ""
+    }
+  ],
+  "gaps": [
+    "No secretaries named across committees.",
+    "Paid details vague—stipends likely for leads, but no ranges.",
+    "Decision logs: Elections (e.g., 522 voters Q1 2025, 27% turnout) but no per-member votes.",
+    "Full member lists incomplete (e.g., testimonials: Andreas Sosilo, Sricharan Ganta, etc., but not comprehensive).",
+    "Responsibilities clear at committee level, but individual accountability missing."
+  ],
+  "decision_making_flow": "MBO model—members vote on committees/board (biannual elections). Committees propose (e.g., Budget consolidates from 7 committees), community/DReps ratify on-chain. Oversight can pause funds. Gaps: No veto/power weight details."
 }
