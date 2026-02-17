@@ -43,6 +43,14 @@ const boardMembers = (peopleData.board_members ?? []).map((member) => ({
   role: member.role,
 }));
 
+const parseMember = (raw: string) => {
+  const match = raw.match(/^(.*?)(?:\s*\((.*?)\))?$/);
+  if (!match) return { name: raw, role: "Member" };
+  const name = match[1]?.trim() || raw;
+  const role = match[2]?.trim() || "Member";
+  return { name, role };
+};
+
 export default function CommitteeDetailPage() {
   const params = useParams();
   const slug = params.slug as string;
@@ -57,6 +65,30 @@ export default function CommitteeDetailPage() {
     return workingGroups.filter((group) =>
       group.description.toLowerCase().includes(committee.name.split(" (")[0].toLowerCase())
     );
+  }, [committee]);
+
+  const committeeHierarchy = useMemo(() => {
+    if (!committee?.members) return [] as { role: string; members: string[] }[];
+    const grouped = new Map<string, string[]>();
+    committee.members.map(parseMember).forEach(({ name, role }) => {
+      const key = role.toLowerCase();
+      if (!grouped.has(key)) grouped.set(key, []);
+      grouped.get(key)?.push(name);
+    });
+    const order = ["chair", "vice chair", "lead", "member"]; // fallback order
+    return Array.from(grouped.entries())
+      .sort((a, b) => {
+        const indexA = order.findIndex((item) => a[0].includes(item));
+        const indexB = order.findIndex((item) => b[0].includes(item));
+        if (indexA === -1 && indexB === -1) return a[0].localeCompare(b[0]);
+        if (indexA === -1) return 1;
+        if (indexB === -1) return -1;
+        return indexA - indexB;
+      })
+      .map(([role, members]) => ({
+        role: role.replace(/\b\w/g, (char) => char.toUpperCase()),
+        members,
+      }));
   }, [committee]);
 
   if (!committee) {
@@ -122,14 +154,21 @@ export default function CommitteeDetailPage() {
         <div className="grid gap-6 md:grid-cols-[1.2fr_0.8fr]">
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
             <p className="text-xs uppercase tracking-[0.2em] text-white/50">Members & Roles</p>
-            {committee.members && committee.members.length > 0 ? (
-              <ul className="mt-4 space-y-2 text-sm text-white/70">
-                {committee.members.map((member) => (
-                  <li key={member} className="rounded-xl border border-white/5 bg-black/30 px-3 py-2">
-                    {member}
-                  </li>
+            {committeeHierarchy.length > 0 ? (
+              <div className="mt-4 space-y-4 text-sm text-white/70">
+                {committeeHierarchy.map((group) => (
+                  <div key={group.role} className="rounded-2xl border border-white/5 bg-black/30 p-4">
+                    <p className="text-xs uppercase tracking-[0.2em] text-white/50">{group.role}</p>
+                    <ul className="mt-3 space-y-2">
+                      {group.members.map((member) => (
+                        <li key={member} className="rounded-xl border border-white/5 bg-black/40 px-3 py-2">
+                          {member}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 ))}
-              </ul>
+              </div>
             ) : (
               <p className="mt-4 text-sm text-white/60">Member roster not yet published.</p>
             )}
@@ -180,10 +219,11 @@ export default function CommitteeDetailPage() {
               <p className="mt-2 text-sm text-white">{committee.name}</p>
               <p className="mt-2 text-xs text-white/60">{committee.description}</p>
               <div className="mt-3 space-y-2 text-xs text-white/70">
-                {(committee.members ?? []).length > 0 ? (
-                  committee.members?.map((member) => (
-                    <div key={member} className="rounded-lg border border-emerald-400/20 bg-black/20 px-3 py-2">
-                      {member}
+                {committeeHierarchy.length > 0 ? (
+                  committeeHierarchy.map((group) => (
+                    <div key={group.role} className="rounded-lg border border-emerald-400/20 bg-black/20 px-3 py-2">
+                      <p className="text-[10px] uppercase tracking-[0.2em] text-emerald-100/70">{group.role}</p>
+                      <p className="mt-2 text-xs text-white/70">{group.members.join(", ")}</p>
                     </div>
                   ))
                 ) : (
@@ -197,7 +237,12 @@ export default function CommitteeDetailPage() {
                 <ul className="mt-2 space-y-2 text-sm text-white/70">
                   {relatedWorkingGroups.map((group) => (
                     <li key={group.name} className="rounded-xl border border-white/5 bg-black/40 px-3 py-2">
-                      {group.name}
+                      <p className="text-sm text-white">{group.name}</p>
+                      <p className="text-xs text-white/50">
+                        {(group.members ?? []).length > 0
+                          ? group.members?.join(", ")
+                          : "Roster pending"}
+                      </p>
                     </li>
                   ))}
                 </ul>
