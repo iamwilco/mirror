@@ -2,42 +2,94 @@
 
 import { ResponsiveContainer, Sankey, Tooltip } from "recharts";
 
-const sankeyData = {
-  nodes: [
-    { name: "Treasury" },
-    { name: "CDH" },
-    { name: "Committees" },
-    { name: "Work Packages" },
-    { name: "Ops Funding" },
-  ],
-  links: [
-    { source: 0, target: 1, value: 263.6 },
-    { source: 1, target: 2, value: 180 },
-    { source: 1, target: 4, value: 20 },
-    { source: 2, target: 3, value: 180 },
-  ],
+type SankeyNode = { name: string };
+type SankeyLink = { source: number; target: number; value: number };
+type SankeyDataset = { nodes: SankeyNode[]; links: SankeyLink[] };
+type BudgetDataset = {
+  sankey: SankeyDataset;
+  rows: { category: string; amount: string; status: string; source: string }[];
 };
 
-const rows = [
-  {
-    category: "Treasury",
-    amount: "₳263.6M",
-    status: "Verified",
-    source: "Intersect budget proposal",
+const DATASETS: Record<"2025" | "2026", BudgetDataset> = {
+  "2025": {
+    sankey: {
+      nodes: [
+        { name: "Treasury" },
+        { name: "CDH" },
+        { name: "Committees" },
+        { name: "Work Packages" },
+        { name: "Ops Funding" },
+      ],
+      links: [
+        { source: 0, target: 1, value: 263.6 },
+        { source: 1, target: 2, value: 180 },
+        { source: 1, target: 4, value: 20 },
+        { source: 2, target: 3, value: 180 },
+      ],
+    },
+    rows: [
+      {
+        category: "Treasury",
+        amount: "₳263.6M",
+        status: "Verified",
+        source: "Intersect budget proposal",
+      },
+      {
+        category: "Ops Funding",
+        amount: "₳20M",
+        status: "Partial",
+        source: "PRD reference",
+      },
+      {
+        category: "Work Packages",
+        amount: "₳180M",
+        status: "Partial",
+        source: "Committee breakdown estimate",
+      },
+    ],
   },
-  {
-    category: "Ops Funding",
-    amount: "₳20M",
-    status: "Partial",
-    source: "PRD reference",
+  "2026": {
+    sankey: {
+      nodes: [
+        { name: "Treasury" },
+        { name: "Planned Allocation" },
+        { name: "Committees" },
+        { name: "Work Packages" },
+        { name: "Ops Funding" },
+      ],
+      links: [
+        { source: 0, target: 1, value: 280 },
+        { source: 1, target: 2, value: 195 },
+        { source: 1, target: 4, value: 22 },
+        { source: 2, target: 3, value: 195 },
+      ],
+    },
+    rows: [
+      {
+        category: "Treasury (Projected)",
+        amount: "₳280M",
+        status: "Partial",
+        source: "Pending Intersect updates",
+      },
+      {
+        category: "Ops Funding",
+        amount: "₳22M",
+        status: "Missing",
+        source: "Awaiting public confirmation",
+      },
+      {
+        category: "Work Packages",
+        amount: "₳195M",
+        status: "Partial",
+        source: "Draft committee planning",
+      },
+    ],
   },
-  {
-    category: "Work Packages",
-    amount: "₳180M",
-    status: "Partial",
-    source: "Committee breakdown estimate",
-  },
-];
+};
+
+interface BudgetSankeyProps {
+  year: "2025" | "2026";
+}
 
 const statusStyles: Record<string, string> = {
   Verified: "bg-emerald-400/15 text-emerald-200 border-emerald-400/40",
@@ -45,14 +97,15 @@ const statusStyles: Record<string, string> = {
   Missing: "bg-rose-400/15 text-rose-200 border-rose-400/40",
 };
 
-export default function BudgetSankey() {
+export default function BudgetSankey({ year }: BudgetSankeyProps) {
+  const dataset = DATASETS[year];
   return (
     <div className="grid gap-8">
       <div className="rounded-[28px] border border-white/10 bg-white/5 p-6 md:p-8">
         <div className="h-72">
           <ResponsiveContainer width="100%" height="100%">
             <Sankey
-              data={sankeyData}
+              data={dataset.sankey}
               nodePadding={24}
               nodeWidth={16}
               linkCurvature={0.55}
@@ -70,7 +123,7 @@ export default function BudgetSankey() {
             <span>Status</span>
             <span>Source</span>
           </div>
-          {rows.map((row) => (
+          {dataset.rows.map((row) => (
             <div
               key={row.category}
               className="grid grid-cols-[1.2fr_0.8fr_0.6fr_1fr] items-center gap-4 rounded-2xl border border-white/10 bg-black/20 px-4 py-3 text-sm text-white/70"

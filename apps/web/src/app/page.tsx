@@ -1,10 +1,12 @@
 import BudgetSankey from "@/components/BudgetSankey";
+import { useState } from "react";
 import InfluenceGraph from "@/components/InfluenceGraph";
 import SubmitDataForm from "@/components/SubmitDataForm";
 import TransparencyTable from "@/components/TransparencyTable";
 import TransparencyMeter from "@/components/TransparencyMeter";
 
 export default function Home() {
+  const [budgetYear, setBudgetYear] = useState<"2025" | "2026">("2025");
   return (
     <div className="min-h-screen">
       <header className="border-b border-white/10 bg-black/20 backdrop-blur">
@@ -68,14 +70,16 @@ export default function Home() {
         <section className="mt-16 grid gap-6" id="budget">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-white/60">
-              2025 Budget Overview
+              {budgetYear} Budget Overview
             </p>
             <h2 className="mt-3 text-3xl font-semibold text-white">
-              ₳263.6M Treasury Flow
+              {budgetYear === "2025" ? "₳263.6M Treasury Flow" : "₳280M Projected Flow"}
             </h2>
             <p className="mt-4 max-w-3xl text-sm text-white/60">
-              Current Sankey highlights the subset of public work package data
-              (~₳180M) versus the full ₳263.6M proposal. Sources: {" "}
+              {budgetYear === "2025"
+                ? "Current Sankey highlights the subset of public work package data (~₳180M) versus the full ₳263.6M proposal."
+                : "Projected 2026 figures are placeholders pending official Intersect releases."}
+              Sources: {" "}
               <a className="underline" href="https://intersectmbo.org" target="_blank" rel="noreferrer">
                 Intersect budget docs
               </a>
@@ -85,8 +89,24 @@ export default function Home() {
               </a>
               .
             </p>
+            <div className="mt-4 flex flex-wrap gap-3">
+              {(["2025", "2026"] as const).map((year) => (
+                <button
+                  key={year}
+                  type="button"
+                  onClick={() => setBudgetYear(year)}
+                  className={`rounded-full border px-4 py-2 text-xs uppercase tracking-[0.2em] transition ${
+                    budgetYear === year
+                      ? "border-emerald-400/60 bg-emerald-500/20 text-emerald-200"
+                      : "border-white/10 bg-white/5 text-white/60 hover:border-white/30"
+                  }`}
+                >
+                  {year}
+                </button>
+              ))}
+            </div>
           </div>
-          <BudgetSankey />
+          <BudgetSankey year={budgetYear} />
         </section>
 
         <section className="mt-16 grid gap-6" id="network">
