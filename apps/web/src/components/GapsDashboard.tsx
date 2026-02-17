@@ -49,6 +49,26 @@ export default function GapsDashboard() {
     }
   });
   const [pendingId, setPendingId] = useState<number | null>(null);
+  const [serverVotes, setServerVotes] = useState<Record<number, number>>({});
+
+  useEffect(() => {
+    const loadVotes = async () => {
+      if (!supabase) return;
+      const { data, error } = await supabase
+        .from("gap_votes")
+        .select("gap_id", { count: "exact" });
+
+      if (error || !data) return;
+      const counts = data.reduce<Record<number, number>>((acc, row) => {
+        const id = row.gap_id as number;
+        acc[id] = (acc[id] ?? 0) + 1;
+        return acc;
+      }, {});
+      setServerVotes(counts);
+    };
+
+    loadVotes();
+  }, []);
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(votes));
@@ -100,7 +120,7 @@ export default function GapsDashboard() {
 
       <div className="mt-6 grid gap-4">
         {enriched.map((gap) => {
-          const boostedVotes = gap.votes + (votes[gap.id] ?? 0);
+          const boostedVotes = gap.votes + (serverVotes[gap.id] ?? 0) + (votes[gap.id] ?? 0);
           return (
           <div
             key={gap.id}
