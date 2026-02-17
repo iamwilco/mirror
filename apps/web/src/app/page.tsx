@@ -2,6 +2,7 @@
 
 import BudgetSankey from "@/components/BudgetSankey";
 import { useState } from "react";
+import GapsDashboard from "@/components/GapsDashboard";
 import InfluenceGraph from "@/components/InfluenceGraph";
 import SubmitDataForm from "@/components/SubmitDataForm";
 import TransparencyTable from "@/components/TransparencyTable";
@@ -139,6 +140,19 @@ export default function Home() {
             </p>
           </div>
           <TransparencyTable />
+        </section>
+
+        <section className="mt-16 grid gap-6" id="gaps">
+          <div>
+            <p className="text-xs uppercase tracking-[0.3em] text-white/60">
+              Transparency Debt
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold text-white">Gaps that need community action</h2>
+            <p className="mt-3 max-w-3xl text-sm text-white/60">
+              Vote the highest-impact gaps, then submit evidence to resolve them.
+            </p>
+          </div>
+          <GapsDashboard />
         </section>
 
         <section className="mt-16 grid gap-6" id="contribute">
