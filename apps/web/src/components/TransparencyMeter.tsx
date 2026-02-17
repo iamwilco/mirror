@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import {
   RadialBar,
@@ -9,6 +10,15 @@ import {
 } from "recharts";
 
 import { supabase } from "@/lib/supabaseClient";
+
+const CATEGORY_SLUGS: Record<string, string> = {
+  "Budget & Money Flow": "budget-money-flow",
+  "Governance & Decisions": "governance-decisions",
+  "People & Compensation": "people-compensation",
+  "Results & Deliverables": "results-deliverables",
+  "Procurement & Contracts": "procurement-contracts",
+  "Relationships": "relationships",
+};
 
 const fallbackScore = 62;
 
@@ -122,9 +132,12 @@ export default function TransparencyMeter() {
           <span>
             Data Points {dataPoints.verified} / {dataPoints.total}
           </span>
-          <button className="rounded-full border border-white/30 px-4 py-2 text-[10px] uppercase tracking-[0.2em] text-white/80 transition hover:border-white/60">
+          <Link
+            href="/#contribute"
+            className="rounded-full border border-white/30 px-4 py-2 text-[10px] uppercase tracking-[0.2em] text-white/80 transition hover:border-white/60"
+          >
             Contribute Data
-          </button>
+          </Link>
         </div>
       </div>
       <div className="rounded-[32px] border border-white/10 bg-white/5 p-8">
@@ -132,20 +145,30 @@ export default function TransparencyMeter() {
           Category Breakdown
         </p>
         <div className="mt-6 space-y-4 text-sm text-white/70">
-          {breakdown.map((item) => (
-            <div key={item.name}>
-              <div className="flex items-center justify-between text-xs uppercase tracking-[0.2em] text-white/50">
-                <span>{item.name}</span>
-                <span>{item.value}%</span>
-              </div>
-              <div className="mt-2 h-2 w-full rounded-full bg-white/10">
-                <div
-                  className="h-2 rounded-full bg-[linear-gradient(90deg,#5eead4,#4fd1c5)]"
-                  style={{ width: `${item.value}%` }}
-                />
-              </div>
-            </div>
-          ))}
+          {breakdown.map((item) => {
+            const slug = CATEGORY_SLUGS[item.name];
+            return (
+              <Link
+                key={item.name}
+                href={slug ? `/transparency/${slug}` : "#"}
+                className="block rounded-lg p-2 -mx-2 transition hover:bg-white/5"
+              >
+                <div className="flex items-center justify-between text-xs uppercase tracking-[0.2em] text-white/50">
+                  <span className="flex items-center gap-2">
+                    {item.name}
+                    <span className="text-[10px] text-white/30">→</span>
+                  </span>
+                  <span>{item.value}%</span>
+                </div>
+                <div className="mt-2 h-2 w-full rounded-full bg-white/10">
+                  <div
+                    className="h-2 rounded-full bg-[linear-gradient(90deg,#5eead4,#4fd1c5)]"
+                    style={{ width: `${item.value}%` }}
+                  />
+                </div>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </div>
