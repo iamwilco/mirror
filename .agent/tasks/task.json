@@ -1,8 +1,8 @@
 {
 "project": "Intersect Mirror",
-"version": "1.0",
-"date": "2026-02-15",
-"overview": "This task.json defines the breakdown of work for AI agents to implement the Intersect Mirror MVP based on PRD v1.0. Tasks are prioritized by phase, with subtasks for execution. Agents should reference /system for architecture, /SOPs for procedures, and /skills for relevant operators. Use /workflows for build/test/deploy steps. Update this file with progress (e.g., add 'status': 'completed' to tasks).",
+"version": "1.1",
+"date": "2026-02-17",
+"overview": "Updated for Phase 2 post-MVP. Focus: Detail views, data enrichment, member dir. Reference new /data JSONs. Update scores dynamically.",
 "phases": [
 {
 "phase": "Phase 1 - Setup & Foundation",
@@ -296,9 +296,9 @@
 ]
 },
 {
-"phase": "Phase 2 - Enhancements (Post-MVP)",
-"priority": "Medium",
-"estimated_duration": "Ongoing",
+"phase": "Phase 2 - Enhancements",
+"priority": "High",
+"estimated_duration": "2 weeks",
 "tasks": [
 {
 "id": "enhance-001",
@@ -310,14 +310,86 @@
 "status": "completed",
 "completed_date": "2026-02-17",
 "assigned_to": "frontend-agent"
+},
+{
+"id": "enhance-002",
+"name": "Transparency Breakdown Detail View",
+"description": "Drill-down pages for Meter categories. Show sub-points, evidence, gaps.",
+"subtasks": [
+{"step": 1, "action": "Create /src/components/TransparencyDetail.tsx: Mini-pie chart (Recharts), evidence table (Category Sub-Item | Status | Source | Notes).", "dependencies": ["mvp-001"], "reference": "/skills/recharts-usage"},
+{"step": 2, "action": "Add routing: /pages/transparency/[category].tsx. Fetch category data from Supabase; render gaps as red badges.", "dependencies": ["step-1"], "reference": "/workflows/frontend.md"},
+{"step": 3, "action": "Integrate CTA: Link to submission form. Update Meter bars to be clickable (use Next Link).", "dependencies": ["step-2"], "reference": "/SOPs/tailwind-design-system"},
+{"step": 4, "action": "Test: Add RTL tests for drill-down render.", "dependencies": ["step-3"], "reference": "/workflows/test.md"}
+],
+"status": "completed",
+"completed_date": "2026-02-17",
+"assigned_to": "frontend-agent",
+"output": "Detail views live; e.g., /transparency/people-compensation shows roles/gaps."
+},
+{
+"id": "enhance-003",
+"name": "Verification Workflow Tags",
+"description": "Add 'Verified by Community' badges; admin moderation placeholder.",
+"subtasks": [
+{"step": 1, "action": "Update DB schema: Add 'verifiedBy' field to tables.", "dependencies": ["enhance-002"], "reference": "/system/database-schema.md"}
+],
+"status": "completed",
+"completed_date": "2026-02-17",
+"assigned_to": "backend-agent"
+},
+{
+"id": "enhance-004",
+"name": "Member Directory + Paid Positions",
+"description": "Searchable list from new data; flag pay gaps.",
+"subtasks": [
+{"step": 1, "action": "Seed new people/committees from /data/network-nodes.json to Supabase.", "dependencies": [], "reference": "/workflows/database.md"},
+{"step": 2, "action": "/pages/members.tsx: Table with search/filter; red badge for 'Salary: Missing'.", "dependencies": ["step-1"], "reference": "/skills/react-table"}
+],
+"status": "completed",
+"completed_date": "2026-02-17",
+"assigned_to": "frontend-agent"
+},
+{
+"id": "enhance-005",
+"name": "Historical Budget Comparison",
+"description": "Add 2025 vs. 2026 tab in Budget page; pull from reports.",
+"subtasks": [
+{"step": 1, "action": "Fetch 2026 data (e.g., from Intersect updates); add to DB.", "dependencies": [], "reference": "/data/initial-budget.json"}
+],
+"status": "completed",
+"completed_date": "2026-02-17",
+"assigned_to": "data-agent"
+}
+]
+},
+{
+"phase": "Phase 2 - Data Integration",
+"priority": "Medium",
+"estimated_duration": "1 week",
+"tasks": [
+{
+"id": "data-001",
+"name": "Incorporate New Search Data",
+"description": "Seed tools-gathered data; update graph/scores.",
+"subtasks": [
+{"step": 1, "action": "Import /data/network-nodes.json to Supabase (people/relationships tables).", "dependencies": [], "reference": "/workflows/database.md"},
+{"step": 2, "action": "Recalculate scores: e.g., People=50% with new verified roles.", "dependencies": ["step-1"], "reference": "/skills/data-parsing"},
+{"step": 3, "action": "Update Influence Graph: Add new nodes/edges; tooltips with sources.", "dependencies": ["step-2"], "reference": "/skills/react-force-graph"}
+],
+"status": "completed",
+"completed_date": "2026-02-17",
+"assigned_to": "data-agent",
+"output": "Graph refreshed; scores improved."
 }
 ]
 }
 ],
 "global_notes": [
+"Prioritize facts: Use sources in tooltips/tables.",
+"Deploy after each enhance: /workflows/deploy.md.",
+"Monitor: Add Vercel Analytics for success metrics.",
 "All commits: Use conventional format (feat:, fix:, docs:).",
-"Data Sensitivity: No real secrets; flag gaps as 'missing' without speculation.",
-"Updates: Agents run /update-doc workflow after tasks.",
-"Success Criteria: MVP deployable, scores calculated, graphs interactive."
+"Data Sensitivity: No real secrets; flag gaps as 'missing' without speculation."
 ]
 }
+

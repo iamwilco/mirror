@@ -1,9 +1,9 @@
 # Intersect Mirror - Product Requirements Document (PRD)
 
 **Project Name:** Intersect Mirror  
-**Version:** 1.0 (Draft)  
-**Date:** February 15, 2026  
-**Status:** In Progress
+**Version:** 1.0  
+**Date:** February 17, 2026  
+**Status:** MVP Complete
 
 ## 1. Vision & Purpose
 
@@ -136,29 +136,29 @@ Nice-to-have:
 - Community starts contributing verified data
 - Intersect is forced to release more information due to public pressure
 
-## 10. Next Steps
+## 10. Implementation Status
 
-1. Finalize PRD + get agreement
-2. Create detailed data model / database schema
-3. Build design system (UI components)
-4. Collect & structure initial data manually
-5. Build MVP Hero Dashboard
+### MVP Completed ✅
+- [x] Hero Transparency Meter with animated score and category breakdown
+- [x] 2025 Budget Sankey diagram with status table
+- [x] Network & Influence Graph (force-directed 2D)
+- [x] Transparency Table with status indicators
+- [x] About/Methodology page
+- [x] Community submission form (Phase 2 feature delivered early)
+
+### Infrastructure ✅
+- [x] Next.js 15 + React 19 + TypeScript + TailwindCSS 4
+- [x] Supabase client ready (env-var driven)
+- [x] Jest + RTL testing setup
+- [x] Vercel GitHub auto-deploy
+
+### Next Phase (Post-MVP)
+- [ ] Transparency Breakdown Detail View
+- [ ] Verification Workflow Tags
+- [ ] Member Directory + Paid Positions
+- [ ] Historical budget comparison
 
 ---
 
-**Approval Needed:**
-- Project Name → Intersect Mirror ?
-- Core Concept (Transparency Meter + Network Graph) ?
-- MVP Scope OK?
-
-Let me know what you think.
-
-Would you like me to now create:
-
-1. **task.json** (for your agents)
-2. Recommended folder structure (`/system`, `/task`, `/data`, etc.)
-3. Database schema draft?
-
-Or do you want to refine this PRD first?
-
-Just tell me what to focus on next.
+**Project Repository:** [github.com/iamwilco/mirror](https://github.com/iamwilco/mirror)  
+**Live URL:** Deployed via Vercel (auto-deploy on push)
