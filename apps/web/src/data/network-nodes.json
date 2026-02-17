@@ -1,6 +1,6 @@
 {
   "nodes": [
-    { "id": "intersect", "type": "org", "label": "Intersect MBO" },
+    { "id": "intersect", "type": "org", "label": "Intersect MBO", "decision_power": "High" },
     { "id": "iog", "type": "org", "label": "IOG", "source": "Intersect KB" },
     { "id": "emurgo", "type": "org", "label": "EMURGO", "source": "Intersect team page" },
     { "id": "cardano-foundation", "type": "org", "label": "Cardano Foundation", "source": "CF blog" },
@@ -11,22 +11,31 @@
     { "id": "kyoso-dao", "type": "org", "label": "Kyoso DAO", "source": "Intersect testimonials" },
     { "id": "genwealth", "type": "org", "label": "GenWealth", "source": "Intersect testimonials" },
     { "id": "bitergia", "type": "org", "label": "Bitergia", "source": "Intersect testimonials" },
-    { "id": "jack-briggs", "type": "person", "label": "Jack Briggs", "role": "Executive Director", "source": "Intersect updates, LinkedIn" },
+    { "id": "jack-briggs", "type": "person", "label": "Jack Briggs", "role": "Executive Director", "source": "Intersect updates, LinkedIn", "decision_power": "High" },
     { "id": "nick-cook", "type": "person", "label": "Nick Cook", "role": "Interim Director of Operations", "source": "Intersect team page" },
     { "id": "rosie-graham", "type": "person", "label": "Rosie Graham", "role": "Head of People & Culture", "source": "Intersect update" },
     { "id": "sam-leathers", "type": "person", "label": "Sam Leathers", "role": "Special Technical Advisor", "source": "X update" },
     { "id": "mike-hornan", "type": "person", "label": "Mike Hornan", "role": "Security Incident Officer", "source": "Intersect updates" },
     { "id": "lally-mcclay", "type": "person", "label": "Lally McClay", "role": "Head of Ecosystem & Community", "source": "X update" },
-    { "id": "nikhil-joshi", "type": "person", "label": "Nikhil Joshi", "role": "Non-Exec Director", "source": "Intersect team page" },
-    { "id": "gerard-moroney", "type": "person", "label": "Gerard Moroney", "role": "Non-Exec Director", "source": "Intersect team page" },
-    { "id": "adam-rusch", "type": "person", "label": "Adam Rusch", "role": "Non-Exec Director", "source": "Cardano Summit recap" },
+    { "id": "nikhil-joshi", "type": "person", "label": "Nikhil Joshi", "role": "Non-Exec Director", "source": "Intersect team page", "decision_power": "High" },
+    { "id": "gerard-moroney", "type": "person", "label": "Gerard Moroney", "role": "Non-Exec Director", "source": "Intersect team page", "decision_power": "High" },
+    { "id": "adam-rusch", "type": "person", "label": "Adam Rusch", "role": "Non-Exec Director", "source": "Cardano Summit recap", "decision_power": "High" },
     { "id": "frederik-gregaard", "type": "person", "label": "Frederik Gregaard", "role": "CEO", "source": "CF blog" },
     { "id": "sricharan-ganta", "type": "person", "label": "Sricharan Ganta", "role": "Founder", "source": "Intersect testimonials" },
     { "id": "andreas-sosilo", "type": "person", "label": "Andreas Sosilo", "role": "Ambassador", "source": "Intersect testimonials" },
-    { "id": "kavinda-kariyapperuma", "type": "person", "label": "Kavinda Kariyapperuma", "role": "Members-Elected Non-Exec Director", "source": "Intersect team" },
+    { "id": "kavinda-kariyapperuma", "type": "person", "label": "Kavinda Kariyapperuma", "role": "Members-Elected Non-Exec Director", "source": "Intersect team", "decision_power": "High" },
     { "id": "yuri-kuriyama", "type": "person", "label": "Yuri Kuriyama", "role": "Kyoso DAO", "source": "Intersect testimonials" },
     { "id": "rafael-cardoso", "type": "person", "label": "Rafael Cardoso", "role": "GenWealth", "source": "Intersect testimonials" },
-    { "id": "georg-link", "type": "person", "label": "Georg Link", "role": "Bitergia", "source": "Intersect testimonials" }
+    { "id": "georg-link", "type": "person", "label": "Georg Link", "role": "Bitergia", "source": "Intersect testimonials" },
+    { "id": "committee-tsc", "type": "committee", "label": "Technical Steering Committee", "source": "Intersect KB", "decision_power": "High" },
+    { "id": "committee-osc", "type": "committee", "label": "Open Source Committee", "source": "Intersect updates", "decision_power": "Medium" },
+    { "id": "committee-civics", "type": "committee", "label": "Civics Committee", "source": "Intersect X", "decision_power": "High" },
+    { "id": "committee-budget", "type": "committee", "label": "Budget Committee", "source": "Forum, KB", "decision_power": "High" },
+    { "id": "committee-gmc", "type": "committee", "label": "Growth & Marketing Committee", "source": "Intersect site", "decision_power": "Medium" },
+    { "id": "committee-mcc", "type": "committee", "label": "Membership & Community Committee", "source": "X, KB", "decision_power": "Medium" },
+    { "id": "committee-cpc", "type": "committee", "label": "Product Committee", "source": "X, KB", "decision_power": "Medium" },
+    { "id": "committee-oversight", "type": "committee", "label": "Oversight Committee", "source": "Intersect news", "decision_power": "High" },
+    { "id": "committee-pc", "type": "committee", "label": "Parameter Committee", "source": "Intersect KB", "decision_power": "High" }
   ],
   "links": [
     { "source": "jack-briggs", "target": "intersect", "type": "role", "source_detail": "Intersect site" },
@@ -57,6 +66,15 @@
     { "source": "sam-leathers", "target": "intersect", "type": "advisor", "source_detail": "X update" },
     { "source": "mike-hornan", "target": "intersect", "type": "staff", "source_detail": "Intersect updates" },
     { "source": "lally-mcclay", "target": "intersect", "type": "staff", "source_detail": "X update" },
-    { "source": "kavinda-kariyapperuma", "target": "intersect", "type": "board", "source_detail": "Intersect team" }
+    { "source": "kavinda-kariyapperuma", "target": "intersect", "type": "board", "source_detail": "Intersect team" },
+    { "source": "committee-tsc", "target": "intersect", "type": "reports_to", "source_detail": "Intersect KB" },
+    { "source": "committee-osc", "target": "intersect", "type": "reports_to", "source_detail": "Intersect updates" },
+    { "source": "committee-civics", "target": "intersect", "type": "reports_to", "source_detail": "Intersect X" },
+    { "source": "committee-budget", "target": "intersect", "type": "reports_to", "source_detail": "Forum, KB" },
+    { "source": "committee-gmc", "target": "intersect", "type": "reports_to", "source_detail": "Intersect site" },
+    { "source": "committee-mcc", "target": "intersect", "type": "reports_to", "source_detail": "X, KB" },
+    { "source": "committee-cpc", "target": "intersect", "type": "reports_to", "source_detail": "X, KB" },
+    { "source": "committee-oversight", "target": "intersect", "type": "reports_to", "source_detail": "Intersect news" },
+    { "source": "committee-pc", "target": "intersect", "type": "reports_to", "source_detail": "Intersect KB" }
   ]
 }
