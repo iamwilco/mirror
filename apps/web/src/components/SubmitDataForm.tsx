@@ -33,8 +33,9 @@ export default function SubmitDataForm() {
 
   return (
     <section className="rounded-[32px] border border-white/10 bg-white/5 p-8 text-white/80 shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
-      <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_320px]">
-        <div className="space-y-4">
+      <div className="grid gap-8">
+        <div className="grid gap-4 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:items-start">
+          <div className="space-y-4">
           <p className="text-xs uppercase tracking-[0.35em] text-emerald-200/70">
             Community Intake
           </p>
@@ -45,6 +46,7 @@ export default function SubmitDataForm() {
             Share credible sources, contract details, or budget anomalies. We verify
             submissions before updating the public dashboard.
           </p>
+          </div>
           <div className="rounded-2xl border border-white/10 bg-black/30 p-4 text-xs text-white/60">
             We never publish private information. If you can, include a link to a
             public document or gov.tools reference.
