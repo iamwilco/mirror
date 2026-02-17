@@ -1,7 +1,8 @@
 "use client";
 
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import inputData from "@/data/input.json";
+import { supabase } from "@/lib/supabaseClient";
 
 const classifyGap = (gap: string) => {
   const normalized = gap.toLowerCase();
@@ -14,8 +15,17 @@ const classifyGap = (gap: string) => {
   return "low" as const;
 };
 
+type GapItem = {
+  id: number;
+  label: string;
+  severity: "high" | "medium" | "low";
+  votes: number;
+};
+
+const STORAGE_KEY = "mirror:gaps:votes";
+
 export default function GapsDashboard() {
-  const enriched = useMemo(() => {
+  const enriched = useMemo<GapItem[]>(() => {
     const gaps = inputData.transparency_gaps ?? [];
     return gaps.map((gap, idx) => {
       const severity = classifyGap(gap);
@@ -27,6 +37,38 @@ export default function GapsDashboard() {
       };
     });
   }, []);
+
+  const [votes, setVotes] = useState<Record<number, number>>(() => {
+    if (typeof window === "undefined") return {};
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (!stored) return {};
+    try {
+      return JSON.parse(stored);
+    } catch {
+      return {};
+    }
+  });
+  const [pendingId, setPendingId] = useState<number | null>(null);
+
+  useEffect(() => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(votes));
+  }, [votes]);
+
+  const handleVote = async (gap: GapItem) => {
+    setPendingId(gap.id);
+    setVotes((prev) => ({
+      ...prev,
+      [gap.id]: (prev[gap.id] ?? 0) + 1,
+    }));
+
+    if (supabase) {
+      await supabase.from("gap_votes").insert({
+        gap_id: gap.id,
+        gap_label: gap.label,
+      });
+    }
+    setPendingId(null);
+  };
 
   const total = enriched.length;
   const resolved = Math.max(2, Math.floor(total * 0.2));
@@ -57,7 +99,9 @@ export default function GapsDashboard() {
       </div>
 
       <div className="mt-6 grid gap-4">
-        {enriched.map((gap) => (
+        {enriched.map((gap) => {
+          const boostedVotes = gap.votes + (votes[gap.id] ?? 0);
+          return (
           <div
             key={gap.id}
             className="flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-white/10 bg-black/30 px-4 py-3"
@@ -79,8 +123,16 @@ export default function GapsDashboard() {
             </div>
             <div className="flex items-center gap-3">
               <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs uppercase tracking-[0.2em] text-white/60">
-                {gap.votes} votes
+                {boostedVotes} votes
               </span>
+              <button
+                type="button"
+                onClick={() => handleVote(gap)}
+                className="rounded-full border border-emerald-400/40 bg-emerald-500/10 px-3 py-2 text-[11px] uppercase tracking-[0.2em] text-emerald-200 transition hover:border-emerald-300"
+                disabled={pendingId === gap.id}
+              >
+                {pendingId === gap.id ? "Voting..." : "Upvote"}
+              </button>
               <a
                 className="rounded-full border border-white/20 px-3 py-2 text-[11px] uppercase tracking-[0.2em] text-white/80 transition hover:border-white/50"
                 href="#contribute"
@@ -89,7 +141,7 @@ export default function GapsDashboard() {
               </a>
             </div>
           </div>
-        ))}
+        );})}
       </div>
     </div>
   );
