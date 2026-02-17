@@ -27,8 +27,8 @@ export default function InfluenceGraph() {
   const data = useMemo(() => graphData as { nodes: Node[]; links: Link[] }, []);
 
   return (
-    <div className="rounded-[28px] border border-white/10 bg-white/5 p-6 md:p-8">
-      <div className="h-[420px]">
+    <div className="max-w-full overflow-hidden rounded-[28px] border border-white/10 bg-white/5 p-6 md:p-8">
+      <div className="h-[420px] w-full overflow-hidden">
         <ForceGraph2D
           graphData={data}
           nodeAutoColorBy="type"
