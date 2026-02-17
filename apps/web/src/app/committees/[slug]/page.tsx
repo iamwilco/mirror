@@ -152,6 +152,38 @@ export default function CommitteeDetailPage() {
           <div className="mt-3 text-sm text-white/70">{committee.source}</div>
         </div>
 
+        <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+          <p className="text-xs uppercase tracking-[0.2em] text-white/50">Org Map</p>
+          <div className="mt-6 grid gap-4 md:grid-cols-3">
+            <div className="rounded-2xl border border-white/10 bg-black/30 p-4">
+              <p className="text-xs uppercase tracking-[0.2em] text-white/40">Board</p>
+              <p className="mt-2 text-sm text-white/70">Intersect Board</p>
+            </div>
+            <div className="rounded-2xl border border-emerald-400/30 bg-emerald-500/10 p-4">
+              <p className="text-xs uppercase tracking-[0.2em] text-emerald-200/70">Committee</p>
+              <p className="mt-2 text-sm text-white">{committee.name}</p>
+              <p className="mt-2 text-xs text-white/60">{committee.description}</p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-black/30 p-4">
+              <p className="text-xs uppercase tracking-[0.2em] text-white/40">Working Groups</p>
+              {relatedWorkingGroups.length > 0 ? (
+                <ul className="mt-2 space-y-2 text-sm text-white/70">
+                  {relatedWorkingGroups.map((group) => (
+                    <li key={group.name} className="rounded-xl border border-white/5 bg-black/40 px-3 py-2">
+                      {group.name}
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="mt-2 text-sm text-white/60">No working groups mapped yet.</p>
+              )}
+            </div>
+          </div>
+          <p className="mt-4 text-xs text-white/50">
+            Flow: Board sets strategic direction → committees coordinate → working groups execute.
+          </p>
+        </div>
+
         {relatedWorkingGroups.length > 0 && (
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
             <p className="text-xs uppercase tracking-[0.2em] text-white/50">Related Working Groups</p>
