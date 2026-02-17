@@ -4,5 +4,6 @@ export interface Person {
   role?: string | null;
   affiliation?: string | null;
   sourceUrl?: string | null;
+  verifiedBy?: string | null;
   updatedAt?: string;
 }

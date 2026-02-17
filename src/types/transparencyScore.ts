@@ -5,5 +5,6 @@ export interface TransparencyScore {
   weight: number; // percent
   dataPointsVerified?: number;
   dataPointsTotal?: number;
+  verifiedBy?: string | null;
   updatedAt?: string;
 }

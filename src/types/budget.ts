@@ -7,5 +7,6 @@ export interface Budget {
   adaAmount: number;
   status: BudgetStatus;
   sourceUrl?: string | null;
+  verifiedBy?: string | null;
   updatedAt?: string;
 }

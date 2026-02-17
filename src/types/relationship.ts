@@ -4,5 +4,6 @@ export interface Relationship {
   toEntity: string;
   relationType: string;
   sourceUrl?: string | null;
+  verifiedBy?: string | null;
   updatedAt?: string;
 }
