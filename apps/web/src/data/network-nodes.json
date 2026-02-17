@@ -35,7 +35,12 @@
     { "id": "committee-mcc", "type": "committee", "label": "Membership & Community Committee", "source": "X, KB", "decision_power": "Medium" },
     { "id": "committee-cpc", "type": "committee", "label": "Product Committee", "source": "X, KB", "decision_power": "Medium" },
     { "id": "committee-oversight", "type": "committee", "label": "Oversight Committee", "source": "Intersect news", "decision_power": "High" },
-    { "id": "committee-pc", "type": "committee", "label": "Parameter Committee", "source": "Intersect KB", "decision_power": "High" }
+    { "id": "committee-pc", "type": "committee", "label": "Parameter Committee", "source": "Intersect KB", "decision_power": "High" },
+    { "id": "wg-chain-partition", "type": "working_group", "label": "Chain Partition WG", "source": "Intersect news", "decision_power": "Low" },
+    { "id": "wg-dev-experience", "type": "working_group", "label": "Developer Experience WG", "source": "X update, Reddit", "decision_power": "Low" },
+    { "id": "wg-constitution", "type": "working_group", "label": "Constitution Drafting WG", "source": "Docs", "decision_power": "Medium" },
+    { "id": "adam-dean", "type": "person", "label": "Adam Dean", "role": "TSC/OSC Contributor", "source": "Reddit, Intersect KB", "decision_power": "Medium" },
+    { "id": "elaine-osc", "type": "person", "label": "Elaine", "role": "OSC Chair (inferred)", "source": "Reddit recordings", "decision_power": "Medium" }
   ],
   "links": [
     { "source": "jack-briggs", "target": "intersect", "type": "role", "source_detail": "Intersect site" },
@@ -75,6 +80,15 @@
     { "source": "committee-mcc", "target": "intersect", "type": "reports_to", "source_detail": "X, KB" },
     { "source": "committee-cpc", "target": "intersect", "type": "reports_to", "source_detail": "X, KB" },
     { "source": "committee-oversight", "target": "intersect", "type": "reports_to", "source_detail": "Intersect news" },
-    { "source": "committee-pc", "target": "intersect", "type": "reports_to", "source_detail": "Intersect KB" }
+    { "source": "committee-pc", "target": "intersect", "type": "reports_to", "source_detail": "Intersect KB" },
+    { "source": "wg-chain-partition", "target": "committee-tsc", "type": "reports_to", "source_detail": "Intersect news" },
+    { "source": "wg-dev-experience", "target": "committee-osc", "type": "reports_to", "source_detail": "X update" },
+    { "source": "wg-dev-experience", "target": "committee-cpc", "type": "reports_to", "source_detail": "X update" },
+    { "source": "wg-constitution", "target": "committee-civics", "type": "reports_to", "source_detail": "Docs" },
+    { "source": "adam-dean", "target": "committee-tsc", "type": "member", "source_detail": "Reddit" },
+    { "source": "adam-dean", "target": "committee-osc", "type": "member", "source_detail": "Intersect updates" },
+    { "source": "elaine-osc", "target": "committee-osc", "type": "chair", "source_detail": "Reddit recordings" },
+    { "source": "mike-hornan", "target": "wg-constitution", "type": "member", "source_detail": "Docs" },
+    { "source": "mike-hornan", "target": "committee-pc", "type": "member", "source_detail": "Intersect KB" }
   ]
 }

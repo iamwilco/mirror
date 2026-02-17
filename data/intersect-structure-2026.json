@@ -1,0 +1,248 @@
+{
+  "meta": {
+    "compiled": "2026-02-17",
+    "sources": [
+      "Intersect official site/docs",
+      "X posts (@IntersectMBO, @therealdisasm, @Hornan7, @LallyMcClay)",
+      "Reddit committee recordings",
+      "CF blog",
+      "GitHub repos"
+    ],
+    "notes": "Team page 404'd—full roster missing. Elections biannual via GovTool. ~300M ADA treasury admin."
+  },
+  "leadership_team": [
+    {
+      "name": "Jack Briggs",
+      "role": "Executive Director",
+      "affiliations": ["Intersect MBO"],
+      "responsibilities": "Leads governance coordination, ecosystem support, treasury admin. Oversees staff/committees.",
+      "paid": "verified (executive)",
+      "decision_power": "High—strategic/budget direction.",
+      "source": "Intersect updates, X posts",
+      "notes": "Appointed Jan 2026; blockchain since 2012. No salary—gap."
+    },
+    {
+      "name": "Sam Leathers (@therealdisasm)",
+      "role": "Special Technical Advisor",
+      "affiliations": ["Intersect MBO"],
+      "responsibilities": "Tech coordination, security/incident response with Security Incident Manager.",
+      "paid": "verified",
+      "decision_power": "Medium—advises on tech resilience.",
+      "source": "X update Feb 13, 2026",
+      "notes": "8+ years Cardano contrib."
+    },
+    {
+      "name": "Mike Hornan (@Hornan7)",
+      "role": "Security Incident Manager",
+      "affiliations": ["Intersect MBO", "Open Source Office"],
+      "responsibilities": "Vulnerability handling, incident escalation.",
+      "paid": "verified",
+      "decision_power": "Medium—security program lead.",
+      "source": "X update Feb 13, 2026",
+      "notes": ""
+    },
+    {
+      "name": "Lally McClay (@LallyMcClay)",
+      "role": "Head of Ecosystem & Community",
+      "affiliations": ["Intersect MBO"],
+      "responsibilities": "Community alignment, governance engagement.",
+      "paid": "verified",
+      "decision_power": "Medium—ecosystem collab.",
+      "source": "X update Feb 13, 2026",
+      "notes": "Promoted from Governance Lead."
+    },
+    {
+      "name": "Nick Cook",
+      "role": "Interim Director of Operations",
+      "affiliations": ["Intersect MBO"],
+      "responsibilities": "Ops planning, delivery coordination.",
+      "paid": "verified",
+      "decision_power": "Medium—internal alignment.",
+      "source": "Intersect news",
+      "notes": ""
+    },
+    {
+      "name": "Rosie Graham",
+      "role": "Head of People & Culture",
+      "affiliations": ["Intersect MBO"],
+      "responsibilities": "HR, hiring, culture.",
+      "paid": "verified",
+      "decision_power": "Low—internal support.",
+      "source": "Intersect updates Jan 2026",
+      "notes": "New hire."
+    }
+  ],
+  "board_members": [
+    {
+      "name": "Nikhil Joshi",
+      "role": "Non-Exec Director",
+      "affiliations": ["Intersect MBO", "EMURGO (COO)"],
+      "responsibilities": "Strategic oversight.",
+      "paid": "partial (stipend likely)",
+      "decision_power": "High—board votes/elections.",
+      "source": "Intersect site",
+      "notes": "Founder overlap."
+    },
+    {
+      "name": "Gerard Moroney",
+      "role": "Non-Exec Director",
+      "affiliations": ["Intersect MBO", "IOG (COO)"],
+      "responsibilities": "Ops guidance.",
+      "paid": "partial",
+      "decision_power": "High",
+      "source": "Intersect site",
+      "notes": "Founder overlap."
+    },
+    {
+      "name": "Adam Rusch",
+      "role": "Non-Exec Director",
+      "affiliations": ["Intersect MBO"],
+      "responsibilities": "Governance.",
+      "paid": "partial",
+      "decision_power": "High",
+      "source": "Intersect site, X",
+      "notes": "Mentioned in community posts."
+    },
+    {
+      "name": "Kavinda Kariyapperuma",
+      "role": "Members-Elected Non-Exec Director",
+      "affiliations": ["Intersect MBO", "CoinCeylon"],
+      "responsibilities": "Community rep.",
+      "paid": "partial",
+      "decision_power": "High",
+      "source": "Intersect",
+      "notes": ""
+    }
+  ],
+  "committees": [
+    {
+      "name": "Technical Steering Committee (TSC)",
+      "purpose": "Cardano technical topics, upgrades, incident response.",
+      "members": ["Adam Dean (known contributor)"],
+      "election": "Biannual; 50% seats Q1/Q4 2026, community-voted.",
+      "paid": "partial (stipends unclear)",
+      "decision_power": "High—endorses params, forms WGs.",
+      "source": "Docs, Reddit meetings",
+      "notes": "No full list—gap."
+    },
+    {
+      "name": "Open Source Committee (OSC)",
+      "purpose": "Open source strategy, dApps, bug bounties.",
+      "members": ["Elaine (Chair? from meetings)"],
+      "election": "Biannual",
+      "paid": "partial",
+      "decision_power": "Medium—repos/security.",
+      "source": "Reddit recordings Feb 5/Jan 22 2026",
+      "notes": "Meetings public; gaps in bios."
+    },
+    {
+      "name": "Civics Committee",
+      "purpose": "Governance topics, elections, constitution.",
+      "members": ["Mike (crossover with params WG)"],
+      "election": "Biannual; snap Nov 2025",
+      "paid": "partial",
+      "decision_power": "High—treasury actions.",
+      "source": "Docs",
+      "notes": "Public minutes partial."
+    },
+    {
+      "name": "Budget Committee (CBC)",
+      "purpose": "Treasury/budget management, audits.",
+      "members": ["Elected; no names"],
+      "election": "50% Oct 2025/Apr 2026",
+      "paid": "partial",
+      "decision_power": "High—proposals.",
+      "source": "Docs, GitHub",
+      "notes": "Procurement opaque."
+    },
+    {
+      "name": "Product Committee (CPC)",
+      "purpose": "Long-term vision, roadmap.",
+      "members": ["TBD"],
+      "election": "Biannual",
+      "paid": "partial",
+      "decision_power": "Medium—R&D.",
+      "source": "Docs",
+      "notes": ""
+    },
+    {
+      "name": "Growth & Marketing Committee (GMC)",
+      "purpose": "Ecosystem growth, marketing.",
+      "members": ["TBD"],
+      "election": "Biannual",
+      "paid": "partial",
+      "decision_power": "Medium—events/comms.",
+      "source": "Docs",
+      "notes": "Pulse reports."
+    },
+    {
+      "name": "Membership & Community Committee (MCC)",
+      "purpose": "Member engagement, hubs.",
+      "members": ["TBD"],
+      "election": "Biannual",
+      "paid": "partial",
+      "decision_power": "Medium—offerings.",
+      "source": "Docs, X office hours Feb 16",
+      "notes": "1,800+ paid members."
+    },
+    {
+      "name": "Oversight Committee",
+      "purpose": "Accountability, contract pauses.",
+      "members": ["Independent TBD"],
+      "election": "N/A",
+      "paid": "partial",
+      "decision_power": "High—milestones.",
+      "source": "News",
+      "notes": "New for 2026."
+    },
+    {
+      "name": "Parameter Committee (PC)",
+      "purpose": "Network params.",
+      "members": ["Mike (WG head)"],
+      "election": "Biannual",
+      "paid": "partial",
+      "decision_power": "High—changes.",
+      "source": "Docs",
+      "notes": ""
+    }
+  ],
+  "working_groups": [
+    {
+      "name": "Chain Partition Incident Analysis WG",
+      "under": "TSC",
+      "purpose": "Incident review.",
+      "members": ["TSC-formed"],
+      "paid": "unknown",
+      "decision_power": "Low—advisory.",
+      "source": "News",
+      "notes": "Jan 2026 report."
+    },
+    {
+      "name": "Developer Experience WG",
+      "under": "OSC/Product",
+      "purpose": "Dev tools/surveys.",
+      "members": ["TBD"],
+      "paid": "unknown",
+      "decision_power": "Low.",
+      "source": "X update, Reddit",
+      "notes": "Survey closing Feb 2026."
+    },
+    {
+      "name": "Constitution Drafting & Ratification WG",
+      "under": "Civics",
+      "purpose": "Governance docs.",
+      "members": ["Mike"],
+      "paid": "unknown",
+      "decision_power": "Medium.",
+      "source": "Docs",
+      "notes": ""
+    }
+  ],
+  "gaps": [
+    "No team page (404)—full roster missing.",
+    "Committee members not listed in docs—major gap.",
+    "No salary/stipend details anywhere.",
+    "Elections: Turnout low (e.g., 27% in past); no per-member votes.",
+    "Working groups ad-hoc; no secretaries named."
+  ]
+}

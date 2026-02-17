@@ -339,7 +339,11 @@
     "Paid details vague—stipends likely for leads, but no ranges.",
     "Decision logs: Elections (e.g., 522 voters Q1 2025, 27% turnout) but no per-member votes.",
     "Full member lists incomplete.",
-    "Responsibilities clear at committee level, but individual accountability missing."
+    "Responsibilities clear at committee level, but individual accountability missing.",
+    "No team page (404)—full roster missing.",
+    "Committee members not listed in docs—major gap.",
+    "Elections: Turnout low (e.g., 27% in past); no per-member votes.",
+    "Working groups ad-hoc; no secretaries named."
   ],
   "decision_making_flow": "MBO model—members vote on committees/board (biannual elections). Committees propose (e.g., Budget consolidates from 7 committees), community/DReps ratify on-chain. Oversight can pause funds. Gaps: No veto/power weight details."
 }
