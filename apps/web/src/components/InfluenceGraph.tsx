@@ -1,14 +1,14 @@
 "use client";
 
 import dynamic from "next/dynamic";
+import type { ComponentType } from "react";
 import { useMemo } from "react";
 
 import graphData from "@/data/network-nodes.json";
 
-const ForceGraph2D = dynamic(
-  () => import("react-force-graph").then((mod) => mod.ForceGraph2D),
-  { ssr: false }
-);
+const ForceGraph2D = dynamic(() => import("react-force-graph-2d"), {
+  ssr: false,
+}) as ComponentType<Record<string, unknown>>;
 
 type Node = {
   id: string;
@@ -36,7 +36,7 @@ export default function InfluenceGraph() {
           linkDirectionalParticleWidth={1.5}
           linkColor={() => "rgba(255,255,255,0.25)"}
           nodeRelSize={6}
-          nodeLabel={(node) => {
+          nodeLabel={(node: unknown) => {
             const item = node as Node;
             return `${item.label}${item.role ? ` (${item.role})` : ""}`;
           }}
