@@ -1,15 +1,35 @@
 "use client";
 
 import BudgetSankey from "@/components/BudgetSankey";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import GapsDashboard from "@/components/GapsDashboard";
 import InfluenceGraph from "@/components/InfluenceGraph";
 import SubmitDataForm from "@/components/SubmitDataForm";
 import TransparencyTable from "@/components/TransparencyTable";
 import TransparencyMeter from "@/components/TransparencyMeter";
+import Link from "next/link";
+import inputData from "@/data/input.json";
 
 export default function Home() {
   const [budgetYear, setBudgetYear] = useState<"2025" | "2026">("2025");
+
+  const stats = useMemo(() => {
+    const people = inputData.people ?? [];
+    const committees = inputData.committees ?? [];
+    const workingGroups = inputData.working_groups ?? [];
+    const relationships = inputData.relationships ?? [];
+    const all = [
+      ...people.map(p => p.transparency),
+      ...committees.map(c => c.transparency),
+      ...workingGroups.map(g => g.transparency),
+      ...relationships.map(() => "verified"),
+    ];
+    const verified = all.filter(t => t === "verified").length;
+    const total = all.length;
+    const gaps = inputData.transparency_gaps?.length ?? 0;
+    return { verified, total, gaps };
+  }, []);
+
   return (
     <div className="min-h-screen">
       <header className="border-b border-white/10 bg-black/20 backdrop-blur">
@@ -33,6 +53,12 @@ export default function Home() {
             <a className="transition hover:text-white" href="#network">
               Network
             </a>
+            <Link className="transition hover:text-white" href="/hierarchy">
+              Hierarchy
+            </Link>
+            <Link className="transition hover:text-white" href="/sources">
+              Sources
+            </Link>
             <a className="transition hover:text-white" href="#about">
               About
             </a>
@@ -63,8 +89,8 @@ export default function Home() {
             </div>
             <div className="rounded-3xl border border-white/15 bg-white/5 px-6 py-5 text-sm text-white/70">
               <p className="text-xs uppercase tracking-[0.2em] text-white/50">Data Points</p>
-              <p className="text-3xl font-semibold text-white">87 / 142</p>
-              <p className="text-xs text-white/50">Last verified 2 days ago</p>
+              <p className="text-3xl font-semibold text-white">{stats.verified} / {stats.total}</p>
+              <p className="text-xs text-white/50">{stats.gaps} transparency gaps tracked</p>
             </div>
           </div>
           <TransparencyMeter />
@@ -176,9 +202,30 @@ export default function Home() {
             <p className="text-xs uppercase tracking-[0.3em] text-white/60">Methodology</p>
             <h2 className="mt-3 text-3xl font-semibold text-white">Neutral. Verifiable. Public.</h2>
           </div>
-          <div className="rounded-[28px] border border-white/10 bg-white/5 p-8 text-sm text-white/70">
-            This is a placeholder section for the About page. We document sources,
-            verification criteria, and how the transparency score is calculated.
+          <div className="rounded-[28px] border border-white/10 bg-white/5 p-6 md:p-8">
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <div>
+                <p className="text-xs font-medium uppercase tracking-wider text-emerald-300/70">Verification</p>
+                <p className="mt-2 text-sm leading-relaxed text-white/60">
+                  Every data point is tagged <strong className="text-emerald-300">verified</strong>, <strong className="text-amber-300">partial</strong>, or <strong className="text-rose-300">missing</strong>. Verified means at least two independent sources confirm the claim.
+                </p>
+              </div>
+              <div>
+                <p className="text-xs font-medium uppercase tracking-wider text-amber-300/70">Scoring</p>
+                <p className="mt-2 text-sm leading-relaxed text-white/60">
+                  The transparency score weights six categories (Budget 30%, Governance 20%, People 20%, Deliverables 15%, Procurement 10%, Relationships 5%). Each sub-item contributes: verified=1, partial=0.5, missing=0.
+                </p>
+              </div>
+              <div>
+                <p className="text-xs font-medium uppercase tracking-wider text-violet-300/70">Sources</p>
+                <p className="mt-2 text-sm leading-relaxed text-white/60">
+                  We track {stats.total}+ data points from {13}+ sources including official Intersect docs, election results, on-chain data, committee meeting archives, and community research. See the full <Link href="/sources" className="underline hover:text-white/80">knowledge base</Link>.
+                </p>
+              </div>
+            </div>
+            <div className="mt-6 rounded-xl border border-white/10 bg-white/5 p-4 text-xs text-white/50">
+              <strong className="text-white/70">Neutrality commitment:</strong> We do not assign intent to overlap or influence. We document what is public, flag what is missing, and let the community decide what matters. All data and code is open source.
+            </div>
           </div>
         </section>
       </main>
