@@ -16,6 +16,8 @@
     "react-dom": "19.2.3",
     "react-force-graph-2d": "^1.29.1",
     "react-hook-form": "^7.71.1",
+    "react-organizational-chart": "^2.2.1",
+    "react-tooltip": "^5.30.0",
     "recharts": "^3.7.0"
   },
   "devDependencies": {

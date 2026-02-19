@@ -1,0 +1,174 @@
+{
+  "hierarchy": {
+    "name": "Intersect MBO Hierarchy (as of Feb 2026)",
+    "description": "Community-led: Members elect board/committees. Committees propose; on-chain DReps/CC ratify. Gaps: No secretaries/visitors listed; salaries undisclosed.",
+    "sources": ["Intersect Docs", "Election Results Oct 2025", "Updates Jan-Feb 2026"],
+    "children": [
+      {
+        "name": "Members (Top Level)",
+        "details": "1,800+ paid members, 2,700 associates. Vote on board/committees (1 member=1 vote). Final influence via on-chain governance.",
+        "decision_power": "Ultimate (elect/ratify)",
+        "how_work_done": "Discussions, events, proposals.",
+        "children": [
+          {
+            "name": "Board of Directors",
+            "details": "Governing body; strategic oversight, elections, ops. Majority member-elected by 2026.",
+            "decision_power": "High—votes on direction, appoints ED.",
+            "how_work_done": "Meetings, executive sessions; balances ecosystem/membership/ops.",
+            "members": [
+              {"name": "Nikhil Joshi", "role": "Non-Exec Director (EMURGO COO overlap)", "elected": "Appointed"},
+              {"name": "Gerard Moroney", "role": "Non-Exec Director (IOG COO overlap)", "elected": "Appointed"},
+              {"name": "Adam Rusch", "role": "Non-Exec Director", "elected": "Member-elected"},
+              {"name": "Kavinda Kariyapperuma", "role": "Members-Elected Non-Exec Director (CoinCeylon)", "elected": "Yes"}
+            ]
+          },
+          {
+            "name": "Executive Director",
+            "details": "Leads ops/governance; reports to board.",
+            "decision_power": "High—strategic/budget facilitation.",
+            "how_work_done": "Coordinates staff/committees.",
+            "members": [{"name": "Jack Briggs", "role": "Executive Director (appointed Jan 2026)"}]
+          },
+          {
+            "name": "Intersect Steering Committee (ISC)",
+            "details": "Chairs of 7 committees + elected + admin leads. Provides structure/direction.",
+            "decision_power": "High—collective decisions.",
+            "how_work_done": "Supports development; all committees report here.",
+            "chairs_vice": "TBD",
+            "elected_members": [
+              {"name": "Kristijan Kowalsky", "role": "Elected (CBC Chair)"},
+              {"name": "Jose Miguel De Gamboa", "role": "Elected (Economist)"}
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Standing Committees (Elected, Report to ISC)",
+        "details": "7 committees; biannual elections (50% seats Q1/Q4). Propose solutions, form WGs, vote on on-chain actions.",
+        "decision_power": "Medium—advisory/proposals.",
+        "how_work_done": "Meetings (public minutes), discussions, WGs for tasks.",
+        "children": [
+          {
+            "name": "Cardano Civics Committee (CCC)",
+            "details": "Governance support, elections, constitution.",
+            "chairs_vice": "Vice Chair election Jan 2026 (extended).",
+            "elected_members": [
+              {"name": "Ian Hartwell", "role": "Elected (SPO/DRep)"},
+              {"name": "Simon Fleck", "role": "Elected (Entrepreneur)"},
+              {"name": "Ridwan Itopa Musa", "role": "Elected (Educator)"},
+              {"name": "Megan Dyamond", "role": "Elected (Attorney, CF)"},
+              {"name": "Mike", "role": "Member (Params WG crossover)"}
+            ]
+          },
+          {
+            "name": "Membership & Community Committee (MCC)",
+            "details": "Membership sales, engagement, grants, events.",
+            "chairs_vice": "TBD",
+            "elected_members": [
+              {"name": "Jose Iadicicco", "role": "Elected (Ambassador)"},
+              {"name": "Ian McCullough", "role": "Elected (Artist/CEO)"},
+              {"name": "Sanjaya Wanigasekera", "role": "Elected (Community Mgr)"},
+              {"name": "Akheel Fouze", "role": "Elected (Logistics)"},
+              {"name": "Olivier Rishi Matabaro", "role": "Elected (Entrepreneur)"}
+            ]
+          },
+          {
+            "name": "Growth & Marketing Committee (GMC)",
+            "details": "Marketing strategies, adoption.",
+            "chairs_vice": "TBD",
+            "elected_members": [
+              {"name": "Yoram Ben Zvi", "role": "Elected (Partner)"},
+              {"name": "Wes Parkinson", "role": "Elected (Crypto Expert)"},
+              {"name": "Otavio Lima", "role": "Elected (Ambassador)"},
+              {"name": "Maggie Schmidt", "role": "Elected (Strategist)"},
+              {"name": "Reshan Fernando", "role": "Elected (Entrepreneur)"}
+            ]
+          },
+          {
+            "name": "Technical Steering Committee (TSC)",
+            "details": "Tech upgrades, params, incidents. Includes Parameters Subcommittee.",
+            "chairs_vice": "TBD",
+            "elected_members": [
+              {"name": "Kevin Hammond", "role": "Elected (Node Dev)"},
+              {"name": "Ryan Wiley", "role": "Elected (Tester/DRep)"},
+              {"name": "Udai Solanki", "role": "Elected (Advocate)"},
+              {"name": "Leandros Holleman", "role": "Elected (Developer)"},
+              {"name": "Seungheon Oh", "role": "Elected (Engineer)"},
+              {"name": "Adam Dean", "role": "Member"}
+            ]
+          },
+          {
+            "name": "Open Source Committee (OSC)",
+            "details": "OS strategy, bug bounties, dApps.",
+            "chairs_vice": "Elaine (Chair?)",
+            "elected_members": [
+              {"name": "Sebastian Pabon", "role": "Elected (Contributor)"},
+              {"name": "Bernard Sibanda", "role": "Elected (Founder)"},
+              {"name": "Udai Solanki", "role": "Elected (Advocate)"},
+              {"name": "Jordan Hill", "role": "Elected (Mgr)"},
+              {"name": "Reshma Mohan", "role": "Elected (Engineer)"},
+              {"name": "Adam Dean", "role": "Member"}
+            ]
+          },
+          {
+            "name": "Cardano Budget Committee (CBC)",
+            "details": "Budget guidance, audits, oversight.",
+            "chairs_vice": "Kristijan Kowalsky (Chair)",
+            "elected_members": [
+              {"name": "Nicolas Cerny", "role": "Elected (CF Governance Lead)"},
+              {"name": "Kristijan Kowalsky", "role": "Elected (Chair)"},
+              {"name": "Eric Helms", "role": "Elected (CPA)"},
+              {"name": "Jose Velazquez", "role": "Elected (Scientist)"},
+              {"name": "Otavio Lima", "role": "Elected (Ambassador)"}
+            ]
+          },
+          {
+            "name": "Cardano Product Committee (CPC)",
+            "details": "Vision, roadmap alignment.",
+            "chairs_vice": "TBD",
+            "elected_members": [
+              {"name": "Samuel Leathers", "role": "Elected (Chair)"},
+              {"name": "Kyle Solomon", "role": "Elected (Entrepreneur)"},
+              {"name": "Giorgio Zinetti", "role": "Elected (CF CTO)"},
+              {"name": "Christian Schmitz", "role": "Elected (Finance)"},
+              {"name": "Alexandre Maaza", "role": "Elected (CF Lead)"}
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Working Groups (Ad-Hoc, Report to Committees)",
+        "details": "Hands-on tasks, proposals. Created by committees/members.",
+        "decision_power": "Low—advisory/execution.",
+        "how_work_done": "Collaboration, meetings (some recorded).",
+        "children": [
+          {"name": "Chain Partition Incident Analysis WG", "under": "TSC", "members": "TBD"},
+          {"name": "Developer Experience WG", "under": "OSC/Product", "members": "TBD"},
+          {"name": "Constitution Drafting & Ratification WG", "under": "Civics", "members": "Mike"},
+          {"name": "Civics Budget Workstream", "under": "Civics", "members": "TBD (new 2026)"},
+          {"name": "Governance Parameters Advisory Group", "under": "TSC Params Subcommittee", "members": "Mike (Head)"}
+        ]
+      },
+      {
+        "name": "Staff/Support (Report to ED)",
+        "details": "Ops, people, tech advisors. Facilitate, not decide.",
+        "decision_power": "Low—support.",
+        "how_work_done": "Daily ops, coordination.",
+        "members": [
+          {"name": "Nick Cook", "role": "Interim Director of Operations"},
+          {"name": "Rosie Graham", "role": "Head of People & Culture"},
+          {"name": "Sam Leathers", "role": "Special Technical Advisor"},
+          {"name": "Mike Hornan", "role": "Security Incident Manager"},
+          {"name": "Lally McClay", "role": "Head of Ecosystem & Community"}
+        ]
+      }
+    ],
+    "gaps": [
+      "No secretaries/visitors named across committees.",
+      "Partial chairs/vice (e.g., elections ongoing).",
+      "No salaries/stipends disclosed.",
+      "Election turnout low (19.4% Oct 2025).",
+      "Full 2026 elections pending."
+    ]
+  }
+}

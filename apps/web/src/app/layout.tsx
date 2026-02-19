@@ -42,6 +42,9 @@ export default function RootLayout({
               <Link className="transition hover:text-white" href="/#network">
                 Network
               </Link>
+              <Link className="transition hover:text-white" href="/hierarchy">
+                Hierarchy
+              </Link>
               <Link className="transition hover:text-white" href="/sources">
                 Sources
               </Link>
