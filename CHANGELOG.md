@@ -61,3 +61,27 @@ All notable changes to this project will be documented in this file.
 ### Technical Notes
 - Recharts `ResponsiveContainer` warns about container size in JSDOM/static build — non-breaking, app renders correctly in browser
 - All components use `"use client"` directive for client-side interactivity
+
+## [0.3.0] - 2026-02-19
+
+### Added
+
+#### Data Enrichment — 4 New Data Files
+- **budget-2025.json** — Per-committee budget breakdown: ₳263.5M across 6 budget buckets (Core, Research, Governance Support, Growth & Marketing, Innovation, Intersect Ops), 8 committee allocations, treasury withdrawal schedule with NCL constraints
+- **elections-2025.json** — Q4 2025 committee election results: 36 elected members across 8 committees, 293 voters (19.4% turnout), 5,182 ballots, 98 candidates, per-candidate vote counts and bios. Audited by Dquadrant
+- **governance-stats.json** — DRep participation (6.23B ADA delegated, 68% to Abstain), CF delegation strategy (360M ADA to 18 DReps), constitution ratification (Dec 2024 Buenos Aires), governance milestones, treasury stats (~1.7B ADA)
+- **meeting-archives.json** — Committee meeting recordings and minutes: OSC YouTube recordings, TSC/ISC/CBC written minutes, transparency gap analysis (5 of 10 committees have no public archives)
+
+#### Committee Member Enrichment
+- **8 of 9 committees** now have named elected members (was 3 with placeholders)
+- **48 named committee members** with vote counts, affiliations, and bios extracted from official election results
+- Per-committee `budget_ada` and `source_url` fields added to all committees in input.json
+
+#### Knowledge Base Expansion
+- **33 sources** in sources.json (was 22) — added election results, budget docs, CExplorer governance analysis, CF governance blog, OSC YouTube, TSC docs, budget committee minutes, Dquadrant audit, constitution pages, budget spreadsheet
+- **40 verified facts** (was 20) — added budget breakdowns, DRep delegation stats, election turnout, constitution ratification, CF delegation strategy, meeting archive coverage, Net Change Limit, Plomin Hard Fork
+- All 8 enrichment opportunities marked as completed with result summaries
+
+### Changed
+- **/sources page** — New coverage cards for Budget Allocations (₳263.5M), Elected Members (36), DRep Delegation (₳6.2B), Governance stats; enrichment items now show ✓ done status with result descriptions; on-chain card shows integrated vs pending data
+- **data_coverage_summary** — Updated to reflect: 8/9 committees with known members, 48 named members, 8 budget entries, election stats, governance stats, meeting archive coverage
