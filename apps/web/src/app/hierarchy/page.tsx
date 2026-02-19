@@ -1,10 +1,8 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import Link from "next/link";
+import OrgChart from "@/components/OrgChart";
 import hierarchyData from "@/data/hierarchy.json";
-
-const OrgChart = dynamic(() => import("@/components/OrgChart"), { ssr: false });
 
 const data = hierarchyData.hierarchy;
 
