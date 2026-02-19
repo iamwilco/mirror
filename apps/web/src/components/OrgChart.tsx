@@ -18,6 +18,7 @@ interface HierarchyNode {
   how_work_done?: string;
   chairs_vice?: string;
   under?: string;
+  transparency_note?: string;
   members?: Member[] | string;
   elected_members?: Member[];
   children?: HierarchyNode[];
@@ -115,6 +116,13 @@ function NodeCard({ node, full }: { node: HierarchyNode; full?: boolean }) {
       {typeof node.members === "string" && (
         <p className="mt-1.5 text-[10px] text-white/40">{node.members}</p>
       )}
+
+      {/* Transparency note */}
+      {node.transparency_note && (
+        <p className="mt-2 rounded-md bg-rose-500/10 px-2 py-1 text-[10px] leading-snug text-rose-300/80">
+          &#9888; {node.transparency_note}
+        </p>
+      )}
     </div>
   );
 }
@@ -128,6 +136,7 @@ function buildTooltip(node: HierarchyNode): string {
   if (node.decision_power) lines.push(`<p class="mt-1 text-xs"><span class="text-emerald-300 font-semibold">Power:</span> ${node.decision_power}</p>`);
   if (node.how_work_done) lines.push(`<p class="text-xs"><span class="text-amber-300 font-semibold">How:</span> ${node.how_work_done}</p>`);
   if (node.chairs_vice) lines.push(`<p class="text-xs"><span class="text-violet-300 font-semibold">Chair:</span> ${node.chairs_vice}</p>`);
+  if (node.transparency_note) lines.push(`<p class="mt-1 text-xs text-rose-300">⚠ ${node.transparency_note}</p>`);
   return lines.join("");
 }
 

@@ -1,20 +1,22 @@
 {
   "hierarchy": {
     "name": "Intersect MBO Hierarchy (as of Feb 2026)",
-    "description": "Community-led: Members elect board/committees. Committees propose; on-chain DReps/CC ratify. Gaps: No secretaries/visitors listed; salaries undisclosed.",
+    "description": "Marketed as community-led, but members only directly elect committee seats and 2 of 4 board seats. Board appoints ED. Founding entities (IOG, EMURGO) retain 2 appointed board seats. Committees are advisory — on-chain DReps/CC hold final ratification power.",
     "sources": ["Intersect Docs", "Election Results Oct 2025", "Updates Jan-Feb 2026"],
     "children": [
       {
-        "name": "Members (Top Level)",
-        "details": "1,800+ paid members, 2,700 associates. Vote on board/committees (1 member=1 vote). Final influence via on-chain governance.",
-        "decision_power": "Ultimate (elect/ratify)",
-        "how_work_done": "Discussions, events, proposals.",
+        "name": "Members (1,800 paid / 2,700 associates)",
+        "details": "Vote on committee seats (biannual) and 2 of 4 board seats. Cannot elect ED, staff, or ISC members. On-chain governance (DReps) is separate from Intersect membership. 19.4% turnout in Oct 2025 election.",
+        "decision_power": "Limited — elect committees + 2 board seats only",
+        "how_work_done": "Discussions, events, proposals. Actual power is indirect: elect committees who propose, then DReps ratify on-chain.",
+        "transparency_note": "Intersect markets this as 'ultimate' power, but members do not control board composition (50% appointed), ED hiring, staff, or budget execution.",
         "children": [
           {
             "name": "Board of Directors",
-            "details": "Governing body; strategic oversight, elections, ops. Majority member-elected by 2026.",
-            "decision_power": "High—votes on direction, appoints ED.",
-            "how_work_done": "Meetings, executive sessions; balances ecosystem/membership/ops.",
+            "details": "Governing body; strategic oversight, appoints ED, sets direction. Only 2 of 4 seats are member-elected. Founding entities (IOG, EMURGO) hold the other 2 seats.",
+            "decision_power": "High — appoints ED, sets strategy. 50% appointed by founding entities.",
+            "how_work_done": "Meetings, executive sessions. No public minutes. Board decisions are not subject to member vote.",
+            "transparency_note": "Claim of 'majority member-elected by 2026' is aspirational — no confirmed timeline. Current structure gives founding entities veto-level influence.",
             "members": [
               {"name": "Nikhil Joshi", "role": "Non-Exec Director (EMURGO COO overlap)", "elected": "Appointed"},
               {"name": "Gerard Moroney", "role": "Non-Exec Director (IOG COO overlap)", "elected": "Appointed"},
@@ -24,16 +26,17 @@
           },
           {
             "name": "Executive Director",
-            "details": "Leads ops/governance; reports to board.",
-            "decision_power": "High—strategic/budget facilitation.",
-            "how_work_done": "Coordinates staff/committees.",
+            "details": "Leads ops/governance; reports to board. Appointed by board — not elected by members.",
+            "decision_power": "High — strategic/budget facilitation. Board-appointed, not member-elected.",
+            "how_work_done": "Coordinates staff/committees. Hiring decisions not disclosed publicly.",
             "members": [{"name": "Jack Briggs", "role": "Executive Director (appointed Jan 2026)"}]
           },
           {
             "name": "Intersect Steering Committee (ISC)",
-            "details": "Chairs of 7 committees + elected + admin leads. Provides structure/direction.",
-            "decision_power": "High—collective decisions.",
-            "how_work_done": "Supports development; all committees report here.",
+            "details": "Composed of committee chairs + 2 elected seats + admin leads. Not directly elected by members as a body — chairs come from committee elections, admin leads are appointed.",
+            "decision_power": "High — collective decisions, but composition is mostly internal.",
+            "how_work_done": "Supports development; all committees report here. Minutes not consistently public.",
+            "transparency_note": "Only 2 ISC seats are directly elected. Remaining seats are ex-officio (chairs) or appointed (admin leads).",
             "chairs_vice": "TBD",
             "elected_members": [
               {"name": "Kristijan Kowalsky", "role": "Elected (CBC Chair)"},
@@ -43,10 +46,10 @@
         ]
       },
       {
-        "name": "Standing Committees (Elected, Report to ISC)",
-        "details": "7 committees; biannual elections (50% seats Q1/Q4). Propose solutions, form WGs, vote on on-chain actions.",
-        "decision_power": "Medium—advisory/proposals.",
-        "how_work_done": "Meetings (public minutes), discussions, WGs for tasks.",
+        "name": "Standing Committees (Member-Elected, Report to ISC)",
+        "details": "7 committees; biannual elections (50% seats per cycle). This is the primary level where members actually elect representatives. Committees propose solutions and form WGs, but final decisions go through on-chain governance.",
+        "decision_power": "Medium — advisory/proposals. This is where member elections actually matter.",
+        "how_work_done": "Meetings (some public minutes), discussions, WGs for tasks. Only OSC has public YouTube recordings.",
         "children": [
           {
             "name": "Cardano Civics Committee (CCC)",
@@ -151,9 +154,10 @@
       },
       {
         "name": "Staff/Support (Report to ED)",
-        "details": "Ops, people, tech advisors. Facilitate, not decide.",
-        "decision_power": "Low—support.",
-        "how_work_done": "Daily ops, coordination.",
+        "details": "Ops, people, tech advisors. Hired by ED/board — no member input on hiring. Facilitate, not decide (officially).",
+        "decision_power": "Low (officially) — but staff control day-to-day ops, meeting agendas, and information flow.",
+        "how_work_done": "Daily ops, coordination. No public org chart or team page (404).",
+        "transparency_note": "No salaries disclosed. Team page returns 404. Hiring process opaque.",
         "members": [
           {"name": "Nick Cook", "role": "Interim Director of Operations"},
           {"name": "Rosie Graham", "role": "Head of People & Culture"},
@@ -164,11 +168,16 @@
       }
     ],
     "gaps": [
+      "Members only elect committee seats + 2 of 4 board seats — not ED, staff, ISC admin leads, or secretaries.",
+      "50% of board seats are founding-entity appointed (IOG, EMURGO) — not member-elected.",
       "No secretaries/visitors named across committees.",
-      "Partial chairs/vice (e.g., elections ongoing).",
-      "No salaries/stipends disclosed.",
-      "Election turnout low (19.4% Oct 2025).",
-      "Full 2026 elections pending."
+      "Partial chairs/vice (elections ongoing).",
+      "No salaries/stipends disclosed for any role.",
+      "Election turnout critically low (19.4% Oct 2025) — governance legitimacy concern.",
+      "Full 2026 elections pending — no confirmed date.",
+      "Board meeting minutes not public.",
+      "ED hiring process not disclosed — appointed by partially-appointed board.",
+      "Team page on intersectmbo.org returns 404."
     ]
   }
 }
