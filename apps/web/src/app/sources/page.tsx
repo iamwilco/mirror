@@ -98,14 +98,30 @@ export default function SourcesPage() {
           </div>
           <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
             <p className="text-3xl font-bold text-white">{data_coverage_summary.budget.entries}</p>
-            <p className="mt-1 text-xs uppercase tracking-wider text-white/50">Budget Entries</p>
-            <p className="mt-2 text-[11px] text-rose-300/70">{data_coverage_summary.budget.status}</p>
+            <p className="mt-1 text-xs uppercase tracking-wider text-white/50">Budget Allocations</p>
+            <p className="mt-2 text-xs text-emerald-300">₳{(data_coverage_summary.budget.total_ada / 1e6).toFixed(1)}M total</p>
+            <p className="mt-1 text-[11px] text-white/40">{data_coverage_summary.budget.status}</p>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <p className="text-3xl font-bold text-white">{data_coverage_summary.elections.total_elected}</p>
+            <p className="mt-1 text-xs uppercase tracking-wider text-white/50">Elected Members</p>
+            <div className="mt-3 flex gap-2">
+              <span className="text-xs text-white/50">{data_coverage_summary.elections.total_voters} voters</span>
+              <span className="text-xs text-amber-300">{data_coverage_summary.elections.turnout} turnout</span>
+            </div>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
+            <p className="text-3xl font-bold text-white">₳{(data_coverage_summary.governance.drep_ada_delegated / 1e9).toFixed(1)}B</p>
+            <p className="mt-1 text-xs uppercase tracking-wider text-white/50">DRep Delegated</p>
+            <p className="mt-2 text-xs text-emerald-300">Constitution: {data_coverage_summary.governance.constitution}</p>
+            <p className="mt-1 text-[11px] text-white/40">Treasury: ₳{(data_coverage_summary.governance.treasury_ada / 1e9).toFixed(1)}B</p>
           </div>
           <div className="rounded-2xl border border-white/10 bg-white/5 p-5">
             <p className="text-3xl font-bold text-amber-300">⛓</p>
             <p className="mt-1 text-xs uppercase tracking-wider text-white/50">On-Chain Data</p>
-            <p className="mt-2 text-[11px] text-rose-300/70">{data_coverage_summary.on_chain.status}</p>
-            <p className="mt-1 text-[11px] text-white/40">{data_coverage_summary.on_chain.potential}</p>
+            <p className="mt-2 text-[11px] text-emerald-300">{data_coverage_summary.on_chain.status}</p>
+            <p className="mt-1 text-[11px] text-white/40">Integrated: {data_coverage_summary.on_chain.integrated.join(", ")}</p>
+            <p className="mt-1 text-[11px] text-rose-300/70">Pending: {data_coverage_summary.on_chain.pending.join(", ")}</p>
           </div>
         </div>
       </section>
@@ -227,12 +243,17 @@ export default function SourcesPage() {
         <p className="mt-1 text-sm text-white/50">Data we could add to strengthen the dashboard.</p>
         <div className="mt-6 grid gap-3">
           {enrichment_opportunities.map((opp, i) => (
-            <div key={i} className={`rounded-xl border px-5 py-4 ${PRIORITY_CLR[opp.priority]}`}>
+            <div key={i} className={`rounded-xl border px-5 py-4 ${(opp as Record<string, unknown>).status === "completed" ? "border-emerald-500/30 text-emerald-300" : PRIORITY_CLR[opp.priority]}`}>
               <div className="flex items-center gap-2">
-                <span className="rounded-full bg-white/5 px-2 py-0.5 text-[10px] uppercase tracking-wider">{opp.priority}</span>
+                <span className={`rounded-full px-2 py-0.5 text-[10px] uppercase tracking-wider ${(opp as Record<string, unknown>).status === "completed" ? "bg-emerald-500/20" : "bg-white/5"}`}>
+                  {(opp as Record<string, unknown>).status === "completed" ? "✓ done" : (opp as Record<string, unknown>).status === "partial" ? "partial" : opp.priority}
+                </span>
                 <span className="text-sm font-semibold">{opp.area}</span>
               </div>
               <p className="mt-2 text-xs text-white/60">{opp.action}</p>
+              {typeof (opp as Record<string, unknown>).result === "string" && (
+                <p className="mt-1 text-xs text-emerald-300/70">{String((opp as Record<string, unknown>).result)}</p>
+              )}
               <p className="mt-1 text-[10px] text-white/30">
                 Sources: {opp.sources.map((sid) => sources.find((s) => s.id === sid)?.name ?? sid).join(", ")}
               </p>

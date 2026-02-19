@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "compiled": "2026-02-19",
+    "source": "Intersect committee election October 2025 results",
+    "source_url": "https://www.intersectmbo.org/news/intersect-committee-election-october-2025-results",
+    "audit": "Independent audit by Dquadrant (Netherlands-based Web3 firm, active in Cardano since 2017)",
+    "audit_results_url": "https://docs.intersectmbo.org/intersect-membership/intersect-voting-events/intersect-elections-2025/october-2025-committee-elections/april-2025-committee-election-results/voting-results-audit-info"
+  },
+  "election": {
+    "period": "Q4 2025 (October–November 2025)",
+    "voting_closed": "2025-11-07",
+    "results_announced": "2025-11-14",
+    "eligible_voters": 1510,
+    "total_voters": 293,
+    "turnout_percent": 19.4,
+    "total_ballots_cast": 5182,
+    "total_candidates": 98,
+    "total_seats": 36,
+    "facilitation": "5 X Spaces hosted by Intersect for candidate introductions"
+  },
+  "results": [
+    {
+      "committee": "Intersect Steering Committee (ISC)",
+      "seats_elected": 2,
+      "candidates": [
+        { "name": "Kristijan Kowalsky", "votes": 119, "elected": true, "bio": "Current chair of the Cardano Budget Committee" },
+        { "name": "Jose Miguel De Gamboa", "votes": 108, "elected": true, "bio": "Economist and business school professor" }
+      ]
+    },
+    {
+      "committee": "Cardano Civics Committee (CCC)",
+      "seats_elected": 4,
+      "candidates": [
+        { "name": "Ian Hartwell", "votes": 113, "elected": true, "bio": "SPO, DRep, and ICC member, active community participant" },
+        { "name": "Simon Fleck", "votes": 102, "elected": true, "bio": "Former IT consultant turned full-time Cardano entrepreneur" },
+        { "name": "Ridwan Itopa Musa", "votes": 90, "elected": true, "bio": "Blockchain educator, community leader, decentralized governance advocate" },
+        { "name": "Megan Dyamond", "votes": 45, "elected": true, "bio": "South African-qualified attorney, legal counsel for Cardano Foundation" }
+      ]
+    },
+    {
+      "committee": "Membership & Community Committee (MCC)",
+      "seats_elected": 5,
+      "candidates": [
+        { "name": "Jose Iadicicco", "votes": 113, "elected": true, "bio": "SPO, system architect, and Cardano ambassador (Latin America)" },
+        { "name": "Ian McCullough", "votes": 111, "elected": true, "bio": "Artist, entrepreneur, community builder, founder/CEO of Awen" },
+        { "name": "Sanjaya Wanigasekera", "votes": 104, "elected": true, "bio": "Community Manager for Coin Ceylon" },
+        { "name": "Akheel Fouze", "votes": 93, "elected": true, "bio": "Logistics/supply chain professional, current MCC member" },
+        { "name": "Olivier Rishi Matabaro", "votes": 86, "elected": true, "bio": "Social entrepreneur and blockchain evangelist (Goma, DRC)" }
+      ]
+    },
+    {
+      "committee": "Growth & Marketing Committee (GMC)",
+      "seats_elected": 5,
+      "candidates": [
+        { "name": "Yoram Ben Zvi", "votes": 146, "elected": true, "bio": "Partner at ELKsconnect.com, BD & Partnerships at SundialProtocol/Andamio" },
+        { "name": "Wes Parkinson", "votes": 117, "elected": true, "bio": "Full-time crypto after career in enterprise content software" },
+        { "name": "Otavio Lima (Cardano Feed)", "votes": 113, "elected": true, "bio": "Cardano Ambassador, founder of CardanoFeed.com, GovernanceSpace, ADAspending" },
+        { "name": "Maggie Schmidt", "votes": 111, "elected": true, "bio": "Marketing strategist, creative director, co-founder/CMO of Awen" },
+        { "name": "Reshan Fernando", "votes": 85, "elected": true, "bio": "Sri Lankan entrepreneur and community builder" }
+      ]
+    },
+    {
+      "committee": "Technical Steering Committee (TSC)",
+      "seats_elected": 5,
+      "candidates": [
+        { "name": "Kevin Hammond", "votes": 160, "elected": true, "bio": "Key member of Cardano node development team since 2019" },
+        { "name": "Ryan Wiley", "votes": 147, "elected": true, "bio": "Professional penetration tester, DRep, Incentives Working Group member" },
+        { "name": "Udai Solanki", "votes": 140, "elected": true, "bio": "Developer Advocate (OSC Cohort #1), founder Cardano India Developers Hub" },
+        { "name": "Leandros Holleman", "votes": 126, "elected": true, "bio": "Active in Cardano since 2017, SPO, full-time developer since 2021" },
+        { "name": "Seungheon Oh", "votes": 115, "elected": true, "bio": "Software Engineer, Cardano smart contract ecosystem" }
+      ]
+    },
+    {
+      "committee": "Open Source Committee (OSC)",
+      "seats_elected": 5,
+      "candidates": [
+        { "name": "Sebastian Pabon", "votes": 139, "elected": true, "bio": "Long-time contributor, current OSC member" },
+        { "name": "Bernard Sibanda", "votes": 97, "elected": true, "bio": "Founder of WIMS Cardano Global" },
+        { "name": "Udai Solanki", "votes": 52, "elected": true, "bio": "Developer Advocate (OSC Cohort #1), Cardano India Developers Hub" },
+        { "name": "Jordan Hill", "votes": 43, "elected": true, "bio": "Delivery manager and blockchain strategist at MLabs Ltd" },
+        { "name": "Reshma Mohan", "votes": 38, "elected": true, "bio": "Cardano engineer, Intersect founding member, DRep Pioneer Workshop Leader" }
+      ]
+    },
+    {
+      "committee": "Cardano Budget Committee (CBC)",
+      "seats_elected": 5,
+      "candidates": [
+        { "name": "Nicolas Cerny", "votes": 176, "elected": true, "bio": "Governance Lead at the Cardano Foundation" },
+        { "name": "Kristijan Kowalsky", "votes": 144, "elected": true, "bio": "Current chair of the Cardano Budget Committee" },
+        { "name": "Eric Helms", "votes": 49, "elected": true, "bio": "CPA (Inactive), Veteran Community Advisor for Project Catalyst" },
+        { "name": "Jose Velazquez", "votes": 41, "elected": true, "bio": "Scientist, blockchain innovator in agriculture and real-world assets" },
+        { "name": "Otavio Lima (Cardano Feed)", "votes": 30, "elected": true, "bio": "Cardano Ambassador, founder of CardanoFeed.com, GovernanceSpace" }
+      ]
+    },
+    {
+      "committee": "Cardano Product Committee (CPC)",
+      "seats_elected": 5,
+      "candidates": [
+        { "name": "Samuel Leathers", "votes": 168, "elected": true, "bio": "Chaired product committee, led Cardano vision & strategy" },
+        { "name": "Kyle Solomon", "votes": 146, "elected": true, "bio": "Technical entrepreneur, product definition/building/selling experience" },
+        { "name": "Giorgio Zinetti", "votes": 137, "elected": true, "bio": "CTO of Cardano Foundation" },
+        { "name": "Christian Schmitz", "votes": 88, "elected": true, "bio": "Building a more transparent financial industry with Cardano" },
+        { "name": "Alexandre Maaza", "votes": 51, "elected": true, "bio": "Sustainability & Innovation Lead at Cardano Foundation" }
+      ]
+    }
+  ]
+}

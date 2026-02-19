@@ -1,0 +1,86 @@
+{
+  "meta": {
+    "compiled": "2026-02-19",
+    "sources": [
+      "https://cexplorer.io/article/how-decentralized-is-cardano-governance",
+      "https://cardano.org/news/2025-12-03-reflection-cardano-governance-2025/",
+      "https://cardanofoundation.org/blog/reflecting-cardano-governance-2025",
+      "https://cardanofoundation.org/blog/developer-builder-delegations",
+      "https://thecryptobasic.com/2026/01/22/cardano-foundation-delegates-220m-ada-to-11-community-dreps/",
+      "https://u.today/cardano-achieves-major-governance-milestone-with-6-billion-ada",
+      "https://www.newsbtc.com/news/cardano/cardano-sets-voting-record-nearly-100-of-4-6-billion-ada-cast-via-delegates/"
+    ]
+  },
+  "drep_stats": {
+    "as_of": "2025-12",
+    "total_ada_delegated": 6230000000,
+    "ada_delegated_to_abstain": 6230000000,
+    "abstain_delegators": 105400,
+    "abstain_ada": 6230000000,
+    "no_confidence_delegators": 5200,
+    "no_confidence_ada": 173000000,
+    "active_delegation_percent": 32,
+    "abstain_percent": 68,
+    "notes": "68% of delegated voting power chose Abstain DRep. Only ~32% actively delegated to autonomous DReps. Top 10 DReps include two founding entities (EMURGO and Cardano Foundation)."
+  },
+  "cardano_foundation_governance": {
+    "voting_record": "100% participation as DRep in 2025",
+    "icc_tenure": "Completed Interim Constitutional Committee tenure",
+    "delegation_phase_1": {
+      "date": "2025",
+      "ada_delegated": 140000000,
+      "dreps_selected": 7,
+      "category": "Developer/Builder DReps",
+      "ada_per_drep": 20000000,
+      "source": "https://cardanofoundation.org/blog/developer-builder-delegations"
+    },
+    "delegation_phase_2": {
+      "date": "2026-01",
+      "ada_delegated": 220000000,
+      "dreps_selected": 11,
+      "ada_per_drep": 20000000,
+      "category": "Adoption and Operations DReps",
+      "source": "https://thecryptobasic.com/2026/01/22/cardano-foundation-delegates-220m-ada-to-11-community-dreps/"
+    },
+    "total_cf_delegation": 360000000,
+    "notes": "CF's total delegation of 360M ADA to 18 community DReps is a major governance concentration vector."
+  },
+  "governance_milestones": [
+    { "date": "2024-06-21", "event": "Interim Constitution introduced", "source": "CIP-1694" },
+    { "date": "2024-12", "event": "Cardano Constitution ratified at Buenos Aires Constitutional Convention", "source": "https://www.intersectmbo.org/cardano-constitution" },
+    { "date": "2025-01", "event": "Plomin Hard Fork — full on-chain governance activated", "source": "Cardano node release" },
+    { "date": "2025-04", "event": "First treasury withdrawal governance action approved", "source": "GovTool" },
+    { "date": "2025-06", "event": "Core Budget treasury withdrawal: ₳70M (first tranche)", "source": "Budget Committee docs" },
+    { "date": "2025-10", "event": "Q4 2025 committee elections: 293 voters, 5182 ballots, 36 seats filled", "source": "Intersect election results" },
+    { "date": "2025-11", "event": "Intersect reaches 6B ADA delegated milestone", "source": "Intersect announcement" },
+    { "date": "2025-12", "event": "CF completes ICC tenure; 100% voting record", "source": "CF blog" },
+    { "date": "2026-01", "event": "CF delegates 220M ADA to 11 Adoption/Operations DReps", "source": "CF announcement" }
+  ],
+  "constitution": {
+    "status": "ratified",
+    "ratification_date": "2024-12",
+    "on_chain_cip": "CIP-1694",
+    "on_chain_action": "CIP-169 (constitution script)",
+    "full_text_url": "https://github.com/IntersectMBO/interim-constitution/blob/main/cardano-constitution-0.txt.md",
+    "intersect_page": "https://www.intersectmbo.org/cardano-constitution",
+    "key_governance_roles": [
+      "Delegated Representatives (DReps) — vote on governance actions on behalf of ADA holders",
+      "Constitutional Committee (CC) — checks constitutionality of governance actions",
+      "Stake Pool Operators (SPOs) — vote on hard forks and certain protocol changes"
+    ],
+    "governance_action_types": [
+      "Treasury Withdrawals",
+      "Hard Fork Initiation",
+      "Protocol Parameter Changes",
+      "No Confidence motions",
+      "Constitutional Committee Updates",
+      "Info Actions"
+    ],
+    "guardrails": "Constitution defines parameter bounds, treasury limits (Net Change Limit), and voting thresholds for each governance action type."
+  },
+  "treasury": {
+    "total_ada_in_treasury": 1700000000,
+    "notes": "Treasury holds ~1.7B ADA. Net Change Limit governs maximum withdrawal per epoch. 2025 budget proposed ₳263.6M total.",
+    "net_change_limit_explainer": "https://cardano.org/news/2025-12-02-what-is-cardano-net-change-limit/"
+  }
+}

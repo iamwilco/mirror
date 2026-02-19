@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "compiled": "2026-02-19",
+    "source": "Intersect Budget Committee — 2025 Cardano Blockchain Ecosystem Budget Proposal",
+    "source_url": "https://committees.docs.intersectmbo.org/intersect-budget-committee/archive/2025-cardano-budget-proposal-a-cardano-blockchain-ecosystem-budget",
+    "notes": "All figures indicative; subject to ADA price, community feedback, on-chain approvals. Input from 100+ members across committees/WGs.",
+    "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1XNcaZmjfz5Q6ZNwNSLBNaZtrZf58tD7bun2Tz7-GSK4/edit?gid=1531906637"
+  },
+  "total_proposed_ada": 263507044,
+  "buckets": [
+    {
+      "name": "Core Budget",
+      "ada_amount": 125304400,
+      "description": "Ongoing development and maintenance of Cardano blockchain.",
+      "source_url": "https://committees.docs.intersectmbo.org/intersect-budget-committee/archive/2025-cardano-budget-proposal-a-cardano-blockchain-ecosystem-budget/core-budget",
+      "committees": [
+        {
+          "committee": "Technical Steering Committee (TSC)",
+          "ada_amount": 99419400,
+          "breakdown": [
+            { "item": "Core Maintenance (IOE call-off Feb–Jul, open tender Jul+)", "ada": 40100000, "notes": "Integration & rollout ~35%, core maint ~40%, support ~15%, ops ~10%" },
+            { "item": "Roadmap Projects", "ada": 50319400, "notes": "Ouroboros Leios, UTxO LMDB/LSM, Plutus improvements, node improvements, etc." },
+            { "item": "Emergency/Contingency Fund", "ada": 9000000, "notes": "Requested by TSC; may be handled by Budget Committee" }
+          ]
+        },
+        {
+          "committee": "Open Source Committee (OSC)",
+          "ada_amount": 5885000,
+          "breakdown": [
+            { "item": "Maintainer Retainer Program", "ada": 1800000, "notes": "50 open-source projects: half Core Cardano, half community-nominated" },
+            { "item": "Code For Us Model", "ada": 250000, "notes": "Bounties for features on qualified projects" },
+            { "item": "Developer Advocate Program", "ada": 160000, "notes": "Part-time roles: N. America, Africa, India, Vietnam" },
+            { "item": "Cardano Project Services", "ada": 100000, "notes": "Legal, outreach, tooling, partnerships" },
+            { "item": "Events", "ada": 100000, "notes": "Conferences, hackathons, meetups" },
+            { "item": "Incident Monitoring/Response", "ada": 175000, "notes": "24/7 monitoring, 48hr response, 7-day fix target" },
+            { "item": "OSC Attendance to Events", "ada": 50000, "notes": "Travel and reimbursement" },
+            { "item": "Google Summer of Code or Equivalent", "ada": 250000, "notes": "Mentorship program" },
+            { "item": "Other (audits, security, tooling)", "ada": 3000000, "notes": "Estimated remaining allocation" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Research Budget",
+      "ada_amount": 27211304,
+      "description": "Long-term R&D, roadmap vision, product strategy.",
+      "committees": [
+        {
+          "committee": "Cardano Product Committee (CPC)",
+          "ada_amount": 27211304,
+          "breakdown": [
+            { "item": "Research & Development", "ada": 27211304, "notes": "Roadmap items, vision facilitation" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Governance Support Budget",
+      "ada_amount": 13170500,
+      "description": "Constitution stewardship, elections, DRep support, budget management.",
+      "source_url": "https://committees.docs.intersectmbo.org/intersect-budget-committee/archive/2025-cardano-budget-proposal-a-cardano-blockchain-ecosystem-budget/governance-support-budget",
+      "committees": [
+        {
+          "committee": "Cardano Civics Committee (CCC)",
+          "ada_amount": 11270500,
+          "breakdown": [
+            { "item": "Supporting Governance Participants", "ada": 5000000, "notes": "DRep compensation/training/tooling, CC admin/legal/remuneration, SPO training, ADA holder education" },
+            { "item": "Steward Governance Process", "ada": 4000000, "notes": "Constitution ratification, CC elections, on-chain voting tools, events/remuneration" },
+            { "item": "Governance Improvement", "ada": 2270500, "notes": "Future governance processes, annual state-of-governance report, regional events" }
+          ]
+        },
+        {
+          "committee": "Cardano Budget Committee (CBC)",
+          "ada_amount": 1900000,
+          "breakdown": [
+            { "item": "Budget Committee Operations", "ada": 1900000, "notes": "Budget process management, audits, financial reporting" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Growth & Marketing Budget",
+      "ada_amount": 20394540,
+      "description": "Ecosystem growth, marketing strategies, community events.",
+      "source_url": "https://committees.docs.intersectmbo.org/intersect-budget-committee/archive/2025-cardano-budget-proposal-a-cardano-blockchain-ecosystem-budget/growth-and-marketing-budget",
+      "committees": [
+        {
+          "committee": "Growth & Marketing Committee (GMC)",
+          "ada_amount": 20394540,
+          "breakdown": [
+            { "item": "Marketing & Growth Initiatives", "ada": 20394540, "notes": "Ecosystem events, community growth, marketing pulse reports" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Innovation Budget",
+      "ada_amount": 77526800,
+      "description": "Member engagement, community hubs, innovation programs.",
+      "source_url": "https://committees.docs.intersectmbo.org/intersect-budget-committee/archive/2025-cardano-budget-proposal-a-cardano-blockchain-ecosystem-budget/innovation-budget",
+      "committees": [
+        {
+          "committee": "Membership & Community Committee (MCC)",
+          "ada_amount": 77526800,
+          "breakdown": [
+            { "item": "Community Hubs", "ada": 75500000, "notes": "Global hub network (Brazil, Sri Lanka, etc.)" },
+            { "item": "Member Engagement & Programs", "ada": 2026800, "notes": "Member services, offerings, retention" }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Funding Intersect (Administrator)",
+      "ada_amount": 20000000,
+      "description": "Intersect operational costs as treasury administrator, replacing 5% Delivery Assurance fee.",
+      "committees": [
+        {
+          "committee": "Intersect MBO (Operations)",
+          "ada_amount": 20000000,
+          "breakdown": [
+            { "item": "Operational Costs & 2025 Roadmap", "ada": 20000000, "notes": "Covers all admin, staff, capabilities, member services" }
+          ]
+        }
+      ]
+    }
+  ],
+  "treasury_withdrawal_schedule": [
+    { "date": "June 2025", "core_ada": 70000000, "governance_ada": 13170500 },
+    { "date": "July 2025", "core_ada": 13000000 },
+    { "date": "August 2025", "core_ada": 13000000 },
+    { "date": "September 2025", "core_ada": 29304400 }
+  ]
+}
