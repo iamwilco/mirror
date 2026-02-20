@@ -153,6 +153,20 @@
         ]
       },
       {
+        "name": "Treasury Oversight Committee (External)",
+        "details": "Independent committee overseeing smart contract treasury disbursements. Multi-sig authorization for all fund movements. Reviews vendor contract funding, disbursements, and modifications.",
+        "decision_power": "Medium — can pause/approve fund releases, but cannot initiate proposals or change governance decisions.",
+        "how_work_done": "Multi-signature verification of smart contract actions. Treasury Contracts (escrow) → Vendor Contracts (milestone release).",
+        "transparency_note": "Sundae Labs built the treasury contracts AND sits on this committee — dual role. No single entity can modify contracts unilaterally.",
+        "members": [
+          {"name": "Cardano Foundation", "role": "Oversight member"},
+          {"name": "Dquadrant", "role": "Oversight member (also election auditor)"},
+          {"name": "Xerberus", "role": "Oversight member"},
+          {"name": "NMKR", "role": "Oversight member"},
+          {"name": "Sundae Labs", "role": "Oversight member + contract builder (dual role)"}
+        ]
+      },
+      {
         "name": "Staff/Support (Report to ED)",
         "details": "Ops, people, tech advisors. Hired by ED/board — no member input on hiring. Facilitate, not decide (officially).",
         "decision_power": "Low (officially) — but staff control day-to-day ops, meeting agendas, and information flow.",

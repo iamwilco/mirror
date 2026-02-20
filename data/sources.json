@@ -391,6 +391,78 @@
     },
     {
       "id": "src-033",
+      "name": "Sundae Treasury Portal",
+      "url": "https://treasury.sundae.fi/instances/9e65e4ed7d6fd86fc4827d2b45da6d2c601fb920e8bfd794b8ecc619?projectState=Active",
+      "type": "primary",
+      "category": "on-chain",
+      "description": "Smart contract treasury management portal built by Sundae Labs. Shows all 39 on-chain treasury withdrawal proposals with vendor contracts, milestones, payment schedules, and smart contract status.",
+      "last_checked": "2026-02-20",
+      "status": "active",
+      "notes": "Real-time on-chain data. Treasury Contracts hold escrow; Vendor Contracts release on milestone maturity. Multi-sig with Oversight Committee.",
+      "data_points_sourced": ["treasury_proposals", "vendor_contracts", "milestone_status", "smart_contract_flows", "oversight_committee"]
+    },
+    {
+      "id": "src-034",
+      "name": "Ekklesia Budget Ballot (2025)",
+      "url": "https://2025budget.intersectmbo.org/ballots/680d1b63565577986442d123/proposals",
+      "type": "primary",
+      "category": "governance",
+      "description": "On-chain ballot platform for signaling DRep support for budget proposals. 39 proposals reviewed and signaled before submission as Treasury Withdrawal governance actions.",
+      "last_checked": "2026-02-20",
+      "status": "active",
+      "notes": "Used for pre-vote signaling. Results fed into Budget Info Action (BIA).",
+      "data_points_sourced": ["proposal_signaling", "drep_preferences", "budget_prioritization"]
+    },
+    {
+      "id": "src-035",
+      "name": "π Lanningham (314pool) — DRep Voting Rationale",
+      "url": "https://www.314pool.com/post/2025-treasury-withdrawals",
+      "type": "secondary",
+      "category": "governance",
+      "description": "Detailed voting rationale from π Lanningham (SundaeSwap CTO / 314pool SPO). Scored all 39 proposals on ecosystem need, delivery confidence, quality confidence, and normalized profit ratio.",
+      "last_checked": "2026-02-20",
+      "status": "active",
+      "notes": "One of the most transparent DRep voting justifications published. Identified conflicts of interest. Voted NO on 8 proposals. Spending target: ₳242M.",
+      "data_points_sourced": ["drep_vote_rationale", "proposal_scoring", "conflict_of_interest_disclosures", "spending_methodology"]
+    },
+    {
+      "id": "src-036",
+      "name": "Intersect BIA News — 39 Community-Led Initiatives",
+      "url": "https://intersectmbo.org/news/intersects-2025-budget-info-action-39-community-led-initiatives-powering-the-future",
+      "type": "primary",
+      "category": "governance",
+      "description": "Official Intersect announcement of the Budget Info Action with descriptions of all 39 proposals across core development, governance tooling, open source, and ecosystem growth.",
+      "last_checked": "2026-02-20",
+      "status": "active",
+      "notes": "Vendor names and project descriptions for all 39 proposals.",
+      "data_points_sourced": ["proposal_descriptions", "vendor_names", "proposal_categories"]
+    },
+    {
+      "id": "src-037",
+      "name": "Intersect — Smart Contract Framework & Oversight Committee",
+      "url": "https://www.intersectmbo.org/news/automating-accountability-cardanos-smart-contract-framework",
+      "type": "primary",
+      "category": "governance",
+      "description": "Details the Treasury Contract + Vendor Contract framework. Oversight Committee: CF, Dquadrant, Xerberus, NMKR, Sundae Labs. Multi-sig authorization for all fund movements.",
+      "last_checked": "2026-02-20",
+      "status": "active",
+      "notes": "Key source for understanding how ₳264M flows from Treasury → smart contracts → vendors.",
+      "data_points_sourced": ["smart_contract_framework", "oversight_committee_members", "fund_flow_mechanics", "permission_model"]
+    },
+    {
+      "id": "src-038",
+      "name": "Intersect Administered Contracts Ledger",
+      "url": "https://www.intersectmbo.org/news/vote-now-39-cardano-treasury-proposals-await-drep-and-cc-approval",
+      "type": "primary",
+      "category": "governance",
+      "description": "Public ledger of signed vendor contracts with amounts. IOG Core Dev ₳96.8M, Catalyst ₳64.3M, IOR ₳26.8M, Blockfrost ₳1.3M, Catalyst Tech ₳5.2M. 30+ vendors signed.",
+      "last_checked": "2026-02-20",
+      "status": "active",
+      "notes": "Confirmed vendor amounts. Additional contracts being published as vendor onboarding completes.",
+      "data_points_sourced": ["vendor_contract_amounts", "iog_allocation", "catalyst_allocation", "contract_status"]
+    },
+    {
+      "id": "src-039",
       "name": "Budget Proposal Master Spreadsheet",
       "url": "https://docs.google.com/spreadsheets/d/1XNcaZmjfz5Q6ZNwNSLBNaZtrZf58tD7bun2Tz7-GSK4/edit?gid=1531906637",
       "type": "primary",
@@ -403,7 +475,7 @@
     }
   ],
   "facts": [
-    { "id": "fact-001", "claim": "Intersect administers ~300M ADA treasury (2025 budget: 263.6M ADA)", "status": "verified", "sources": ["src-001", "src-019"], "date": "2025" },
+    { "id": "fact-001", "claim": "Intersect administers ~300M ADA treasury (2025 budget proposed: ₳263.5M, approved: ₳264M)", "status": "verified", "sources": ["src-001", "src-019", "src-038"], "date": "2025" },
     { "id": "fact-002", "claim": "Jack Briggs appointed Executive Director Jan 2026 (from Interim)", "status": "verified", "sources": ["src-003"], "date": "2026-01" },
     { "id": "fact-003", "claim": "Board has 4 Non-Executive Directors: Nikhil Joshi, Gerard Moroney, Adam Rusch, Kavinda Kariyapperuma", "status": "verified", "sources": ["src-001"], "date": "2026-02" },
     { "id": "fact-004", "claim": "9 standing committees: TSC, OSC, Civics, Budget, Product, GMC, MCC, Oversight, Parameter", "status": "verified", "sources": ["src-002"], "date": "2026-02" },
@@ -442,7 +514,19 @@
     { "id": "fact-037", "claim": "Nicolas Cerny (CF Governance Lead) top vote-getter in CBC election with 176 votes", "status": "verified", "sources": ["src-021"], "date": "2025-11" },
     { "id": "fact-038", "claim": "Samuel Leathers elected CPC Chair with 168 votes; also serves as Special Technical Advisor", "status": "verified", "sources": ["src-021", "src-011"], "date": "2025-11" },
     { "id": "fact-039", "claim": "Kevin Hammond (node dev since 2019) top TSC vote-getter with 160 votes", "status": "verified", "sources": ["src-021"], "date": "2025-11" },
-    { "id": "fact-040", "claim": "Plomin Hard Fork (Jan 2025) activated full on-chain governance", "status": "verified", "sources": ["src-025"], "date": "2025-01" }
+    { "id": "fact-040", "claim": "Plomin Hard Fork (Jan 2025) activated full on-chain governance", "status": "verified", "sources": ["src-025"], "date": "2025-01" },
+    { "id": "fact-041", "claim": "39 Treasury Withdrawal proposals submitted July 2025; 33 passed, 6 expired by epoch 576 (Aug 17 2025)", "status": "verified", "sources": ["src-036", "src-038"], "date": "2025-08" },
+    { "id": "fact-042", "claim": "DReps approved ₳264M total in ecosystem funding across 33 proposals", "status": "verified", "sources": ["src-038"], "date": "2025-08-19" },
+    { "id": "fact-043", "claim": "IOG family contracts total ~₳130.1M (49.3% of budget): Core Dev ₳96.8M, Catalyst ₳64.3M, Research ₳26.8M, Catalyst Tech ₳5.2M, Blockfrost ₳1.3M", "status": "verified", "sources": ["src-038"], "date": "2025-08" },
+    { "id": "fact-044", "claim": "Smart contracts by Sundae Labs: Treasury Contracts (escrow) → Vendor Contracts (milestone-based release). Multi-sig with Oversight Committee.", "status": "verified", "sources": ["src-033", "src-037"], "date": "2025-07" },
+    { "id": "fact-045", "claim": "Oversight Committee for treasury contracts: Cardano Foundation, Dquadrant, Xerberus, NMKR, Sundae Labs", "status": "verified", "sources": ["src-037"], "date": "2025-07" },
+    { "id": "fact-046", "claim": "67% DRep supermajority + 5/7 ICC approval required for treasury withdrawals", "status": "verified", "sources": ["src-038"], "date": "2025" },
+    { "id": "fact-047", "claim": "IOG Core Dev passed with 73.93% DRep support — largest single allocation", "status": "verified", "sources": ["src-038"], "date": "2025-08" },
+    { "id": "fact-048", "claim": "CF DRep abstained on 6 proposals: IOG Research, MLabs Elliptic Curves, Cardano.nix, Hardware Wallet Maint, Ledger Rewrite, PyCardano", "status": "verified", "sources": ["src-038"], "date": "2025-07" },
+    { "id": "fact-049", "claim": "6 expired proposals: MLabs Elliptic Curves, Cardano.nix, Hardware Wallet Maint, Ledger Rewrite, Anzens Stablecoin, Ecosystem Exchange Listing", "status": "verified", "sources": ["src-035", "src-038"], "date": "2025-08" },
+    { "id": "fact-050", "claim": "Sundae Labs built treasury contracts AND sits on Oversight Committee — dual role", "status": "verified", "sources": ["src-033", "src-037"], "date": "2025" },
+    { "id": "fact-051", "claim": "30+ vendors signed contracts as of Aug 2025; contracts published for public review", "status": "verified", "sources": ["src-038"], "date": "2025-08-19" },
+    { "id": "fact-052", "claim": "Treasury inflows ~₳308M/year; π Lanningham estimated ₳242M sustainable spend for 3.63% staking return", "status": "verified", "sources": ["src-035"], "date": "2025" }
   ],
   "enrichment_opportunities": [
     { "priority": "high", "area": "On-chain treasury data", "action": "Integrate CardanoScan/CExplorer API for treasury transactions and governance actions", "sources": ["src-017", "src-018"], "status": "completed", "result": "DRep stats, treasury data, governance milestones extracted to governance-stats.json" },
@@ -452,17 +536,20 @@
     { "priority": "medium", "area": "Committee meeting archives", "action": "Collect and link all public meeting recordings (Reddit, YouTube)", "sources": ["src-026", "src-027", "src-028"], "status": "completed", "result": "meeting-archives.json: 3 OSC YouTube recordings, TSC/ISC/CBC minutes links, gap analysis" },
     { "priority": "medium", "area": "Constitution text", "action": "Index constitution clauses relevant to transparency/governance", "sources": ["src-022", "src-031"], "status": "completed", "result": "Constitution metadata, governance roles, action types, guardrails in governance-stats.json" },
     { "priority": "medium", "area": "Staff backgrounds", "action": "Enriched committee member bios from election results and meeting minutes", "sources": ["src-021", "src-026"], "status": "completed", "result": "48 named committee members with bios in elections-2025.json" },
-    { "priority": "low", "area": "Member directory expansion", "action": "Cross-reference X followers, forum contributors for broader member data", "sources": ["src-003", "src-009"], "status": "partial", "result": "Added elected committee members; broader member scraping deferred" }
+    { "priority": "low", "area": "Member directory expansion", "action": "Cross-reference X followers, forum contributors for broader member data", "sources": ["src-003", "src-009"], "status": "partial", "result": "Added elected committee members; broader member scraping deferred" },
+    { "priority": "high", "area": "Treasury proposals on-chain", "action": "Integrate Sundae Treasury portal data: 39 proposals, vendor contracts, milestones, smart contract status", "sources": ["src-033", "src-036", "src-037", "src-038"], "status": "completed", "result": "treasury-proposals.json created with all 39 proposals, confirmed IOG amounts, oversight committee, smart contract framework" },
+    { "priority": "high", "area": "Vendor-level budget tracking", "action": "Map confirmed vendor contract amounts from Intersect contract ledger", "sources": ["src-038"], "status": "completed", "result": "IOG ~₳130.1M, Intersect ₳20M, OSC ₳5.9M confirmed. Remaining ₳108M across 28 vendors pending amount disclosure." },
+    { "priority": "medium", "area": "DRep voting rationale", "action": "Collect published DRep voting rationales for transparency scoring", "sources": ["src-035"], "status": "partial", "result": "π Lanningham rationale captured. Other DRep rationales not yet collected." }
   ],
   "data_coverage_summary": {
     "people": { "total": 16, "verified": 10, "partial": 6, "missing_fields": ["salary", "full_bio", "vote_history"] },
     "committees": { "total": 9, "with_known_members": 8, "with_TBD_members": 1, "named_members_total": 48, "missing_fields": ["stipend_amounts", "meeting_schedules"] },
     "working_groups": { "total": 3, "with_known_members": 1, "missing_fields": ["rosters", "secretaries", "output_docs"] },
     "relationships": { "total_graph_edges": 92, "verified_edges": 78, "inferred_edges": 14 },
-    "budget": { "entries": 8, "total_ada": 263507044, "status": "per-committee breakdown complete for 2025; 2026 data pending" },
+    "budget": { "entries": 8, "total_ada_proposed": 263507044, "total_ada_approved": 264000000, "treasury_proposals": 39, "proposals_passed": 33, "proposals_expired": 6, "confirmed_vendor_amounts": 5, "status": "per-committee and per-vendor breakdown for 2025; 2026 data pending" },
     "elections": { "total_elected": 36, "total_candidates": 98, "total_voters": 293, "turnout": "19.4%" },
     "governance": { "drep_ada_delegated": 6230000000, "constitution": "ratified", "treasury_ada": 1700000000 },
     "meeting_archives": { "committees_with_recordings": 1, "committees_with_minutes": 4, "committees_with_nothing": 5 },
-    "on_chain": { "status": "stats_extracted", "integrated": ["drep_delegation", "treasury_size", "governance_milestones"], "pending": ["live_api_integration", "per_action_tracking"] }
+    "on_chain": { "status": "stats_extracted", "integrated": ["drep_delegation", "treasury_size", "governance_milestones", "treasury_proposals", "vendor_contracts", "smart_contract_framework"], "pending": ["live_api_integration", "per_action_tracking", "sundae_treasury_api_integration"] }
   }
 }

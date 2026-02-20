@@ -57,27 +57,37 @@ function buildCategories(): CategoryRow[] {
     {
       category: "Budget & Money Flow",
       slug: "budget-money-flow",
-      verified: committees.filter(c => (c as Record<string, unknown>).budget_ada).length,
-      partial: committees.filter(c => !(c as Record<string, unknown>).budget_ada && c.transparency === "partial").length,
+      verified: 8,
+      partial: 3,
       missing: 2,
-      updated: "2026-02-17",
-      sources: ["Intersect budget docs", "gov.tools", "Budget Committee meeting notes"],
+      updated: "2026-02-20",
+      sources: ["Intersect budget docs", "Sundae Treasury Portal", "Budget Committee meeting notes", "Intersect contract ledger"],
       gaps: [
-        "₳263M total proposal vs ₳180M itemized — ₳83M gap unexplained",
-        "Individual work package spending not itemized per vendor",
-        "No real-time treasury tracking",
-        "Procurement process opaque — no named vendors",
+        "IOG receives ~₳130M (49.3% of total) — concentration risk",
+        "Individual contract amounts for 28+ non-IOG vendors not yet public",
+        "Sundae Labs built treasury contracts AND sits on Oversight Committee — dual role",
+        "6 proposals expired without funding — no post-mortem published",
+        "Procurement process for vendor selection undocumented",
       ],
-      budget: `₳${(committeeBudget / 1e6).toFixed(1)}M allocated across ${committees.length} committees`,
-      subItems: committees
-        .filter(c => (c as Record<string, unknown>).budget_ada)
-        .map(c => ({
-          name: c.name,
-          status: c.transparency as "verified" | "partial" | "missing",
-          detail: `₳${(((c as Record<string, unknown>).budget_ada as number) / 1e6).toFixed(1)}M budget`,
-          source: c.source,
-          sourceUrl: (c as Record<string, unknown>).source_url as string | undefined,
-        })),
+      budget: `₳264M approved (33 of 39 proposals) · ₳${(committeeBudget / 1e6).toFixed(1)}M across ${committees.length} committees`,
+      subItems: [
+        { name: "IOG — Core Development", status: "verified" as const, detail: "₳96.8M · 73.93% DRep support · Largest single allocation", source: "Intersect contract ledger", sourceUrl: "https://treasury.sundae.fi/instances/9e65e4ed7d6fd86fc4827d2b45da6d2c601fb920e8bfd794b8ecc619?projectState=Active" },
+        { name: "IOG — Catalyst 2025", status: "verified" as const, detail: "₳64.3M · Community innovation fund", source: "Intersect contract ledger" },
+        { name: "IOG — Research (IOR)", status: "partial" as const, detail: "₳26.8M · CF DRep abstained (lack of strategic clarity)", source: "Intersect contract ledger" },
+        { name: "Intersect MBO Operations", status: "verified" as const, detail: "₳20M · Admin + staff costs", source: "Budget docs" },
+        { name: "OSC — Paid Open Source", status: "verified" as const, detail: "₳5.9M · 50 projects, bounties, advocates", source: "Budget docs" },
+        { name: "IOG — Catalyst Tech + Blockfrost", status: "verified" as const, detail: "₳6.5M combined", source: "Intersect contract ledger" },
+        ...committees
+          .filter(c => (c as Record<string, unknown>).budget_ada)
+          .map(c => ({
+            name: c.name,
+            status: c.transparency as "verified" | "partial" | "missing",
+            detail: `₳${(((c as Record<string, unknown>).budget_ada as number) / 1e6).toFixed(1)}M committee budget`,
+            source: c.source,
+            sourceUrl: (c as Record<string, unknown>).source_url as string | undefined,
+          })),
+        { name: "28+ Other Vendors", status: "partial" as const, detail: "₳108M combined — individual amounts not disclosed", source: "Sundae Treasury Portal" },
+      ],
     },
     {
       category: "Governance & Decisions",

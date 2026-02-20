@@ -4,9 +4,21 @@
     "source": "Intersect Budget Committee — 2025 Cardano Blockchain Ecosystem Budget Proposal",
     "source_url": "https://committees.docs.intersectmbo.org/intersect-budget-committee/archive/2025-cardano-budget-proposal-a-cardano-blockchain-ecosystem-budget",
     "notes": "All figures indicative; subject to ADA price, community feedback, on-chain approvals. Input from 100+ members across committees/WGs.",
-    "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1XNcaZmjfz5Q6ZNwNSLBNaZtrZf58tD7bun2Tz7-GSK4/edit?gid=1531906637"
+    "spreadsheet_url": "https://docs.google.com/spreadsheets/d/1XNcaZmjfz5Q6ZNwNSLBNaZtrZf58tD7bun2Tz7-GSK4/edit?gid=1531906637",
+    "sundae_treasury_url": "https://treasury.sundae.fi/instances/9e65e4ed7d6fd86fc4827d2b45da6d2c601fb920e8bfd794b8ecc619?projectState=Active"
   },
   "total_proposed_ada": 263507044,
+  "total_approved_ada": 264000000,
+  "on_chain_status": {
+    "proposals_submitted": 39,
+    "proposals_passed": 33,
+    "proposals_expired": 6,
+    "voting_threshold": "67% DRep supermajority + 5/7 ICC",
+    "epoch_deadline": 576,
+    "epoch_deadline_date": "2025-08-17",
+    "vendors_contracted": 30,
+    "smart_contract_framework": "Sundae Labs Treasury + Vendor Contracts with Oversight Committee multi-sig"
+  },
   "buckets": [
     {
       "name": "Core Budget",
@@ -129,5 +141,61 @@
     { "date": "July 2025", "core_ada": 13000000 },
     { "date": "August 2025", "core_ada": 13000000 },
     { "date": "September 2025", "core_ada": 29304400 }
+  ],
+  "vendor_disbursements": [
+    {
+      "vendor": "Input Output Global (IOG/IOE)",
+      "proposals": ["Core Development", "Catalyst 2025", "Research (IOR)", "Catalyst Tech Stack", "Blockfrost"],
+      "total_ada": 130116080,
+      "pct_of_approved": 49.3,
+      "amounts": {
+        "core_development": 96817080,
+        "catalyst_fund": 64300000,
+        "research": 26840000,
+        "catalyst_tech": 5159000,
+        "blockfrost": 1300000
+      },
+      "status": "contracted",
+      "smart_contract": true,
+      "transparency_note": "Nearly half the entire approved budget goes to one entity (IOG). Core Dev passed with 73.93% DRep support. CF DRep abstained on Research citing lack of strategic clarity."
+    },
+    {
+      "vendor": "Intersect MBO",
+      "proposals": ["MBO for the Cardano Ecosystem"],
+      "total_ada": 20000000,
+      "pct_of_approved": 7.6,
+      "status": "contracted",
+      "smart_contract": true
+    },
+    {
+      "vendor": "Open Source Committee",
+      "proposals": ["OSC Budget — Paid Open Source Model"],
+      "total_ada": 5885000,
+      "pct_of_approved": 2.2,
+      "status": "contracted",
+      "smart_contract": true
+    },
+    {
+      "vendor": "Remaining 28+ vendors",
+      "proposals": ["TxPipe (Pallas, Dolos, UTxO RPC)", "Tweag", "MLabs", "zkFold", "Anastasia Labs (Midgard)", "NFTCDN", "Eternl", "Socious", "Discover Cardano", "Sundae Labs / Xerberus", "AdaStat", "PyCardano", "Others"],
+      "total_ada": 107998920,
+      "pct_of_approved": 40.9,
+      "status": "mixed — most contracted, individual amounts not yet disclosed",
+      "smart_contract": true,
+      "transparency_note": "Individual contract amounts for non-IOG vendors not publicly itemized yet. Combined remainder = ₳264M - ₳156M confirmed."
+    }
+  ],
+  "oversight_committee": {
+    "members": ["Cardano Foundation", "Dquadrant", "Xerberus", "NMKR", "Sundae Labs"],
+    "role": "Independent verification of key smart contract actions. Multi-sig authorization for fund movements. No single entity can modify contracts unilaterally.",
+    "transparency_note": "Sundae Labs built the treasury contracts AND sits on the Oversight Committee — dual role noted."
+  },
+  "expired_proposals": [
+    { "name": "MLabs — Research towards Tooling for Elliptic Curves", "reason": "Did not reach 67% threshold" },
+    { "name": "MLabs — Cardano.nix Core Tool Maintenance", "reason": "Did not reach 67% threshold" },
+    { "name": "Hardware Wallet Maintenance (Vacuum Labs)", "reason": "CF abstained; pricing concerns" },
+    { "name": "Ledger App Rewrite (Vacuum Labs)", "reason": "CF abstained; overlap with maintenance proposal" },
+    { "name": "Expanding Stablecoin / Fiat Ramps (Anzens)", "reason": "Viewed as business venture, not public good" },
+    { "name": "Ecosystem Exchange Listing / Market Making (Flowdesk)", "reason": "Poor cost justification; normalized profit ratio very low" }
   ]
 }

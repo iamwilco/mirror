@@ -146,6 +146,43 @@ const RICH_GAPS: RichGap[] = [
     relatedLinks: [{ label: "Network graph", href: "/#network" }],
     baseVotes: 15,
   },
+  {
+    id: 13,
+    label: "IOG receives ~₳130M (49.3%) of the ₳264M approved budget",
+    severity: "high",
+    category: "Budget & Money Flow",
+    whyItMatters: "Nearly half the entire community-approved treasury budget goes to a single entity (IOG) across 5 proposals. This creates concentration risk — if IOG underdelivers, half the ecosystem budget is at risk. IOG also holds an appointed board seat (Gerard Moroney).",
+    whatResolvesIt: "Publish detailed milestone reports for each IOG sub-project. Independent audit of IOG deliverables vs. spending. Break omnibus proposals into smaller, independently votable items in future cycles.",
+    relatedLinks: [
+      { label: "Sundae Treasury Portal", href: "https://treasury.sundae.fi/instances/9e65e4ed7d6fd86fc4827d2b45da6d2c601fb920e8bfd794b8ecc619?projectState=Active" },
+      { label: "Budget detail", href: "/transparency/budget-money-flow" },
+    ],
+    baseVotes: 50,
+  },
+  {
+    id: 14,
+    label: "Sundae Labs built treasury contracts AND sits on Oversight Committee",
+    severity: "medium",
+    category: "Budget & Money Flow",
+    whyItMatters: "Sundae Labs designed the smart contract framework that controls all ₳264M in disbursements, and simultaneously serves on the Oversight Committee that verifies those same contracts. This dual role creates a potential conflict of interest — the builder is also the auditor.",
+    whatResolvesIt: "Engage a fully independent third party to audit the smart contracts. Rotate Sundae Labs off the Oversight Committee once contract maintenance stabilizes. Publish all multi-sig transaction logs.",
+    relatedLinks: [
+      { label: "Smart contract framework", href: "https://www.intersectmbo.org/news/automating-accountability-cardanos-smart-contract-framework" },
+    ],
+    baseVotes: 30,
+  },
+  {
+    id: 15,
+    label: "Individual contract amounts for 28+ non-IOG vendors not disclosed",
+    severity: "medium",
+    category: "Budget & Money Flow",
+    whyItMatters: "We know IOG gets ₳130M and Intersect gets ₳20M, but the remaining ₳108M across 28+ vendors has no per-vendor amount breakdown. Community cannot assess whether individual allocations are proportionate to deliverables.",
+    whatResolvesIt: "Publish the Intersect contract ledger with per-vendor amounts. The Sundae Treasury portal should expose individual Vendor Contract values as they are funded on-chain.",
+    relatedLinks: [
+      { label: "Sundae Treasury Portal", href: "https://treasury.sundae.fi/instances/9e65e4ed7d6fd86fc4827d2b45da6d2c601fb920e8bfd794b8ecc619?projectState=Active" },
+    ],
+    baseVotes: 27,
+  },
 ];
 
 /* ── Category grouping ─────────────────────────── */
