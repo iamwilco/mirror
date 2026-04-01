@@ -52,6 +52,7 @@ export default function RootLayout({
                 <Link className="text-white/40 transition hover:text-white" href="/history">History</Link>
                 <Link className="text-white/40 transition hover:text-white" href="/hierarchy">Power Map</Link>
                 <Link className="text-white/40 transition hover:text-white" href="/accountability">Accountability</Link>
+                <Link className="text-white/40 transition hover:text-white" href="/operations">Operations</Link>
                 <Link className="text-white/40 transition hover:text-white" href="/budget">Budget</Link>
                 <Link className="text-white/40 transition hover:text-white" href="/members">People</Link>
                 <Link className="text-white/40 transition hover:text-white" href="/elections">Elections</Link>

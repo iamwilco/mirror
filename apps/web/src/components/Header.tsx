@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { href: "/history", label: "History" },
   { href: "/hierarchy", label: "Power Map" },
   { href: "/accountability", label: "Accountability" },
+  { href: "/operations", label: "Operations" },
   { href: "/budget", label: "Budget" },
   { href: "/members", label: "People" },
   { href: "/elections", label: "Elections" },

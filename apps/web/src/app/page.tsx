@@ -102,6 +102,16 @@ export default function Home() {
             <p className="mt-3 text-sm text-white/30 group-hover:text-white/50">See governance details &rarr;</p>
           </Link>
 
+          {/* Operations */}
+          <Link href="/operations" className="group rounded-[28px] border border-rose-500/20 bg-rose-500/5 p-6 transition hover:border-rose-400/30 hover:bg-rose-500/[0.07]">
+            <p className="text-xs uppercase tracking-wider text-rose-300/70">Operational Audit</p>
+            <p className="mt-2 text-3xl font-bold text-rose-300">0 KPIs</p>
+            <p className="mt-2 text-sm text-white/50">
+              No committee had measurable deliverables until 2026. 5 of 10 have no public meeting records.
+            </p>
+            <p className="mt-3 text-sm text-rose-300/50 group-hover:text-rose-300/70">See full audit &rarr;</p>
+          </Link>
+
           {/* History */}
           <Link href="/history" className="group rounded-[28px] border border-white/10 bg-white/5 p-6 transition hover:border-white/20 hover:bg-white/[0.07]">
             <p className="text-xs uppercase tracking-wider text-white/40">Founded</p>
