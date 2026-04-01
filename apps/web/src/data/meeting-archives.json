@@ -1,94 +1,141 @@
 {
   "meta": {
-    "compiled": "2026-02-19",
-    "notes": "Collected public committee meeting recordings and minutes. Not exhaustive — many meetings lack public recordings."
+    "compiled": "2026-04-01",
+    "verified_via": "Direct verification of committees.docs.intersectmbo.org and budgetcommittee.docs.intersectmbo.org",
+    "notes": "Every committee's documentation portal was checked. Meeting counts are approximate based on listed entries."
   },
   "meetings": [
     {
-      "committee": "Open Source Committee (OSC)",
-      "recordings": [
-        { "date": "2026-02-05", "url": "https://www.youtube.com/watch?v=tbK0XxALtV0", "platform": "YouTube", "notes": "OSC meeting recording" },
-        { "date": "2026-01-08", "url": "https://www.youtube.com/watch?v=V8VZRY-wW6w", "platform": "YouTube", "notes": "OSC meeting recording" },
-        { "date": "2025-02-20", "url": "https://www.youtube.com/watch?v=NlOz3JCs3DY", "platform": "YouTube", "notes": "OSC meeting recording" }
-      ],
-      "minutes_url": "https://committees.docs.intersectmbo.org/intersect-open-source-committee/osc-meeting-minutes/open-source-committee-meeting-minutes",
-      "attendees_from_minutes": [
-        { "name": "Christian", "role": "Head of Open Source Office, Intersect Staff, OS SME" },
-        { "name": "Tex", "role": "Open Source Program Manager, Intersect Staff, OSC Secretary" },
-        { "name": "Adam Dean", "role": "OSC + TSC Intersect, CIP Editors, DripDropz LLC" },
-        { "name": "Arnaud", "role": "OSC Member, Cardano Foundation" },
-        { "name": "Elaine", "role": "OSC Chair, Aira Corporation CTO" },
-        { "name": "Georg", "role": "Bitergia" },
-        { "name": "Johnny", "role": "Non-Custodial Co-Management" }
-      ]
-    },
-    {
       "committee": "Technical Steering Committee (TSC)",
+      "has_minutes": true,
+      "meeting_count": 73,
+      "date_range": "Mar 2024 — Apr 2026",
+      "minutes_url": "https://committees.docs.intersectmbo.org/intersect-technical-steering-committee/meeting-minutes",
       "recordings": [],
-      "minutes_url": "https://committees.docs.intersectmbo.org/intersect-technical-steering-committee/meeting-minutes/2025-tsc-meeting-minutes",
-      "sample_minutes": [
-        { "date": "2025-02-05", "url": "https://committees.docs.intersectmbo.org/intersect-technical-steering-committee/meeting-minutes/2025-tsc-meeting-minutes/5th-feb-25", "topics": "TSC custodial wallet, on-chain approval tool, budget detail levels, ADA price impact" },
-        { "date": "2025-04-23", "url": "https://committees.docs.intersectmbo.org/intersect-technical-steering-committee/meeting-minutes/2025-tsc-meeting-minutes/23rd-april-25", "topics": "Community outreach, open TSC meetings, community event participation" }
-      ]
-    },
-    {
-      "committee": "Intersect Steering Committee (ISC)",
-      "recordings": [],
-      "minutes_url": "https://committees.docs.intersectmbo.org/intersect-steering-committee/committee-meeting-notes",
-      "sample_minutes": [
-        { "date": "2025-06-23", "url": "https://committees.docs.intersectmbo.org/intersect-steering-committee/committee-meeting-notes/june-23-2025-isc-meeting", "topics": "2025 budget retrospective, 2026 planning, stakeholder engagement" }
-      ]
+      "has_recordings": false,
+      "extras": ["2025 Member Attendance log", "2024 & 2025 TSC Decision Logs"],
+      "notes": "Consistent weekly minutes. Decision logs are a strong accountability feature unique to TSC."
     },
     {
       "committee": "Budget Committee (CBC)",
+      "has_minutes": true,
+      "meeting_count": 71,
+      "date_range": "Jan 2025 — Mar 2026",
+      "minutes_url": "https://budgetcommittee.docs.intersectmbo.org/committee-meeting-notes",
       "recordings": [],
-      "minutes_url": "https://budgetcommittee.docs.intersectmbo.org/committee-meeting-notes/2025-meeting-notes/budget-committee-weekly-meetings",
-      "sample_minutes": [
-        { "date": "2025-03-03", "url": "https://budgetcommittee.docs.intersectmbo.org/committee-meeting-notes/2025-meeting-notes/budget-committee-weekly-meetings/mar-3-2025-budget-comm-minutes", "topics": "NCL models (Stark, Monte Carlo, Percentage), DRep decision-making" },
-        { "date": "2025-03-31", "url": "https://budgetcommittee.docs.intersectmbo.org/committee-meeting-notes/2025-meeting-notes/budget-committee-weekly-meetings/mar-31-2025-budget-comm-minutes", "topics": "Proposal grouping by theme, TSC proposal clarification, April 24 deadline" }
-      ]
+      "has_recordings": false,
+      "extras": ["Budget Task Force Catchup notes"],
+      "notes": "Weekly meetings throughout both years. Dense schedule during budget season (Apr-Jul 2025)."
     },
     {
-      "committee": "Civics Committee (CCC)",
+      "committee": "Intersect Steering Committee (ISC)",
+      "has_minutes": true,
+      "meeting_count": 59,
+      "date_range": "Mar 2025 — Mar 2026",
+      "minutes_url": "https://committees.docs.intersectmbo.org/intersect-steering-committee/committee-meeting-notes",
       "recordings": [],
-      "minutes_url": null,
-      "notes": "Public minutes described as 'partial' — no centralized archive found."
+      "has_recordings": false,
+      "extras": [],
+      "notes": "Weekly steering committee sessions documented."
     },
     {
-      "committee": "Growth & Marketing Committee (GMC)",
-      "recordings": [],
-      "minutes_url": null,
-      "notes": "No public meeting recordings or minutes found."
-    },
-    {
-      "committee": "Membership & Community Committee (MCC)",
-      "recordings": [],
-      "minutes_url": null,
-      "notes": "X office hours mentioned (Feb 16 2026) but no permanent recordings found."
+      "committee": "Open Source Committee (OSC)",
+      "has_minutes": true,
+      "meeting_count": 50,
+      "date_range": "Dec 2023 — Mar 2026",
+      "minutes_url": "https://committees.docs.intersectmbo.org/intersect-open-source-committee/osc-meeting-minutes",
+      "recordings": [
+        {"date": "2026-03-19", "url": "https://www.youtube.com/watch?v=tbK0XxALtV0", "platform": "YouTube"},
+        {"date": "2026-01-08", "url": "https://www.youtube.com/watch?v=V8VZRY-wW6w", "platform": "YouTube"},
+        {"date": "2025-02-20", "url": "https://www.youtube.com/watch?v=NlOz3JCs3DY", "platform": "YouTube"}
+      ],
+      "has_recordings": true,
+      "extras": ["Google Drive recordings linked from some minutes"],
+      "notes": "Only committee with public video recordings. Longest documentation history (since Dec 2023)."
     },
     {
       "committee": "Product Committee (CPC)",
+      "has_minutes": true,
+      "meeting_count": 87,
+      "date_range": "Aug 2024 — Mar 2026",
+      "minutes_url": "https://committees.docs.intersectmbo.org/intersect-product-committee/committee-meeting-notes",
       "recordings": [],
-      "minutes_url": null,
-      "notes": "No public meeting recordings found."
-    },
-    {
-      "committee": "Oversight Committee",
-      "recordings": [],
-      "minutes_url": null,
-      "notes": "New for 2026 — no public meetings yet."
+      "has_recordings": false,
+      "extras": [],
+      "notes": "Most prolific documentation — 87 meetings. Includes joint session with Intersect Board (Apr 1, 2025)."
     },
     {
       "committee": "Parameter Committee (PC)",
+      "has_minutes": true,
+      "meeting_count": 27,
+      "date_range": "Apr 2023 — Oct 2024",
+      "minutes_url": "https://committees.docs.intersectmbo.org/intersect-parameter-committee/committee-meeting-notes",
       "recordings": [],
+      "has_recordings": false,
+      "extras": [],
+      "notes": "Documentation stops at October 2024. No minutes found for 2025 or 2026 — unclear if committee is still meeting."
+    },
+    {
+      "committee": "Membership & Community Committee (MCC)",
+      "has_minutes": "partial",
+      "meeting_count": null,
+      "date_range": "Unknown",
+      "minutes_url": "https://committees.docs.intersectmbo.org/intersect-membership-community-committee/committee-meeting-notes",
+      "recordings": [],
+      "has_recordings": false,
+      "extras": [],
+      "notes": "Page exists but only mentions a 'new format' for minutes. No individual meeting notes found as of Apr 2026. Oversees ₳77.5M budget."
+    },
+    {
+      "committee": "Civics Committee (CCC)",
+      "has_minutes": false,
+      "meeting_count": 0,
+      "date_range": "N/A",
       "minutes_url": null,
-      "notes": "Meetings referenced in docs but no public archive found."
+      "recordings": [],
+      "has_recordings": false,
+      "extras": [],
+      "notes": "No public meeting minutes or notes found. Meeting notes URL returns 404. Oversees ₳11.3M governance budget."
+    },
+    {
+      "committee": "Growth & Marketing Committee (GMC)",
+      "has_minutes": false,
+      "meeting_count": 0,
+      "date_range": "N/A",
+      "minutes_url": null,
+      "recordings": [],
+      "has_recordings": false,
+      "extras": [],
+      "notes": "Terms of reference mention recordings should be posted on YouTube/GitBook, but no actual links found. Oversees ₳20.4M marketing budget."
+    },
+    {
+      "committee": "Oversight Committee",
+      "has_minutes": false,
+      "meeting_count": 0,
+      "date_range": "N/A",
+      "minutes_url": null,
+      "recordings": [],
+      "has_recordings": false,
+      "extras": [],
+      "notes": "New for 2026. No public documentation found."
     }
   ],
+  "summary": {
+    "total_committees": 10,
+    "with_published_minutes": 6,
+    "with_partial_or_no_minutes": 4,
+    "with_public_recordings": 1,
+    "committees_no_minutes": ["Civics Committee (CCC)", "Growth & Marketing Committee (GMC)", "Oversight Committee"],
+    "committees_partial_minutes": ["Membership & Community Committee (MCC)"],
+    "total_documented_meetings": 367,
+    "note": "6 of 10 committees publish meeting minutes. Only OSC has public video recordings. 3 committees (CCC, GMC, Oversight) have zero public meeting documentation. MCC's status is unclear — page exists but contains no actual minutes."
+  },
   "gaps": [
-    "Only OSC has public YouTube recordings",
-    "TSC, ISC, and CBC have published minutes on Intersect docs but no recordings",
-    "5 of 10 committees have NO public meeting archives at all",
-    "No standardized meeting cadence published across committees"
+    "3 committees have zero public meeting documentation (CCC, GMC, Oversight)",
+    "MCC meeting notes page exists but has no actual minutes — just a format change notice",
+    "Only OSC publishes video recordings — all other committees are text-only",
+    "Parameter Committee minutes stop at Oct 2024 — 18+ months of silence",
+    "No standardized format across committees — each documents differently",
+    "No published attendance tracking except TSC (which has a 2025 attendance log)"
   ]
 }

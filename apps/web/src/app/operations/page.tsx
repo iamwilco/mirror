@@ -126,8 +126,8 @@ const KEY_FINDINGS: Finding[] = [
     evidence: "Fact",
   },
   {
-    problem: "5/10 committees have no public meeting records",
-    status: "Confirmed by audit",
+    problem: "3 committees have zero public meeting minutes; 1 more is unclear",
+    status: "Verified via committee docs (Apr 2026)",
     evidence: "Fact",
   },
   {
@@ -171,6 +171,26 @@ const KEY_FINDINGS: Finding[] = [
     status: "Widely reported",
     evidence: "Fact",
   },
+  {
+    problem: "No quality management or performance tracking for committee members",
+    status: "No system found",
+    evidence: "Fact",
+  },
+  {
+    problem: "No training or onboarding program for elected committee members",
+    status: "No program found",
+    evidence: "Fact",
+  },
+  {
+    problem: "Documentation scattered across 5+ platforms, much of it outdated",
+    status: "Documentation audit",
+    evidence: "Fact",
+  },
+  {
+    problem: "No consequences for non-performing members — no removal cases documented",
+    status: "Bylaws + committee docs",
+    evidence: "Fact",
+  },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -208,8 +228,8 @@ export default function OperationsPage() {
           color="rose"
         />
         <StatCard
-          value="5 of 10"
-          label="Committees have no public meeting archives"
+          value="3 of 10"
+          label="Committees have zero public meeting minutes"
           color="rose"
         />
         <StatCard
@@ -287,12 +307,15 @@ export default function OperationsPage() {
               <Source>Intersect Bylaws</Source>
             </FindingCard>
 
-            <FindingCard title="No standardized meeting cadence">
+            <FindingCard title="Inconsistent documentation across committees">
               <p>
-                Each committee self-organizes. Budget Committee met weekly.
-                Others&apos; schedules are unknown publicly.
+                6 of 10 committees publish meeting minutes (TSC: 73 meetings, CPC: 87, CBC: 71, ISC: 59, OSC: 50, Parameter: 27).
+                But 3 committees — Civics, Growth &amp; Marketing, and Oversight — have zero public minutes.
+                MCC&apos;s page exists but contains no actual minutes. Only OSC has video recordings.
+                Parameter Committee minutes stop at Oct 2024 with no updates since.
+                There is no standardized format — each committee documents differently.
               </p>
-              <Source>Committee docs audit</Source>
+              <Source>Verified via committees.docs.intersectmbo.org (Apr 2026)</Source>
             </FindingCard>
 
             <FindingCard title="One-year terms too short">
@@ -591,7 +614,52 @@ export default function OperationsPage() {
           </Source>
         </SectionShell>
 
-        {/* ── 8. Key Structural Findings — Summary Table ── */}
+        {/* ── 8. Quality Management Gap ── */}
+        <SectionShell id="quality" number={8} title="No Quality Management, No Consequences" color="rose">
+          <div className="grid gap-4 md:grid-cols-2">
+            <FindingCard title="No follow-through on election promises">
+              <p>
+                Candidates submit ambitious proposals during elections — often AI-generated —
+                but once elected, there is no mechanism to verify whether they deliver on their commitments.
+                No committee tracks member output against election promises. No public performance reviews exist.
+              </p>
+              <Source>Community observation; no Intersect performance tracking system found</Source>
+            </FindingCard>
+
+            <FindingCard title="No consequences for non-performance">
+              <p>
+                If a committee member does nothing after being elected, nothing happens.
+                There is no documented removal process for inactive members. The bylaws allow the board
+                to dissolve committees, but no case of individual accountability has been documented.
+                Members can effectively collect their 500 ADA/month stipend without contributing.
+              </p>
+              <Source>Intersect Bylaws; committee documentation audit</Source>
+            </FindingCard>
+
+            <FindingCard title="No training or onboarding for committee members">
+              <p>
+                Committee members and secretaries receive no standardized training on how to
+                run meetings, write minutes, make decisions, or produce deliverables.
+                Each committee self-organizes, leading to wildly inconsistent documentation quality.
+                Some committees produce 87 sets of detailed minutes; others produce zero.
+              </p>
+              <Source>Committee docs audit — committees.docs.intersectmbo.org</Source>
+            </FindingCard>
+
+            <FindingCard title="Documentation scattered and outdated">
+              <p>
+                Intersect documentation is spread across multiple platforms: intersectmbo.org,
+                docs.intersectmbo.org, committees.docs.intersectmbo.org, budgetcommittee.docs.intersectmbo.org,
+                board.docs.intersectmbo.org, and various GitBooks. Many pages are outdated or archived
+                without clear indicators. The Committee Maturity Framework is archived with no replacement.
+                There is no single source of truth for current committee status.
+              </p>
+              <Source>Documentation audit across all Intersect web properties</Source>
+            </FindingCard>
+          </div>
+        </SectionShell>
+
+        {/* ── 9. Key Structural Findings — Summary Table ── */}
         <section
           id="summary"
           className="rounded-[28px] border border-white/10 bg-black/20 p-6 md:p-8"

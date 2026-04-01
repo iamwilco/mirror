@@ -13,6 +13,7 @@ const NAV_LINKS = [
   { href: "/budget", label: "Budget" },
   { href: "/members", label: "People" },
   { href: "/elections", label: "Elections" },
+  { href: "/suggestions", label: "Suggestions" },
   { href: "/sources", label: "Sources" },
 ];
 

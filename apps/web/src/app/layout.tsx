@@ -56,6 +56,7 @@ export default function RootLayout({
                 <Link className="text-white/40 transition hover:text-white" href="/budget">Budget</Link>
                 <Link className="text-white/40 transition hover:text-white" href="/members">People</Link>
                 <Link className="text-white/40 transition hover:text-white" href="/elections">Elections</Link>
+                <Link className="text-white/40 transition hover:text-white" href="/suggestions">Suggestions</Link>
                 <Link className="text-white/40 transition hover:text-white" href="/sources">Sources</Link>
                 <Link className="text-white/40 transition hover:text-white" href="/contribute">Contribute</Link>
               </div>
