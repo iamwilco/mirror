@@ -200,7 +200,7 @@ export default function TransparencyMeter() {
             Data Points {dataPoints.verified} / {dataPoints.total}
           </span>
           <Link
-            href="/#contribute"
+            href="/contribute"
             className="rounded-full border border-white/30 px-4 py-2 text-[10px] uppercase tracking-[0.2em] text-white/80 transition hover:border-white/60"
           >
             Contribute Data

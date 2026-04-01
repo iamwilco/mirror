@@ -1,79 +1,125 @@
 # Intersect Mirror
 
-Intersect Mirror is a public, independent transparency platform for **Intersect MBO**. It visualizes budgets, governance, people, and influence networks to help the Cardano community track what is public, what is missing, and where to contribute verified sources.
+Independent transparency index for **Intersect MBO** — the Wyoming nonprofit corporation that administers Cardano's treasury and coordinates off-chain governance.
 
-## What’s Included
-- **Transparency Meter** with category breakdown and drill‑down detail views
-- **Budget Overview** with Sankey diagrams + 2025/2026 comparison toggle
-- **Influence Graph** showing relationships between people and orgs
-- **Transparency Table** summarizing status and sources
-- **Member Directory** with filters and salary‑missing flags
-- **Community Submission Form** for data tips
+**Not affiliated with Intersect, IOG, EMURGO, or the Cardano Foundation.**
+
+## What This Is
+
+Intersect manages ₳263M+ in Cardano treasury funds, employs 31 people, and coordinates governance across 7 advisory committees. This platform tracks what they disclose and what they don't.
+
+Every claim is sourced. Every data point is tagged as **verified**, **partial**, or **missing**. No speculation. No assumptions. Facts only.
+
+## Live Pages
+
+| Page | What It Shows |
+|------|---------------|
+| **Dashboard** (`/`) | Transparency score, key numbers at a glance, biggest gaps |
+| **History** (`/history`) | Timeline from Wyoming incorporation (Jul 2023) to present |
+| **Power Map** (`/hierarchy`) | Who holds binding authority vs advisory-only roles, elected vs appointed |
+| **Accountability** (`/accountability`) | Conflict of interest map, committee scorecard, budget-per-voter, founding entity footprint |
+| **Budget** (`/budget`) | ₳263.6M breakdown, 39 treasury proposals, vendor concentration (IOG 49.3%), Sankey flow |
+| **People** (`/members`) | Directory with elected/appointed/hired badges, salary gap flags |
+| **Elections** (`/elections`) | Per-candidate vote counts, turnout analysis (19.4%), competitiveness index |
+| **Governance** (`/governance`) | DRep participation (68% abstain), CF delegation power, influence network, chain split incident |
+| **Sources** (`/sources`) | 40+ sources, 54 verified facts, enrichment opportunities |
+| **Contribute** (`/contribute`) | Community data submission form |
+
+## Key Findings
+
+- **Committees are advisory only** — they cannot make binding decisions, per Intersect's own bylaws and documentation
+- **IOG receives 49.3%** (₳130.1M) of the total approved 2025 budget and holds an appointed board seat
+- **28 of 39 vendor amounts are undisclosed** — only 4 proposals have confirmed ADA amounts
+- **No salary data** has been disclosed for any role at Intersect
+- **No board meeting minutes** have ever been published
+- **19 of 31 staff members** are not publicly named
+- **~20% election turnout** — 293 of 1,510 eligible members voted in the last committee election
+- **Founding entities (IOG, EMURGO, CF)** held board majority for the first 2 years; CF-affiliated people sit on 4+ committees
 
 ## Tech Stack
-- **Next.js 16** (App Router) + **React 19**
-- **TypeScript** + **TailwindCSS 4**
-- **Recharts** + **react-force-graph-2d**
-- **Supabase** (Postgres) for persistence
-- **Jest + React Testing Library** for tests
+
+- **Next.js 16** (App Router) + **React 19** + **TypeScript**
+- **TailwindCSS 4** (dark theme)
+- **Recharts** (Sankey diagrams) + **react-force-graph-2d** (influence network)
+- **Supabase** (optional, for community submissions)
+- **Jest + React Testing Library** (tests)
 
 ## Repo Structure
+
 ```
 .
-├── apps/
-│   └── web/              # Next.js app
-├── data/                 # Research inputs + raw datasets
-├── src/                  # Shared types
-├── system/               # Architecture + schema docs
-├── CHANGELOG.md
+├── apps/web/                   # Next.js app
+│   ├── src/app/                # Pages (App Router)
+│   │   ├── page.tsx            # Dashboard
+│   │   ├── history/            # Intersect timeline
+│   │   ├── hierarchy/          # Power Map
+│   │   ├── accountability/     # Conflicts, scorecard, metrics
+│   │   ├── budget/             # Treasury analysis
+│   │   ├── members/            # People directory
+│   │   ├── elections/          # Vote results
+│   │   ├── governance/         # DRep stats, CF delegation
+│   │   ├── sources/            # Knowledge base
+│   │   └── contribute/         # Submit data form
+│   ├── src/components/         # Shared components
+│   ├── src/data/               # JSON datasets (all sourced)
+│   └── src/lib/                # Supabase client
+├── data/                       # Raw research data
+├── system/                     # Architecture docs
 └── README.md
 ```
 
+## Data Sources
+
+All data is sourced from:
+
+- Intersect official website, docs, and weekly updates (#94–#104)
+- Intersect bylaws (Wyoming Nonprofit Corporation Act)
+- Committee election results (Oct 2024, Sep/Oct 2025)
+- Sundae Treasury Portal (39 on-chain proposals)
+- Budget Committee documentation
+- Cardano Foundation governance blog
+- CExplorer governance analysis
+- Community research (Lido Nation, Cardano Forum)
+
+Full source catalog with 40+ entries: see `/sources` page.
+
 ## Setup
-### 1) Install dependencies
-```
+
+```bash
 cd apps/web
 npm install
+npm run dev
 ```
 
-### 2) Configure environment
-Create `apps/web/.env.local`:
+Visit http://localhost:3000
+
+### Environment (optional)
+
+Create `apps/web/.env.local` for Supabase integration:
+
 ```
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
 NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
-SUPABASE_SERVICE_ROLE_KEY=your_service_role_key
 ```
 
-### 3) Run the app
-```
-npm run dev
-```
-Visit http://localhost:3000
+## Scripts
 
-## Supabase Seeding (optional)
-After creating tables (`people`, `committees`, `relationships`), seed data:
+```bash
+npm run dev       # Local development
+npm run build     # Production build
+npm run start     # Start production server
+npm run lint      # Lint
+npm test          # Unit tests
 ```
-cd apps/web
-node scripts/seed-supabase.js
-```
-
-## Scripts (apps/web)
-- `npm run dev` — local dev
-- `npm run build` — production build
-- `npm run start` — start prod server
-- `npm run lint` — lint
-- `npm test` — unit tests
-
-## Data Sources
-Research inputs live in:
-- `data/input.json` (raw notes)
-- `apps/web/src/data/input.json` (app-local seed data)
-- `apps/web/src/data/network-nodes.json` (graph nodes/edges)
 
 ## Contributing
-- Keep sources factual and verifiable
+
+- Every claim must have a source
+- Use factual language — no speculation or assumptions
+- Flag gaps explicitly rather than guessing
 - Use Conventional Commits (`feat:`, `fix:`, `docs:`)
-- Avoid speculation; flag gaps explicitly
+- Submit evidence via `/contribute` or open a PR
 
 ## License
+
 TBD

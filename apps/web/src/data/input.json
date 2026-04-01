@@ -90,14 +90,14 @@
     },
     {
       "name": "Adam Rusch",
-      "role": "Non-Exec Director",
+      "role": "Members-Elected Non-Exec Director",
       "affiliations": ["Intersect MBO"],
       "bio": "Governance/workshops.",
       "paid": "partial",
       "decision_power": "High",
       "transparency": "verified",
-      "source": "Intersect",
-      "notes": ""
+      "source": "Intersect, Intersect 2025 Board Elections",
+      "notes": "Re-elected Sep 2025 (187 votes). Term until Oct 2027."
     },
     {
       "name": "Frederik Gregaard",
@@ -134,7 +134,73 @@
       "paid": "partial",
       "decision_power": "High",
       "transparency": "verified",
-      "source": "Intersect team",
+      "source": "Intersect team, Intersect 2025 Board Elections",
+      "notes": "Re-elected Sep 2025 (179 votes). Term until Oct 2027."
+    },
+    {
+      "name": "Mercy Fordwoo",
+      "role": "Members-Elected Non-Exec Director (board)",
+      "affiliations": ["Intersect MBO"],
+      "bio": "Community governance representative on board.",
+      "paid": "partial",
+      "decision_power": "High",
+      "transparency": "verified",
+      "source": "Intersect 2025 Board Elections",
+      "notes": "Elected Sep 2025 (143 votes). Term until Oct 2027."
+    },
+    {
+      "name": "Rand McHenry",
+      "role": "Members-Elected Non-Exec Director (board)",
+      "affiliations": ["Intersect MBO"],
+      "bio": "Community governance representative on board.",
+      "paid": "partial",
+      "decision_power": "High",
+      "transparency": "verified",
+      "source": "Intersect 2025 Board Elections",
+      "notes": "Elected Sep 2025 (126 votes). Term until Oct 2027."
+    },
+    {
+      "name": "Steven Lupien",
+      "role": "Non-Exec Director (Education seat)",
+      "affiliations": ["Intersect MBO", "UW Center for Blockchain"],
+      "bio": "Academic oversight and blockchain education.",
+      "paid": "partial",
+      "decision_power": "High",
+      "transparency": "verified",
+      "source": "Intersect team page",
+      "notes": "Appointed — UW education seat"
+    },
+    {
+      "name": "Michaela Burle-Sore",
+      "role": "Financial Controller",
+      "affiliations": ["Intersect MBO"],
+      "bio": "Financial management, accounting, budget oversight.",
+      "paid": "verified",
+      "decision_power": "Medium",
+      "transparency": "verified",
+      "source": "Intersect team page, RocketReach",
+      "notes": ""
+    },
+    {
+      "name": "Simo Simovic",
+      "role": "Head of Delivery",
+      "affiliations": ["Intersect MBO"],
+      "bio": "Project delivery management, vendor coordination.",
+      "paid": "verified",
+      "decision_power": "Medium",
+      "transparency": "verified",
+      "source": "LinkedIn, Intersect team page",
+      "notes": ""
+    },
+    {
+      "name": "Lorenzo Bruno",
+      "role": "Head of Product",
+      "affiliations": ["Intersect MBO"],
+      "bio": "Product strategy and development oversight.",
+      "paid": "verified",
+      "decision_power": "Medium",
+      "transparency": "verified",
+      "source": "LinkedIn, Intersect team page",
       "notes": ""
     },
     {
@@ -355,10 +421,10 @@
     "Decision logs: Elections (e.g., 522 voters Q1 2025, 27% turnout) but no per-member votes.",
     "Full member lists incomplete.",
     "Responsibilities clear at committee level, but individual accountability missing.",
-    "No team page (404)—full roster missing.",
+    "Team page now accessible — shows 31 employees.",
     "Committee members not listed in docs—major gap.",
     "Elections: Turnout low (e.g., 27% in past); no per-member votes.",
     "Working groups ad-hoc; no secretaries named."
   ],
-  "decision_making_flow": "MBO model—members vote on committees/board (biannual elections). Committees propose (e.g., Budget consolidates from 7 committees), community/DReps ratify on-chain. Oversight can pause funds. Gaps: No veto/power weight details."
+  "decision_making_flow": "MBO model—members vote on committees/board (biannual elections). Board expanded to 7 seats (4 member-elected + 3 appointed) after Sep 2025 election. Committees propose (e.g., Budget consolidates from 7 committees), community/DReps ratify on-chain. Oversight can pause funds. Gaps: No veto/power weight details."
 }

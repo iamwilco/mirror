@@ -14,7 +14,7 @@
       "description": "Main site for Intersect MBO. Contains committee descriptions, membership info, news, and governance docs.",
       "last_checked": "2026-02-17",
       "status": "active",
-      "notes": "Team page returned 404 as of Feb 2026 — full staff roster unavailable.",
+      "notes": "Team page now accessible at /about-team (previously 404). Shows 31 employees.",
       "data_points_sourced": ["committees", "membership_stats", "governance_structure", "news"]
     },
     {
@@ -400,12 +400,90 @@
       "status": "active",
       "notes": "Google Sheet with all committee budgets in one place.",
       "data_points_sourced": ["budget_spreadsheet", "committee_budgets"]
+    },
+    {
+      "id": "src-034",
+      "name": "Intersect 2025 Board Election Results",
+      "url": "https://www.intersectmbo.org/news/intersect-announces-results-of-2025-board-elections",
+      "type": "primary",
+      "category": "governance",
+      "description": "Official board election results Sep 2025: 269 voters (22% turnout), 20 candidates, 4 member-elected seats. Members now hold majority (4/7).",
+      "last_checked": "2026-04-01",
+      "status": "active",
+      "data_points_sourced": ["board_election_2025", "board_composition"]
+    },
+    {
+      "id": "src-035",
+      "name": "Intersect Team Page",
+      "url": "https://www.intersectmbo.org/about-team",
+      "type": "primary",
+      "category": "organisation",
+      "description": "Official team page (now live). Lists 31 employees including board, leadership, and staff.",
+      "last_checked": "2026-04-01",
+      "status": "active",
+      "notes": "Previously 404 — now accessible. Shows Steven Lupien as education seat.",
+      "data_points_sourced": ["staff_roster", "board_members", "team_size"]
+    },
+    {
+      "id": "src-036",
+      "name": "Intersect Weekly Updates (#99-#104)",
+      "url": "https://intersectmbo.org/news",
+      "type": "primary",
+      "category": "organisation",
+      "description": "Weekly updates Feb-Mar 2026. Cover governance actions, vendor progress, committee elections, protocol upgrades.",
+      "last_checked": "2026-04-01",
+      "status": "active",
+      "data_points_sourced": ["governance_actions", "vendor_progress", "protocol_upgrades", "committee_elections_2026"]
+    },
+    {
+      "id": "src-037",
+      "name": "Critical Integrations Budget Proposal",
+      "url": "https://intersectmbo.org/news/priming-cardano-for-2026-through-the-critical-integrations-budget-proposal",
+      "type": "primary",
+      "category": "governance",
+      "description": "70M ADA proposal ratified Dec 2025. Coalition: IOG, EMURGO, CF, Intersect, Midnight Foundation. Fastest-ever governance vote.",
+      "last_checked": "2026-04-01",
+      "status": "active",
+      "data_points_sourced": ["cib_70m", "cib_pillars", "coalition_members"]
+    },
+    {
+      "id": "src-038",
+      "name": "Intersect CC Elections 2025",
+      "url": "https://www.intersectmbo.org/news/constitutional-committee-elections-2025what-happened-who-was-selected-how-it-worked-and-why-it-matter",
+      "type": "primary",
+      "category": "governance",
+      "description": "Constitutional Committee election results: 7 community-elected members replacing interim committee.",
+      "last_checked": "2026-04-01",
+      "status": "active",
+      "data_points_sourced": ["cc_members", "cc_election_process"]
+    },
+    {
+      "id": "src-039",
+      "name": "Constitution v2.4 Ratification",
+      "url": "https://cardano.org/news/2026-01-22-update-cardano-constitution/",
+      "type": "primary",
+      "category": "governance",
+      "description": "Constitution v2.4 ratified Jan 24, 2026 with 79% support. Removed non-binding clauses, eliminated Budget Info Action.",
+      "last_checked": "2026-04-01",
+      "status": "active",
+      "data_points_sourced": ["constitution_v2.4", "constitution_changes"]
+    },
+    {
+      "id": "src-040",
+      "name": "Intersect Chain Split Incident Report",
+      "url": "https://intersectmbo.org/news/incident-report-network-partition-analysis-and-resolution-strategy",
+      "type": "primary",
+      "category": "security",
+      "description": "Official incident report for Nov 21, 2025 chain split. Deserialization bug, 14.5hr recovery, patches shipped.",
+      "last_checked": "2026-04-01",
+      "status": "active",
+      "data_points_sourced": ["chain_split_details", "incident_response", "patches"]
     }
   ],
   "facts": [
     { "id": "fact-001", "claim": "Intersect administers ~300M ADA treasury (2025 budget: 263.6M ADA)", "status": "verified", "sources": ["src-001", "src-019"], "date": "2025" },
     { "id": "fact-002", "claim": "Jack Briggs appointed Executive Director Jan 2026 (from Interim)", "status": "verified", "sources": ["src-003"], "date": "2026-01" },
-    { "id": "fact-003", "claim": "Board has 4 Non-Executive Directors: Nikhil Joshi, Gerard Moroney, Adam Rusch, Kavinda Kariyapperuma", "status": "verified", "sources": ["src-001"], "date": "2026-02" },
+    { "id": "fact-003", "claim": "Board has 7 Non-Executive Directors: Nikhil Joshi, Gerard Moroney, Adam Rusch, Kavinda Kariyapperuma, Mercy Fordwoo, Rand McHenry, Steven Lupien", "status": "verified", "sources": ["src-001", "src-034", "src-035"], "date": "2025-09" },
     { "id": "fact-004", "claim": "9 standing committees: TSC, OSC, Civics, Budget, Product, GMC, MCC, Oversight, Parameter", "status": "verified", "sources": ["src-002"], "date": "2026-02" },
     { "id": "fact-005", "claim": "Committee elections are biannual; 50% of seats rotate per cycle", "status": "verified", "sources": ["src-002", "src-010"], "date": "2026" },
     { "id": "fact-006", "claim": "1,800+ paid members, 2,700+ associates", "status": "verified", "sources": ["src-003", "src-014"], "date": "2026-02" },
@@ -421,7 +499,7 @@
     { "id": "fact-016", "claim": "Q4 2025 election: 293 voters (19.4% turnout), 5182 ballots, 98 candidates, 36 seats", "status": "verified", "sources": ["src-021"], "date": "2025-11" },
     { "id": "fact-017", "claim": "Oversight Committee is new for 2026 — no public reports yet", "status": "verified", "sources": ["src-001"], "date": "2026" },
     { "id": "fact-018", "claim": "No public salary or stipend ranges disclosed for any role", "status": "gap", "sources": [], "date": "2026-02" },
-    { "id": "fact-019", "claim": "Team page on intersectmbo.org returned 404", "status": "gap", "sources": ["src-001"], "date": "2026-02-17" },
+    { "id": "fact-019", "claim": "Team page on intersectmbo.org returned 404", "status": "resolved", "sources": ["src-001", "src-035"], "date": "2026-02-17", "notes": "Team page now accessible at /about-team. Shows 31 employees." },
     { "id": "fact-020", "claim": "Committee member lists not published in official docs (but extractable from election results)", "status": "gap", "sources": ["src-002"], "date": "2026-02" },
     { "id": "fact-021", "claim": "2025 Core Budget: TSC ₳99.4M + OSC ₳5.9M = ₳125.3M total", "status": "verified", "sources": ["src-023"], "date": "2025" },
     { "id": "fact-022", "claim": "2025 Research Budget: CPC ₳27.2M", "status": "verified", "sources": ["src-023"], "date": "2025" },
@@ -442,7 +520,21 @@
     { "id": "fact-037", "claim": "Nicolas Cerny (CF Governance Lead) top vote-getter in CBC election with 176 votes", "status": "verified", "sources": ["src-021"], "date": "2025-11" },
     { "id": "fact-038", "claim": "Samuel Leathers elected CPC Chair with 168 votes; also serves as Special Technical Advisor", "status": "verified", "sources": ["src-021", "src-011"], "date": "2025-11" },
     { "id": "fact-039", "claim": "Kevin Hammond (node dev since 2019) top TSC vote-getter with 160 votes", "status": "verified", "sources": ["src-021"], "date": "2025-11" },
-    { "id": "fact-040", "claim": "Plomin Hard Fork (Jan 2025) activated full on-chain governance", "status": "verified", "sources": ["src-025"], "date": "2025-01" }
+    { "id": "fact-040", "claim": "Plomin Hard Fork (Jan 2025) activated full on-chain governance", "status": "verified", "sources": ["src-025"], "date": "2025-01" },
+    {"id": "fact-041", "claim": "Board expanded to 7 seats: 4 member-elected (majority), 3 appointed (IOG, EMURGO, UW education)", "status": "verified", "sources": ["src-034", "src-035"], "date": "2025-09"},
+    {"id": "fact-042", "claim": "Mercy Fordwoo and Rand McHenry elected to board Sep 2025; Steven Lupien added as education seat", "status": "verified", "sources": ["src-034", "src-035"], "date": "2025-09"},
+    {"id": "fact-043", "claim": "Critical Integrations Budget: 70M ADA ratified Dec 2025, fastest-ever governance vote", "status": "verified", "sources": ["src-037"], "date": "2025-12"},
+    {"id": "fact-044", "claim": "Constitution v2.4 ratified Jan 24, 2026 with 79% of active voting stake", "status": "verified", "sources": ["src-039"], "date": "2026-01-24"},
+    {"id": "fact-045", "claim": "7 community-elected CC members replaced interim Constitutional Committee", "status": "verified", "sources": ["src-038"], "date": "2025"},
+    {"id": "fact-046", "claim": "Chain split Nov 21, 2025: 14.5hr recovery, FBI investigation confirmed", "status": "verified", "sources": ["src-040"], "date": "2025-11-21"},
+    {"id": "fact-047", "claim": "USDCx (Circle stablecoin) launched on Cardano Feb 27, 2026, 15M+ tokens minted", "status": "verified", "sources": ["src-036"], "date": "2026-02-27"},
+    {"id": "fact-048", "claim": "Amaru (Rust Cardano node): 10.142M ADA ratified for 2026 development", "status": "verified", "sources": ["src-036"], "date": "2026-03"},
+    {"id": "fact-049", "claim": "Project Catalyst transitioning from IOG to Cardano Foundation stewardship", "status": "verified", "sources": ["src-036"], "date": "2026-02"},
+    {"id": "fact-050", "claim": "van Rossem hard fork (Protocol v11) in preparation: node 10.7.0 pre-release", "status": "verified", "sources": ["src-036"], "date": "2026-03"},
+    {"id": "fact-051", "claim": "2026 committee elections: 37 seats, applications Mar 30 - Apr 17, 500 ADA/month reward", "status": "verified", "sources": ["src-036"], "date": "2026-03"},
+    {"id": "fact-052", "claim": "Intersect has 31 employees; only ~12 named publicly", "status": "partial", "sources": ["src-035"], "date": "2026-04"},
+    {"id": "fact-053", "claim": "300M ADA NCL proposal expired with only 44.15% DRep support (needed 50%)", "status": "verified", "sources": ["src-036"], "date": "2026-03"},
+    {"id": "fact-054", "claim": "Treasury balance: ~1.7B ADA, ~4.34 years sustainable at current rates", "status": "verified", "sources": ["src-036"], "date": "2026"}
   ],
   "enrichment_opportunities": [
     { "priority": "high", "area": "On-chain treasury data", "action": "Integrate CardanoScan/CExplorer API for treasury transactions and governance actions", "sources": ["src-017", "src-018"], "status": "completed", "result": "DRep stats, treasury data, governance milestones extracted to governance-stats.json" },
@@ -455,7 +547,7 @@
     { "priority": "low", "area": "Member directory expansion", "action": "Cross-reference X followers, forum contributors for broader member data", "sources": ["src-003", "src-009"], "status": "partial", "result": "Added elected committee members; broader member scraping deferred" }
   ],
   "data_coverage_summary": {
-    "people": { "total": 16, "verified": 10, "partial": 6, "missing_fields": ["salary", "full_bio", "vote_history"] },
+    "people": { "total": 22, "verified": 16, "partial": 6, "missing_fields": ["salary", "full_bio", "vote_history"] },
     "committees": { "total": 9, "with_known_members": 8, "with_TBD_members": 1, "named_members_total": 48, "missing_fields": ["stipend_amounts", "meeting_schedules"] },
     "working_groups": { "total": 3, "with_known_members": 1, "missing_fields": ["rosters", "secretaries", "output_docs"] },
     "relationships": { "total_graph_edges": 92, "verified_edges": 78, "inferred_edges": 14 },

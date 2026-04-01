@@ -93,14 +93,8 @@ export default function CommitteeDetailPage() {
 
   if (!committee) {
     return (
-      <main className="min-h-screen bg-[#080c14] px-6 py-20 text-white">
+      <main className="min-h-screen px-6 py-10 text-white">
         <div className="mx-auto max-w-5xl space-y-4">
-          <Link
-            href="/#transparency"
-            className="text-xs uppercase tracking-[0.2em] text-white/50 hover:text-white/80"
-          >
-            ← Back to Dashboard
-          </Link>
           <h1 className="text-2xl font-semibold">Committee Not Found</h1>
           <p className="text-sm text-white/60">
             We couldn&apos;t find a committee for &quot;{slug}&quot;.
@@ -111,15 +105,9 @@ export default function CommitteeDetailPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#080c14] px-6 py-20 text-white">
+    <main className="min-h-screen px-6 py-10 text-white">
       <div className="mx-auto max-w-5xl space-y-10">
         <div className="space-y-4">
-          <Link
-            href="/#transparency"
-            className="text-xs uppercase tracking-[0.2em] text-white/50 hover:text-white/80"
-          >
-            ← Back to Dashboard
-          </Link>
           <div className="flex flex-wrap items-center justify-between gap-4">
             <div>
               <p className="text-xs uppercase tracking-[0.3em] text-white/60">Committee</p>
@@ -222,7 +210,7 @@ export default function CommitteeDetailPage() {
                 {committeeHierarchy.length > 0 ? (
                   committeeHierarchy.map((group) => (
                     <div key={group.role} className="rounded-lg border border-emerald-400/20 bg-black/20 px-3 py-2">
-                      <p className="text-[10px] uppercase tracking-[0.2em] text-emerald-100/70">{group.role}</p>
+                      <p className="text-[11px] uppercase tracking-[0.2em] text-emerald-100/70">{group.role}</p>
                       <p className="mt-2 text-xs text-white/70">{group.members.join(", ")}</p>
                     </div>
                   ))

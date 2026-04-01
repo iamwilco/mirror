@@ -71,7 +71,7 @@ export default function TransparencyDetail({
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div>
           <Link
-            href="/#transparency"
+            href="/"
             className="text-xs uppercase tracking-[0.2em] text-white/50 hover:text-white/80 transition"
           >
             ← Back to Dashboard
@@ -224,7 +224,7 @@ export default function TransparencyDetail({
           <p className="text-xs text-white/50">Help improve transparency by submitting verified data.</p>
         </div>
         <Link
-          href="/#contribute"
+          href="/contribute"
           className="rounded-full bg-linear-to-r from-teal-500 to-emerald-500 px-6 py-3 text-sm font-medium text-white transition hover:opacity-90"
         >
           Contribute Data

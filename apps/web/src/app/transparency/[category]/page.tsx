@@ -173,7 +173,7 @@ export default function TransparencyCategoryPage() {
 
   if (!categoryConfig) {
     return (
-      <main className="min-h-screen bg-[#080c14] px-6 py-20 text-white">
+      <main className="min-h-screen px-6 py-10 text-white">
         <div className="mx-auto max-w-5xl">
           <h1 className="text-2xl font-semibold">Category Not Found</h1>
           <p className="mt-4 text-white/60">
@@ -185,7 +185,7 @@ export default function TransparencyCategoryPage() {
   }
 
   return (
-    <main className="min-h-screen bg-[#080c14] px-6 py-20 text-white">
+    <main className="min-h-screen px-6 py-10 text-white">
       <div className="mx-auto max-w-5xl">
         <TransparencyDetail
           category={categoryConfig.displayName}

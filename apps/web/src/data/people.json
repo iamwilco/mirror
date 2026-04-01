@@ -65,6 +65,39 @@
       "transparency": "verified",
       "source": "X update (@LallyMcClay)",
       "notes": "Promoted from Governance Lead."
+    },
+    {
+      "name": "Michaela Burle-Sore",
+      "role": "Financial Controller",
+      "affiliations": ["Intersect MBO"],
+      "responsibilities": "Financial management, accounting, budget oversight.",
+      "paid": "verified",
+      "decision_power": "Medium",
+      "transparency": "verified",
+      "source": "Intersect team page, RocketReach",
+      "notes": ""
+    },
+    {
+      "name": "Simo Simovic",
+      "role": "Head of Delivery",
+      "affiliations": ["Intersect MBO"],
+      "responsibilities": "Project delivery management, vendor coordination.",
+      "paid": "verified",
+      "decision_power": "Medium",
+      "transparency": "verified",
+      "source": "LinkedIn, Intersect team page",
+      "notes": ""
+    },
+    {
+      "name": "Lorenzo Bruno",
+      "role": "Head of Product",
+      "affiliations": ["Intersect MBO"],
+      "responsibilities": "Product strategy and development oversight.",
+      "paid": "verified",
+      "decision_power": "Medium",
+      "transparency": "verified",
+      "source": "LinkedIn, Intersect team page",
+      "notes": ""
     }
   ],
   "board_members": [
@@ -92,14 +125,14 @@
     },
     {
       "name": "Adam Rusch",
-      "role": "Non-Exec Director",
+      "role": "Members-Elected Non-Exec Director",
       "affiliations": ["Intersect MBO"],
       "responsibilities": "Governance/workshops.",
       "paid": "partial",
       "decision_power": "High",
       "transparency": "verified",
-      "source": "Intersect",
-      "notes": ""
+      "source": "Intersect, Intersect 2025 Board Elections",
+      "notes": "Re-elected Sep 2025 (187 votes). Term until Oct 2027."
     },
     {
       "name": "Kavinda Kariyapperuma",
@@ -109,8 +142,41 @@
       "paid": "partial",
       "decision_power": "High",
       "transparency": "verified",
-      "source": "Intersect team",
-      "notes": ""
+      "source": "Intersect team, Intersect 2025 Board Elections",
+      "notes": "Re-elected Sep 2025 (179 votes). Term until Oct 2027."
+    },
+    {
+      "name": "Mercy Fordwoo",
+      "role": "Members-Elected Non-Exec Director",
+      "affiliations": ["Intersect MBO"],
+      "responsibilities": "Community governance representative on board.",
+      "paid": "partial",
+      "decision_power": "High",
+      "transparency": "verified",
+      "source": "Intersect 2025 Board Elections",
+      "notes": "Elected Sep 2025 (143 votes). Term until Oct 2027."
+    },
+    {
+      "name": "Rand McHenry",
+      "role": "Members-Elected Non-Exec Director",
+      "affiliations": ["Intersect MBO"],
+      "responsibilities": "Community governance representative on board.",
+      "paid": "partial",
+      "decision_power": "High",
+      "transparency": "verified",
+      "source": "Intersect 2025 Board Elections",
+      "notes": "Elected Sep 2025 (126 votes). Term until Oct 2027."
+    },
+    {
+      "name": "Steven Lupien",
+      "role": "Non-Exec Director (Education)",
+      "affiliations": ["Intersect MBO", "UW Center for Blockchain"],
+      "responsibilities": "Academic oversight and blockchain education.",
+      "paid": "partial",
+      "decision_power": "High",
+      "transparency": "verified",
+      "source": "Intersect team page",
+      "notes": "Appointed — UW education seat."
     }
   ],
   "members": [

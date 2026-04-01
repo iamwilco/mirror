@@ -1,8 +1,9 @@
 "use client";
 
 import { useMemo, useState } from "react";
-
 import peopleData from "@/data/people.json";
+
+type Selection = "Elected" | "Appointed" | "Hired" | "External";
 
 interface MemberEntry {
   name: string;
@@ -14,9 +15,9 @@ interface MemberEntry {
   transparency: string;
   source: string;
   notes: string;
+  selection: Selection;
+  category: string;
 }
-
-const DEFAULT_TRANSPARENCY = "partial";
 
 const POWER_RANK: Record<MemberEntry["decisionPower"], number> = {
   High: 3,
@@ -25,229 +26,198 @@ const POWER_RANK: Record<MemberEntry["decisionPower"], number> = {
   Unknown: 0,
 };
 
+const SELECTION_STYLE: Record<Selection, { bg: string; text: string }> = {
+  Elected: { bg: "bg-emerald-500/20", text: "text-emerald-300" },
+  Appointed: { bg: "bg-amber-500/20", text: "text-amber-300" },
+  Hired: { bg: "bg-white/10", text: "text-white/60" },
+  External: { bg: "bg-violet-500/20", text: "text-violet-300" },
+};
+
+function deriveSelection(person: Record<string, unknown>, category: string): Selection {
+  const role = (person.role as string) ?? "";
+  if (category === "board") {
+    if (role.toLowerCase().includes("members-elected") || role.toLowerCase().includes("member-elected")) {
+      return "Elected";
+    }
+    return "Appointed";
+  }
+  if (category === "leadership") return "Hired";
+  return "External";
+}
+
 export default function MembersPage() {
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState("All");
-  const [paidOnly, setPaidOnly] = useState(false);
+  const [selectionFilter, setSelectionFilter] = useState("All");
   const [powerFilter, setPowerFilter] = useState("All");
 
   const members = useMemo<MemberEntry[]>(() => {
-    const leadership = peopleData.leadership ?? [];
-    const board = peopleData.board_members ?? [];
-    const members = peopleData.members ?? [];
-
-    return [...leadership, ...board, ...members].map((person) => ({
-      name: person.name,
-      role: person.role ?? "",
-      affiliations: person.affiliations ?? [],
-      responsibilities: person.responsibilities ?? "",
-      paid: person.paid ?? "unknown",
-      decisionPower: (person.decision_power as MemberEntry["decisionPower"]) ?? "Unknown",
-      transparency: person.transparency ?? DEFAULT_TRANSPARENCY,
-      source: person.source ?? "",
-      notes: person.notes ?? "",
+    const leadership = (peopleData.leadership ?? []).map((p) => ({
+      ...mapPerson(p),
+      selection: deriveSelection(p as Record<string, unknown>, "leadership"),
+      category: "Staff",
     }));
+    const board = (peopleData.board_members ?? []).map((p) => ({
+      ...mapPerson(p),
+      selection: deriveSelection(p as Record<string, unknown>, "board"),
+      category: "Board",
+    }));
+    const community = (peopleData.members ?? []).map((p) => ({
+      ...mapPerson(p),
+      selection: "External" as Selection,
+      category: "Community",
+    }));
+    return [...board, ...leadership, ...community];
   }, []);
 
-  const filters = useMemo(() => {
+  const affiliationFilters = useMemo(() => {
     const unique = new Set<string>();
-    members.forEach((member) => {
-      member.affiliations.forEach((affiliation) => unique.add(affiliation));
-    });
+    members.forEach((m) => m.affiliations.forEach((a) => unique.add(a)));
     return ["All", ...Array.from(unique).sort()];
   }, [members]);
 
-  const filteredMembers = useMemo(() => {
-    const normalized = query.trim().toLowerCase();
-
+  const filtered = useMemo(() => {
+    const q = query.trim().toLowerCase();
     return members
-      .filter((member) => {
-      const matchesQuery =
-        !normalized ||
-        member.name.toLowerCase().includes(normalized) ||
-        member.role.toLowerCase().includes(normalized) ||
-        member.affiliations.some((affiliation) =>
-          affiliation.toLowerCase().includes(normalized)
-        );
-
-      const matchesFilter =
-        filter === "All" ||
-        member.affiliations.some((affiliation) => affiliation === filter);
-
-      const matchesPaid = !paidOnly || member.paid.toLowerCase().includes("verified");
-      const matchesPower =
-        powerFilter === "All" ||
-        member.decisionPower.toLowerCase() === powerFilter.toLowerCase();
-
-      return matchesQuery && matchesFilter && matchesPaid && matchesPower;
-    })
+      .filter((m) => {
+        const matchQuery = !q || m.name.toLowerCase().includes(q) || m.role.toLowerCase().includes(q) || m.affiliations.some((a) => a.toLowerCase().includes(q));
+        const matchFilter = filter === "All" || m.affiliations.includes(filter);
+        const matchSelection = selectionFilter === "All" || m.selection === selectionFilter;
+        const matchPower = powerFilter === "All" || m.decisionPower === powerFilter;
+        return matchQuery && matchFilter && matchSelection && matchPower;
+      })
       .sort((a, b) => POWER_RANK[b.decisionPower] - POWER_RANK[a.decisionPower]);
-  }, [members, query, filter, paidOnly, powerFilter]);
+  }, [members, query, filter, selectionFilter, powerFilter]);
+
+  const electedCount = members.filter((m) => m.selection === "Elected").length;
+  const appointedCount = members.filter((m) => m.selection === "Appointed").length;
+  const hiredCount = members.filter((m) => m.selection === "Hired").length;
 
   return (
-    <main className="min-h-screen bg-[#080c14] px-6 py-20 text-white">
+    <main className="min-h-screen px-6 py-10 text-white">
       <div className="mx-auto max-w-6xl space-y-8">
-        <div className="flex flex-wrap items-end justify-between gap-6">
-          <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-white/50">
-              Member Directory
-            </p>
-            <h1 className="mt-3 text-3xl font-semibold">Intersect Network Map</h1>
-            <p className="mt-3 max-w-2xl text-sm text-white/60">
-              Community-sourced roster of leadership, board members, and ecosystem partners. Flags indicate where salary
-              transparency is missing.
-            </p>
+        {/* Hero */}
+        <div>
+          <p className="text-xs uppercase tracking-[0.3em] text-white/50">People Directory</p>
+          <h1 className="mt-3 text-3xl font-semibold">Who Works at Intersect</h1>
+          <p className="mt-3 max-w-2xl text-sm text-white/50">
+            Everyone we can identify at Intersect, tagged by how they got their role.
+            No salary data has been disclosed for any position.
+          </p>
+        </div>
+
+        {/* Selection summary */}
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+          <div className="rounded-2xl border border-emerald-400/20 bg-emerald-500/5 p-4 text-center">
+            <p className="text-2xl font-bold text-emerald-300">{electedCount}</p>
+            <p className="text-[11px] uppercase tracking-wider text-emerald-300/70">Community Elected</p>
           </div>
-          <div className="flex flex-wrap gap-3">
-            {filters.map((option) => (
-              <button
-                key={option}
-                type="button"
-                onClick={() => setFilter(option)}
-                className={`rounded-full border px-4 py-2 text-xs uppercase tracking-[0.2em] transition ${
-                  filter === option
-                    ? "border-emerald-400/60 bg-emerald-500/20 text-emerald-200"
-                    : "border-white/10 bg-white/5 text-white/60 hover:border-white/30"
-                }`}
-              >
-                {option}
-              </button>
-            ))}
+          <div className="rounded-2xl border border-amber-400/20 bg-amber-500/5 p-4 text-center">
+            <p className="text-2xl font-bold text-amber-300">{appointedCount}</p>
+            <p className="text-[11px] uppercase tracking-wider text-amber-300/70">Appointed</p>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-4 text-center">
+            <p className="text-2xl font-bold text-white">{hiredCount}</p>
+            <p className="text-[11px] uppercase tracking-wider text-white/50">Hired by Board/ED</p>
+          </div>
+          <div className="rounded-2xl border border-rose-400/20 bg-rose-500/5 p-4 text-center">
+            <p className="text-2xl font-bold text-rose-300">~19</p>
+            <p className="text-[11px] uppercase tracking-wider text-rose-300/70">Unnamed Staff</p>
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-4">
+        {/* Filters */}
+        <div className="flex flex-wrap items-center gap-3">
           <input
             value={query}
-            onChange={(event) => setQuery(event.target.value)}
+            onChange={(e) => setQuery(e.target.value)}
             placeholder="Search by name, role, or affiliation"
-            className="flex-1 bg-transparent text-sm text-white placeholder:text-white/40 focus:outline-none"
+            className="flex-1 rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white placeholder:text-white/30 focus:outline-none"
+            aria-label="Search people"
           />
-          <button
-            type="button"
-            onClick={() => setPaidOnly((prev) => !prev)}
-            className={`rounded-full border px-3 py-2 text-[11px] uppercase tracking-[0.2em] transition ${
-              paidOnly
-                ? "border-emerald-400/60 bg-emerald-500/20 text-emerald-200"
-                : "border-white/10 bg-white/5 text-white/60 hover:border-white/30"
-            }`}
+          <select
+            value={selectionFilter}
+            onChange={(e) => setSelectionFilter(e.target.value)}
+            className="rounded-xl border border-white/10 bg-white/5 px-3 py-2.5 text-[11px] uppercase tracking-wider text-white/60 focus:outline-none"
+            aria-label="Filter by selection type"
           >
-            Show Paid Only
-          </button>
-          <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-2 text-[11px] uppercase tracking-[0.2em] text-white/60">
-            <span>Power</span>
-            <select
-              value={powerFilter}
-              onChange={(event) => setPowerFilter(event.target.value)}
-              className="bg-transparent text-[11px] uppercase tracking-[0.2em] text-white/70 focus:outline-none"
-            >
-              <option className="bg-[#080c14]" value="All">
-                All
-              </option>
-              <option className="bg-[#080c14]" value="High">
-                High
-              </option>
-              <option className="bg-[#080c14]" value="Medium">
-                Medium
-              </option>
-              <option className="bg-[#080c14]" value="Low">
-                Low
-              </option>
-            </select>
-          </div>
-          <span className="text-xs uppercase tracking-[0.2em] text-white/40">
-            {`${filteredMembers.length} results`}
-          </span>
+            <option className="bg-[#080c14]" value="All">All Types</option>
+            <option className="bg-[#080c14]" value="Elected">Elected</option>
+            <option className="bg-[#080c14]" value="Appointed">Appointed</option>
+            <option className="bg-[#080c14]" value="Hired">Hired</option>
+            <option className="bg-[#080c14]" value="External">External</option>
+          </select>
+          <select
+            value={powerFilter}
+            onChange={(e) => setPowerFilter(e.target.value)}
+            className="rounded-xl border border-white/10 bg-white/5 px-3 py-2.5 text-[11px] uppercase tracking-wider text-white/60 focus:outline-none"
+            aria-label="Filter by decision power"
+          >
+            <option className="bg-[#080c14]" value="All">All Power</option>
+            <option className="bg-[#080c14]" value="High">High</option>
+            <option className="bg-[#080c14]" value="Medium">Medium</option>
+            <option className="bg-[#080c14]" value="Low">Low</option>
+          </select>
+          <span className="text-xs text-white/40">{filtered.length} results</span>
         </div>
 
-        <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="border-b border-white/10 text-left text-xs uppercase tracking-[0.15em] text-white/50">
-                <th className="pb-3 pr-4">Member</th>
-                <th className="pb-3 pr-4">Role</th>
-                <th className="pb-3 pr-4">Affiliations</th>
-                <th className="pb-3 pr-4">Responsibilities</th>
-                <th className="pb-3 pr-4">Power</th>
-                <th className="pb-3 pr-4">Transparency</th>
-                <th className="pb-3">Paid</th>
-              </tr>
-            </thead>
-            <tbody className="text-white/80">
-              {filteredMembers.map((member) => {
-                const salaryMissing =
-                  member.notes.toLowerCase().includes("salary") ||
-                  member.notes.toLowerCase().includes("pay") ||
-                  member.notes.toLowerCase().includes("comp") ||
-                  member.notes.toLowerCase().includes("gap");
-                const paidLabel = member.paid || "unknown";
+        {/* People cards (responsive — not a table) */}
+        <div className="grid gap-3 sm:grid-cols-2">
+          {filtered.map((m) => {
+            const salaryMissing = m.notes.toLowerCase().includes("salary") || m.notes.toLowerCase().includes("gap");
+            const style = SELECTION_STYLE[m.selection];
 
-                return (
-                  <tr key={member.name} className="border-b border-white/5">
-                    <td className="py-4 pr-4">
-                      <div className="font-medium text-white">{member.name}</div>
-                      <div className="text-xs text-white/50">{member.source}</div>
-                    </td>
-                    <td className="py-4 pr-4 text-white/70">{member.role}</td>
-                    <td className="py-4 pr-4">
-                      <div className="flex flex-wrap gap-2">
-                        {member.affiliations.map((affiliation) => (
-                          <span
-                            key={affiliation}
-                            className="rounded-full border border-white/10 bg-white/5 px-2 py-1 text-[11px] uppercase tracking-[0.15em] text-white/60"
-                          >
-                            {affiliation}
-                          </span>
-                        ))}
-                      </div>
-                    </td>
-                    <td className="py-4 pr-4 text-white/60">
-                      {member.responsibilities || "—"}
-                    </td>
-                    <td className="py-4 pr-4">
-                      <span
-                        className={`inline-flex items-center rounded-full px-2.5 py-1 text-xs uppercase tracking-[0.2em] ${
-                          member.decisionPower === "High"
-                            ? "bg-rose-500/15 text-rose-200"
-                            : member.decisionPower === "Medium"
-                            ? "bg-amber-500/15 text-amber-200"
-                            : member.decisionPower === "Low"
-                            ? "bg-sky-500/15 text-sky-200"
-                            : "bg-white/10 text-white/50"
-                        }`}
-                      >
-                        {member.decisionPower}
-                      </span>
-                    </td>
-                    <td className="py-4 pr-4">
-                      <span
-                        className={`inline-flex items-center gap-2 rounded-full px-2.5 py-1 text-xs uppercase tracking-[0.2em] ${
-                          member.transparency === "verified"
-                            ? "bg-emerald-500/15 text-emerald-200"
-                            : member.transparency === "partial"
-                            ? "bg-amber-500/15 text-amber-200"
-                            : "bg-red-500/15 text-red-200"
-                        }`}
-                      >
-                        {member.transparency}
-                      </span>
-                    </td>
-                    <td className="py-4">
-                      {salaryMissing ? (
-                        <span className="inline-flex items-center rounded-full border border-red-400/40 bg-red-500/10 px-2.5 py-1 text-xs uppercase tracking-[0.2em] text-red-300">
-                          Salary: Missing
-                        </span>
-                      ) : (
-                        <span className="text-white/60">{paidLabel}</span>
-                      )}
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+            return (
+              <div key={m.name} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+                <div className="flex flex-wrap items-start justify-between gap-2">
+                  <div>
+                    <p className="font-medium text-white">{m.name}</p>
+                    <p className="mt-0.5 text-sm text-white/50">{m.role}</p>
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className={`rounded-full px-2.5 py-0.5 text-[11px] uppercase tracking-wider ${style.bg} ${style.text}`}>
+                      {m.selection}
+                    </span>
+                    <span className={`rounded-full px-2.5 py-0.5 text-[11px] uppercase tracking-wider ${
+                      m.decisionPower === "High" ? "bg-violet-500/20 text-violet-300"
+                      : m.decisionPower === "Medium" ? "bg-amber-500/20 text-amber-300"
+                      : "bg-white/10 text-white/40"
+                    }`}>
+                      {m.decisionPower} Power
+                    </span>
+                  </div>
+                </div>
+                {m.responsibilities && (
+                  <p className="mt-2 text-sm text-white/40">{m.responsibilities}</p>
+                )}
+                <div className="mt-3 flex flex-wrap items-center gap-2">
+                  {m.affiliations.map((a) => (
+                    <span key={a} className="rounded-full border border-white/10 bg-white/5 px-2 py-0.5 text-[11px] text-white/40">{a}</span>
+                  ))}
+                  <span className="rounded-full border border-white/10 bg-white/5 px-2 py-0.5 text-[11px] text-white/40">{m.category}</span>
+                </div>
+                {salaryMissing && (
+                  <p className="mt-2 text-[11px] text-rose-300/70">No salary disclosed</p>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </main>
   );
+}
+
+function mapPerson(person: Record<string, unknown>) {
+  return {
+    name: (person.name as string) ?? "",
+    role: (person.role as string) ?? "",
+    affiliations: (person.affiliations as string[]) ?? [],
+    responsibilities: (person.responsibilities as string) ?? "",
+    paid: (person.paid as string) ?? "unknown",
+    decisionPower: ((person.decision_power as string) ?? "Unknown") as MemberEntry["decisionPower"],
+    transparency: (person.transparency as string) ?? "partial",
+    source: (person.source as string) ?? "",
+    notes: (person.notes as string) ?? "",
+  };
 }

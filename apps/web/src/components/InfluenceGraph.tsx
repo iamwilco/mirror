@@ -252,7 +252,7 @@ export default function InfluenceGraph() {
             <span className="h-[2px] w-3 rounded bg-rose-400/60" />
             Reports To
           </span>
-          <Link href="/#contribute" className="rounded-full border border-emerald-400/40 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-emerald-200 transition hover:border-emerald-300">
+          <Link href="/contribute" className="rounded-full border border-emerald-400/40 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-emerald-200 transition hover:border-emerald-300">
             Submit Evidence
           </Link>
         </div>

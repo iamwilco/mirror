@@ -30,7 +30,7 @@ const PRIORITY_CLR: Record<string, string> = {
 function Badge({ status }: { status: string }) {
   const s = STATUS_BADGE[status] ?? STATUS_BADGE.gap;
   return (
-    <span className={`inline-block rounded-full px-2 py-0.5 text-[10px] uppercase tracking-wider ${s.bg} ${s.text}`}>
+    <span className={`inline-block rounded-full px-2 py-0.5 text-[11px] uppercase tracking-wider ${s.bg} ${s.text}`}>
       {s.label}
     </span>
   );
@@ -46,14 +46,11 @@ export default function SourcesPage() {
   const partialFacts = facts.filter((f) => f.status === "partial");
 
   return (
-    <div className="mx-auto w-full max-w-5xl px-6 pb-24 pt-14">
+    <div className="mx-auto w-full max-w-5xl px-6 pb-24 pt-10">
       <header className="space-y-4">
-        <Link href="/" className="text-xs uppercase tracking-[0.4em] text-white/40 transition hover:text-white/70">
-          ← Back to Dashboard
-        </Link>
-        <p className="text-xs uppercase tracking-[0.4em] text-white/60">Knowledge Base</p>
+        <p className="text-xs uppercase tracking-[0.4em] text-white/50">Knowledge Base</p>
         <h1 className="text-4xl font-semibold text-white md:text-5xl">Sources & Facts</h1>
-        <p className="max-w-3xl text-base text-white/70 md:text-lg">
+        <p className="max-w-3xl text-base text-white/50 md:text-lg">
           Every claim in Intersect Mirror is backed by a source. This page catalogues all known sources,
           verified facts, identified gaps, and enrichment opportunities.
         </p>
@@ -156,7 +153,7 @@ export default function SourcesPage() {
                   ))}
                 </div>
               )}
-              <p className="mt-2 text-[10px] text-white/20">Last checked: {src.last_checked}</p>
+              <p className="mt-2 text-[11px] text-white/40">Last checked: {src.last_checked}</p>
             </div>
           ))}
         </div>
@@ -194,7 +191,7 @@ export default function SourcesPage() {
               <span className="mt-0.5 h-2 w-2 shrink-0 rounded-full bg-emerald-400" />
               <div>
                 <p className="text-sm text-white/80">{f.claim}</p>
-                <p className="mt-1 text-[10px] text-white/30">
+                <p className="mt-1 text-[11px] text-white/40">
                   {f.date} · Sources: {f.sources.map((sid) => sources.find((s) => s.id === sid)?.name ?? sid).join(", ")}
                 </p>
               </div>
@@ -213,7 +210,7 @@ export default function SourcesPage() {
                 <span className="mt-0.5 h-2 w-2 shrink-0 rounded-full bg-amber-400" />
                 <div>
                   <p className="text-sm text-white/80">{f.claim}</p>
-                  <p className="mt-1 text-[10px] text-white/30">
+                  <p className="mt-1 text-[11px] text-white/40">
                     {f.date} · Sources: {f.sources.map((sid) => sources.find((s) => s.id === sid)?.name ?? sid).join(", ")}
                   </p>
                 </div>
@@ -245,7 +242,7 @@ export default function SourcesPage() {
           {enrichment_opportunities.map((opp, i) => (
             <div key={i} className={`rounded-xl border px-5 py-4 ${(opp as Record<string, unknown>).status === "completed" ? "border-emerald-500/30 text-emerald-300" : PRIORITY_CLR[opp.priority]}`}>
               <div className="flex items-center gap-2">
-                <span className={`rounded-full px-2 py-0.5 text-[10px] uppercase tracking-wider ${(opp as Record<string, unknown>).status === "completed" ? "bg-emerald-500/20" : "bg-white/5"}`}>
+                <span className={`rounded-full px-2 py-0.5 text-[11px] uppercase tracking-wider ${(opp as Record<string, unknown>).status === "completed" ? "bg-emerald-500/20" : "bg-white/5"}`}>
                   {(opp as Record<string, unknown>).status === "completed" ? "✓ done" : (opp as Record<string, unknown>).status === "partial" ? "partial" : opp.priority}
                 </span>
                 <span className="text-sm font-semibold">{opp.area}</span>
@@ -254,7 +251,7 @@ export default function SourcesPage() {
               {typeof (opp as Record<string, unknown>).result === "string" && (
                 <p className="mt-1 text-xs text-emerald-300/70">{String((opp as Record<string, unknown>).result)}</p>
               )}
-              <p className="mt-1 text-[10px] text-white/30">
+              <p className="mt-1 text-[11px] text-white/40">
                 Sources: {opp.sources.map((sid) => sources.find((s) => s.id === sid)?.name ?? sid).join(", ")}
               </p>
             </div>
@@ -293,7 +290,7 @@ export default function SourcesPage() {
 
       <div className="mt-12 text-center">
         <Link
-          href="/#contribute"
+          href="/contribute"
           className="inline-block rounded-full border border-emerald-400/40 px-6 py-2.5 text-sm uppercase tracking-[0.15em] text-emerald-200 transition hover:border-emerald-300 hover:text-emerald-100"
         >
           Submit Data or Corrections

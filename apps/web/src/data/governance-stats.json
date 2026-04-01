@@ -58,7 +58,10 @@
   ],
   "constitution": {
     "status": "ratified",
-    "ratification_date": "2024-12",
+    "version": "2.4",
+    "ratification_date": "2026-01-24",
+    "support_percent": 79,
+    "changes": "Removed non-binding clauses; eliminated Budget Info Action mechanism; added immutability requirements for proposal documents.",
     "on_chain_cip": "CIP-1694",
     "on_chain_action": "CIP-169 (constitution script)",
     "full_text_url": "https://github.com/IntersectMBO/interim-constitution/blob/main/cardano-constitution-0.txt.md",
@@ -80,7 +83,67 @@
   },
   "treasury": {
     "total_ada_in_treasury": 1700000000,
-    "notes": "Treasury holds ~1.7B ADA. Net Change Limit governs maximum withdrawal per epoch. 2025 budget proposed ₳263.6M total.",
+    "notes": "Treasury holds ~1.7B ADA (~4.34 years sustainable at current rates). Net Change Limit governs maximum withdrawal per epoch. 2025 budget proposed ₳263.6M total.",
     "net_change_limit_explainer": "https://cardano.org/news/2025-12-02-what-is-cardano-net-change-limit/"
+  },
+  "constitutional_committee": {
+    "type": "community-elected",
+    "replaced_interim": true,
+    "members": [
+      {"name": "Cardano Atlantic Council", "source": "Intersect CC Elections 2025"},
+      {"name": "Tingvard", "source": "Intersect CC Elections 2025"},
+      {"name": "Eastern Cardano Council", "source": "Intersect CC Elections 2025"},
+      {"name": "KTorZ", "source": "Intersect CC Elections 2025"},
+      {"name": "Ace Alliance", "source": "Intersect CC Elections 2025"},
+      {"name": "Cardano Japan Council", "source": "Intersect CC Elections 2025"},
+      {"name": "Phil_uplc", "source": "Intersect CC Elections 2025"},
+      {"name": "Cardano Curia", "source": "Snap election Dec 15, 2025"}
+    ],
+    "notes": "Fully community-elected CC replaced interim committee. One member resigned triggering snap election; Cardano Curia elected Dec 15, 2025."
+  },
+  "intersect_role_in_governance": {
+    "description": "Intersect serves as the off-chain coordinator and treasury administrator. It does not vote on-chain — DReps do. Intersect facilitates the budget process, manages vendor contracts, and coordinates committee work. It explicitly states it 'does not govern on behalf of the community or act as a gatekeeper.'",
+    "source": "intersectmbo.org/news/understanding-intersects-role-in-the-cardano-ecosystem-funding-process",
+    "functions": [
+      "Administrates treasury fund disbursements via smart contracts",
+      "Coordinates the annual budget process across committees",
+      "Manages vendor contracts and milestone enforcement",
+      "Facilitates committee elections and governance processes",
+      "Provides governance tooling and grants"
+    ],
+    "does_not": [
+      "Vote on governance actions (DReps vote on-chain)",
+      "Evaluate the quality of deliverables",
+      "Govern on behalf of the community",
+      "Act as a gatekeeper for proposals"
+    ]
+  },
+  "budget_process_concerns": {
+    "description": "The 2025 budget process was widely criticized by the community.",
+    "issues": [
+      "No explicit goals or guidance for what the budget should achieve",
+      "Overnight process changes that rendered stakeholder knowledge inaccurate",
+      "Seven distinct voting stages creating excessive complexity",
+      "39 sub-sections but voters could only approve/reject the entire package",
+      "IOG received 49.3% of the total approved budget"
+    ],
+    "intersect_response": "Published 'Recalibrating Cardano's Budget Process: We've Heard You' — acknowledged lack of transparency around CDH, excessive complexity, and insufficient community authority. Made changes including direct proposal submissions and strengthened DRep decision authority.",
+    "sources": ["lidonation.com/en/posts/cardano-intersect-2025-budget-mayhem-process/", "intersectmbo.org/news/recalibrating-cardanos-budget-process-weve-heard-you"]
+  },
+  "recent_ratified": [
+    {"name": "Amaru Treasury Withdrawal 2026", "type": "Treasury Withdrawal", "ada_amount": 10142000, "ratified_epoch": "620/621", "source": "Update #104"},
+    {"name": "Critical Integrations Budget", "type": "Info then Treasury", "ada_amount": 70000000, "ratified": "2025-12", "notes": "Fastest-ever governance vote. Coalition: IOG, EMURGO, CF, Intersect, Midnight Foundation. Five pillars: stablecoins, custody, analytics, bridges, oracles.", "source": "Intersect CIB Proposal"},
+    {"name": "Constitution v2.4", "type": "Constitutional Amendment", "ratified": "2026-01-24", "support_pct": 79, "source": "cardano.org"},
+    {"name": "CC Member Addition (Cardano Curia)", "type": "Committee", "ratified": "2025-12-15", "source": "Intersect news"}
+  ],
+  "chain_split_incident": {
+    "date": "2025-11-21",
+    "cause": "Deserialization bug from 2022; malformed delegation transaction with oversized hash",
+    "attacker": "Pseudonymous 'Homer J' using AI-generated script",
+    "recovery_hours": 14.5,
+    "patches": ["Node 10.5.2", "Node 10.5.3"],
+    "fbi_investigation": true,
+    "source": "Intersect Incident Report, CoinDesk, CyberNews",
+    "impact": "Accelerated approval of 70M ADA Critical Integrations Budget"
   }
 }
