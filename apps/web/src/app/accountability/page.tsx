@@ -45,7 +45,7 @@ const CONFLICTS: Conflict[] = [
     entity: "IOG (Input Output Global)",
     roles: [
       "Receives ₳130.1M (49.3% of total budget)",
-      "Holds appointed board seat via Gerard Moroney (COO)",
+      "Holds appointed board seat via Gerard Moroney",
     ],
     concern:
       "The largest budget recipient has a seat on the governing board",
@@ -411,7 +411,7 @@ export default function AccountabilityPage() {
   void inputData;
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white">
+    <div className="min-h-screen text-white">
       <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
         {/* ═══════════════════════════════════════════════
             Section 1: Hero
@@ -419,16 +419,16 @@ export default function AccountabilityPage() {
         <header className="mb-20">
           <SectionLabel>Intersect Mirror</SectionLabel>
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl mt-3">
-            Accountability Check
+            Accountability Overview
           </h1>
           <p className="mt-4 text-lg text-white/50 max-w-2xl">
-            Cross-referencing Intersect&apos;s own data to find overlaps, gaps,
-            and concentration
+            Cross-referencing Intersect&apos;s own data to understand overlaps,
+            governance structure, and areas for improvement
           </p>
           <div className="mt-6 rounded-[28px] bg-white/5 border border-white/10 p-6">
             <p className="text-white/50 text-sm leading-relaxed">
-              Every finding below is computed from publicly available data. No
-              assumptions — only documented facts and their sources.
+              Every finding below is computed from publicly available data.
+              Sources are linked throughout.
             </p>
             <div className="mt-4 flex flex-wrap gap-3 text-[11px] uppercase tracking-[0.3em] text-white/40">
               <span>
@@ -460,7 +460,8 @@ export default function AccountabilityPage() {
           </h2>
           <p className="text-white/50 text-sm mb-8">
             People and organizations that hold multiple positions within
-            Intersect&apos;s structure
+            Intersect&apos;s structure. Note: CF-affiliated committee members
+            were democratically elected by Intersect members.
           </p>
 
           <div className="grid gap-4">
@@ -558,15 +559,15 @@ export default function AccountabilityPage() {
                     <span className="text-white/70 font-medium">
                       Gerard Moroney
                     </span>{" "}
-                    — Appointed Board seat (IOG COO)
+                    — Appointed Board seat (IOG)
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-violet-400/50 shrink-0" />
                   <span>
                     Receives{" "}
-                    <span className="text-rose-300 font-medium">
-                      ₳130.1M (49.3% of budget)
+                    <span className="text-amber-300 font-medium">
+                      ₳130.1M (49.3% of budget, incl. Catalyst community fund)
                     </span>
                   </span>
                 </li>
@@ -632,13 +633,9 @@ export default function AccountabilityPage() {
           </h2>
           <p className="text-white/50 text-sm mb-6">
             {committeesWithMinutes} of {scorecard.length} committees publish
-            meeting minutes.{" "}
-            {committeesWithRecordings === 0
-              ? "None have"
-              : committeesWithRecordings === 1
-              ? `Only ${recordingNames[0]} has`
-              : `${committeesWithRecordings} have`}{" "}
-            public recordings.
+            meeting minutes. {committeesWithRecordings} of {scorecard.length}{" "}
+            publish meeting recordings (Google Drive links on individual
+            meeting pages).
           </p>
 
           {/* Desktop table */}
@@ -727,14 +724,21 @@ export default function AccountabilityPage() {
         <section className="mb-20">
           <SectionLabel>Budget Concentration</SectionLabel>
           <h2 className="text-2xl font-bold text-white mt-1 mb-1">
-            How Much Money Does Each Vote Control?
+            Budget Relative to Voter Participation
           </h2>
           <p className="text-white/50 text-sm mb-6">
             With {totalVoters} voters and ₳{formatAda(totalBudget)} in total
-            budget, each voter effectively controls ₳
-            {formatAda(budgetPerVoter)} in spending decisions. Per eligible
+            budget, the ratio of budget to actual voters is ₳
+            {formatAda(budgetPerVoter)}. Per eligible
             member (of {eligibleVoters.toLocaleString()}): ₳
             {formatAda(budgetPerEligible)}.
+          </p>
+          <p className="text-white/40 text-[11px] mb-6">
+            Note: Committee members do not individually control budgets. Committees provide recommendations;
+            DReps hold final on-chain approval power. Budget figures shown are the total budget area each
+            committee advises on, not funds under individual member control.
+            MCC&apos;s directly managed budget is ~₳2M (community hubs and membership services);
+            the ₳75.5M Catalyst allocation has its own management team.
           </p>
 
           {/* Summary stats */}
@@ -839,9 +843,9 @@ export default function AccountabilityPage() {
             </div>
           </div>
           <p className="text-[11px] text-white/30 mt-3">
-            &quot;₳/Vote&quot; = committee budget divided by the lowest vote
-            count among elected members. This shows how few votes can control
-            large budgets.
+            &quot;₳/Vote&quot; = committee advisory budget divided by the lowest vote
+            count among elected members. This illustrates the ratio between
+            voter participation and budget scale — not individual spending authority.
           </p>
         </section>
 
@@ -935,8 +939,9 @@ export default function AccountabilityPage() {
                     IOG receives 49.3% of the total budget (₳130.1M)
                   </span>{" "}
                   while simultaneously holding an appointed board seat through
-                  its COO Gerard Moroney. The largest budget recipient sits on
-                  the governing body that oversees spending.
+                  Gerard Moroney. The largest budget recipient has representation
+                  on the governing body. Note: IOG&apos;s total includes ₳64.3M for
+                  the Catalyst community fund which IOG administers.
                 </p>
               </li>
               <li className="flex items-start gap-3">
@@ -957,13 +962,11 @@ export default function AccountabilityPage() {
                     Only {committeesWithMinutes} of {scorecard.length} committees
                     publish meeting minutes
                   </span>
-                  , and only{" "}
-                  {committeesWithRecordings === 1
-                    ? `${recordingNames[0]} has`
-                    : `${committeesWithRecordings} have`}{" "}
-                  public recordings. The board publishes meeting minutes at
-                  board.docs.intersectmbo.org (since Dec 2023), but they vary in
-                  depth and detail.
+
+                  . {committeesWithRecordings} of {scorecard.length} committees
+                  publish meeting recordings (via Google Drive links on individual
+                  meeting pages). The board publishes meeting minutes at
+                  board.docs.intersectmbo.org (since Dec 2023), though depth varies.
                 </p>
               </li>
               <li className="flex items-start gap-3">

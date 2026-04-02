@@ -11,8 +11,8 @@
       "meeting_count": 87,
       "date_range": "Aug 2024 — Mar 2026",
       "minutes_url": "https://committees.docs.intersectmbo.org/intersect-product-committee/committee-meeting-notes",
-      "has_recordings": false,
-      "notes": "Most prolific documentation. Includes joint session with Intersect Board."
+      "has_recordings": true,
+      "notes": "Most prolific documentation. Includes joint session with Intersect Board. Google Drive recording links on individual meeting pages."
     },
     {
       "committee": "Technical Steering Committee (TSC)",
@@ -20,9 +20,9 @@
       "meeting_count": 73,
       "date_range": "Mar 2024 — Apr 2026",
       "minutes_url": "https://committees.docs.intersectmbo.org/intersect-technical-steering-committee/meeting-minutes",
-      "has_recordings": false,
+      "has_recordings": true,
       "extras": ["2025 Member Attendance log", "2024 & 2025 TSC Decision Logs"],
-      "notes": "Consistent weekly minutes. Decision logs are a strong accountability feature unique to TSC."
+      "notes": "Consistent weekly minutes. Decision logs are a strong accountability feature unique to TSC. Google Drive recording links on individual meeting pages."
     },
     {
       "committee": "Budget Committee (CBC)",
@@ -31,7 +31,7 @@
       "date_range": "Jan 2025 — Mar 2026",
       "minutes_url": "https://budgetcommittee.docs.intersectmbo.org/committee-meeting-notes",
       "has_recordings": false,
-      "notes": "Weekly meetings. Dense schedule during budget season (Apr-Jul 2025)."
+      "notes": "Weekly meetings. Dense schedule during budget season (Apr-Jul 2025). No recordings found on checked pages."
     },
     {
       "committee": "Intersect Steering Committee (ISC)",
@@ -48,8 +48,8 @@
       "meeting_count": 53,
       "date_range": "Feb 2025 — Feb 2026",
       "minutes_url": "https://committees.docs.intersectmbo.org/intersect-growth-marketing-committee/meeting-minutes",
-      "has_recordings": false,
-      "notes": "Detailed minutes with attendees, decisions, and action items. Previous versions of this dataset incorrectly stated GMC had zero minutes."
+      "has_recordings": true,
+      "notes": "Detailed minutes with attendees, decisions, and action items. Google Drive recording links on individual meeting pages."
     },
     {
       "committee": "Civics Committee (CCC)",
@@ -57,8 +57,8 @@
       "meeting_count": 51,
       "date_range": "Oct 2023 — Mar 2026",
       "minutes_url": "https://committees.docs.intersectmbo.org/intersect-civics-committee/meeting-minutes",
-      "has_recordings": false,
-      "notes": "Comprehensive minutes with discussion tables, action items, and recording links. Previous versions of this dataset incorrectly stated CCC had zero minutes."
+      "has_recordings": true,
+      "notes": "Comprehensive minutes with discussion tables, action items. Google Drive recording links on individual meeting pages."
     },
     {
       "committee": "Open Source Committee (OSC)",
@@ -67,7 +67,7 @@
       "date_range": "Dec 2023 — Mar 2026",
       "minutes_url": "https://committees.docs.intersectmbo.org/intersect-open-source-committee/osc-meeting-minutes",
       "has_recordings": true,
-      "notes": "Only committee with public video recordings (YouTube). Longest public documentation history."
+      "notes": "Google Drive recording links on individual meeting pages. Longest public documentation history."
     },
     {
       "committee": "Parameter Committee (PC)",
@@ -109,11 +109,11 @@
     "total_committees": 10,
     "with_published_minutes": 8,
     "with_partial_or_no_minutes": 2,
-    "with_public_recordings": 1,
+    "with_public_recordings": 5,
     "committees_no_minutes": ["Oversight Committee"],
     "committees_partial_minutes": ["Membership & Community Committee (MCC)"],
     "board_minutes_published": true,
     "total_documented_meetings": 471,
-    "note": "8 of 10 committees publish meeting minutes. The board publishes minutes (27 meetings since Dec 2023). Only MCC and Oversight Committee lack clear public minutes. Only OSC has video recordings."
+    "note": "8 of 10 committees publish meeting minutes. The board publishes minutes (27 meetings since Dec 2023). Only MCC and Oversight Committee lack clear public minutes. 5 committees (OSC, TSC, CPC, CCC, GMC) publish Google Drive recordings on individual meeting pages. Budget Committee and ISC do not appear to have recordings."
   }
 }

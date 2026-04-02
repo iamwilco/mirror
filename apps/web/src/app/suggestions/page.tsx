@@ -70,7 +70,7 @@ const SUGGESTIONS: Suggestion[] = [
     id: 5,
     title: "Publish all meeting minutes within 7 days",
     problem:
-      "8 of 10 committees publish minutes, but quality varies widely. MCC and Oversight Committee have unclear or no public minutes. Parameter Committee minutes stopped at Oct 2024. Only OSC has video recordings.",
+      "8 of 10 committees publish minutes, but quality varies widely. MCC and Oversight Committee have unclear or no public minutes. Parameter Committee minutes stopped at Oct 2024. 5 of 7 standing committees publish Google Drive recordings; Budget Committee and ISC do not.",
     recommendation:
       "All committees must publish meeting minutes within 7 calendar days of each meeting. Minutes must follow the standardized template. Failure to publish = flagged in public dashboard.",
     implementation:

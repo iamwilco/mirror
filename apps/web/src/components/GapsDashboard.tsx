@@ -122,7 +122,7 @@ const RICH_GAPS: RichGap[] = [
     label: "Committee meeting minutes inconsistently published",
     severity: "medium",
     category: "Governance & Decisions",
-    whyItMatters: "Only OSC has public YouTube recordings. Other committees publish partial or no minutes. Budget Committee has some meeting notes; others are dark.",
+    whyItMatters: "5 of 7 standing committees publish Google Drive recordings. Budget Committee and ISC do not. MCC and Oversight Committee have unclear or no public minutes.",
     whatResolvesIt: "Standardize public minutes across all 7 committees. Record and publish meetings, or at minimum publish written summaries.",
     baseVotes: 26,
   },

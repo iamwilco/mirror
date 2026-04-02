@@ -189,8 +189,10 @@
           },
           {
             "name": "Membership & Community Committee (MCC)",
-            "details": "Member engagement, community hubs, grants.",
-            "budget_ada": 77526800,
+            "details": "Member engagement, community hubs, grants. Sponsors the Innovation Budget (₳77.5M total), of which ₳75.5M funds Project Catalyst (managed by its own team). MCC directly manages ~₳2M for community hubs and membership services.",
+            "budget_ada": 2026800,
+            "innovation_budget_total": 77526800,
+            "innovation_budget_note": "MCC sponsors the ₳77.5M Innovation Budget, but ₳75.5M of that funds Project Catalyst (its own team and processes). Only ~₳2M is directly managed by MCC for community hubs and membership services.",
             "elected_members": [
               {"name": "Jose Iadicicco", "votes": 113, "selection": "Community Elected"},
               {"name": "Ian McCullough", "votes": 111, "selection": "Community Elected"},

@@ -52,7 +52,7 @@
         "name": "Standing Committees (Member-Elected, Report to ISC)",
         "details": "7 committees; biannual elections (50% seats per cycle). This is the primary level where members actually elect representatives. Committees propose solutions and form WGs, but final decisions go through on-chain governance.",
         "decision_power": "Medium — advisory/proposals. This is where member elections actually matter.",
-        "how_work_done": "Meetings (some public minutes), discussions, WGs for tasks. Only OSC has public YouTube recordings.",
+        "how_work_done": "Meetings (some public minutes), discussions, WGs for tasks. 5 of 7 standing committees publish Google Drive recordings.",
         "children": [
           {
             "name": "Cardano Civics Committee (CCC)",

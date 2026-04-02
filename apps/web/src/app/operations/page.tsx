@@ -313,7 +313,7 @@ export default function OperationsPage() {
                 GMC (53), CCC (51), OSC (50), and Parameter (27). MCC&apos;s minutes page exists but
                 has no individual entries. Oversight Committee (new for 2026) has none yet.
                 Quality varies widely: some have detailed discussion tables and action items,
-                others are sparse summaries. Only OSC has video recordings.
+                others are sparse summaries. 5 of 7 standing committees publish Google Drive recordings; Budget Committee and ISC do not.
                 Parameter Committee minutes stop at Oct 2024.
                 There is no standardized format — each committee documents differently.
               </p>

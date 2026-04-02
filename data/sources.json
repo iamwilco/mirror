@@ -510,7 +510,7 @@
     { "id": "fact-033", "claim": "Treasury holds ~1.7B ADA; governed by Net Change Limit per epoch", "status": "verified", "sources": ["src-030"], "date": "2025" },
     { "id": "fact-034", "claim": "TSC core maintenance contract: IOE call-off $9.75M (Feb–Jul), open tender afterward", "status": "verified", "sources": ["src-023"], "date": "2025" },
     { "id": "fact-035", "claim": "Election audit performed by Dquadrant: schema validation, eligibility checks, tally reconciliation", "status": "verified", "sources": ["src-029"], "date": "2025-11" },
-    { "id": "fact-036", "claim": "Only OSC has public YouTube meeting recordings; 5 of 10 committees have no public archives", "status": "verified", "sources": ["src-026", "src-027"], "date": "2026-02" },
+    { "id": "fact-036", "claim": "5 of 7 standing committees (OSC, TSC, CPC, CCC, GMC) publish Google Drive meeting recordings on individual pages; Budget Committee and ISC do not", "status": "verified", "sources": ["src-026", "src-027"], "date": "2026-04" },
     { "id": "fact-037", "claim": "Nicolas Cerny (CF Governance Lead) top vote-getter in CBC election with 176 votes", "status": "verified", "sources": ["src-021"], "date": "2025-11" },
     { "id": "fact-038", "claim": "Samuel Leathers elected CPC Chair with 168 votes; also serves as Special Technical Advisor", "status": "verified", "sources": ["src-021", "src-011"], "date": "2025-11" },
     { "id": "fact-039", "claim": "Kevin Hammond (node dev since 2019) top TSC vote-getter with 160 votes", "status": "verified", "sources": ["src-021"], "date": "2025-11" },
