@@ -119,7 +119,7 @@ export default function GovernancePage() {
         <StatCard
           label="2025 Budget"
           value="₳263.6M"
-          sub="39 proposals, 33 passed"
+          sub="39 proposals, 37 passed"
         />
       </section>
 

@@ -165,7 +165,7 @@ export default function BudgetPage() {
             <span className="text-rose-400">
               49.3% to a single entity family.
             </span>{" "}
-            28 vendors with undisclosed amounts. This page breaks down every
+            Per-vendor granularity was limited during budget drafting but on-chain proposals required exact amounts. This page breaks down every
             allocation we can trace.
           </p>
         </div>
@@ -330,8 +330,8 @@ export default function BudgetPage() {
             Who gets the money?
           </h2>
           <p className="mt-3 max-w-3xl text-sm text-white/50">
-            Of ₳263.6M approved, only 3 vendors have confirmed ADA amounts.
-            The remaining 28 vendor amounts are not publicly disclosed.
+            Of ₳263.6M approved, on-chain proposals specify exact ADA amounts per CIP-1694.
+            However, detailed cost breakdowns within large omnibus proposals (especially IOG's) remain limited.
           </p>
         </div>
 
@@ -359,7 +359,7 @@ export default function BudgetPage() {
               style={{ width: "40.9%" }}
             >
               <span className="text-[11px] font-medium text-white/70">
-                28 vendors (undisclosed)
+                Other vendors (limited detail)
               </span>
             </div>
           </div>

@@ -6,8 +6,8 @@
     "notes": "39 on-chain Treasury Withdrawal Governance Actions submitted July 2025. DReps approved ₳264M total. IOG family contracts ~₳130.1M (~49%). Smart contracts by Sundae Labs with Oversight Committee multi-sig.",
     "total_approved_ada": 264000000,
     "total_proposals": 39,
-    "proposals_passed": 33,
-    "proposals_expired": 6,
+    "proposals_passed": 37,
+    "proposals_expired": 2,
     "voting_threshold": "67% DRep supermajority + 5/7 ICC approval",
     "epoch_deadline": 576,
     "epoch_deadline_date": "2025-08-17",
@@ -678,7 +678,7 @@
     "threshold": "67% DRep supermajority of active stake",
     "epoch_deadline": 576,
     "cf_drep_abstentions": ["IOG Research", "MLabs Elliptic Curves", "MLabs Cardano.nix", "Hardware Wallet Maintenance", "Ledger App Rewrite", "PyCardano"],
-    "expired_proposals": ["MLabs Elliptic Curves", "MLabs Cardano.nix", "Hardware Wallet Maintenance", "Ledger App Rewrite", "Anzens Stablecoin/Fiat Ramps", "Ecosystem Exchange Listing"],
-    "transparency_notes": "6 proposals expired without reaching threshold. CF DRep abstained on several due to 'procedural gaps or unmet evaluation criteria'. Some DReps (e.g., π Lanningham / SundaeSwap CTO) published detailed voting rationale."
+    "expired_proposals": ["Anzens Stablecoin/Fiat Ramps", "Ecosystem Exchange Listing"],
+    "transparency_notes": "2 proposals expired without reaching threshold. CF DRep abstained on several due to 'procedural gaps or unmet evaluation criteria'. Some DReps (e.g., π Lanningham / SundaeSwap CTO) published detailed voting rationale."
   }
 }

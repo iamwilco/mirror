@@ -56,7 +56,7 @@ export default function Home() {
             <p className="text-xs uppercase tracking-wider text-white/40">2025 Budget</p>
             <p className="mt-2 text-3xl font-bold text-white">₳263.6M</p>
             <p className="mt-2 text-sm text-white/50">
-              39 proposals. <span className="text-amber-300">49.3% goes to IOG.</span> 28 vendors have undisclosed amounts.
+              39 proposals. <span className="text-amber-300">IOG receives 49.3% of funds.</span>
             </p>
             <p className="mt-3 text-sm text-white/30 group-hover:text-white/50">See full breakdown &rarr;</p>
           </Link>
@@ -97,7 +97,7 @@ export default function Home() {
             <p className="text-xs uppercase tracking-wider text-white/40">Committees</p>
             <p className="mt-2 text-3xl font-bold text-white">7 standing</p>
             <p className="mt-2 text-sm text-white/50">
-              All are <span className="text-sky-300">advisory only</span> — they cannot make binding decisions per the bylaws.
+              <span className="text-sky-300">Described as advisory</span> in Intersect's communications, though the bylaws grant them delegated board authority with specific exceptions.
             </p>
             <p className="mt-3 text-sm text-white/30 group-hover:text-white/50">See governance details &rarr;</p>
           </Link>
@@ -117,7 +117,7 @@ export default function Home() {
             <p className="text-xs uppercase tracking-wider text-white/40">Founded</p>
             <p className="mt-2 text-3xl font-bold text-white">July 2023</p>
             <p className="mt-2 text-sm text-white/50">
-              Created by IOG, EMURGO, and Cardano Foundation. Founding entities held board majority for 2 years.
+              Created by IOG and EMURGO as seed funders. CF joined Sep 2024. Seed funders held board majority for 2 years.
             </p>
             <p className="mt-3 text-sm text-white/30 group-hover:text-white/50">See full timeline &rarr;</p>
           </Link>
@@ -138,24 +138,24 @@ export default function Home() {
             description="Not a single salary, stipend, or compensation range has been disclosed for any board member, executive, staff member, or committee participant."
           />
           <GapCard
-            title="No board meeting minutes — ever"
-            description="The board of directors manages all corporate affairs but has never published meeting minutes, agendas, or vote records."
+            title="Board minutes lack depth"
+            description="Board meeting minutes are published at board.docs.intersectmbo.org (27 meetings since Dec 2023), but their depth and detail vary. No compensation decisions, vendor selection criteria, or strategic deliberations are disclosed in public minutes."
           />
           <GapCard
             title="19 of 31 staff unnamed"
             description="The team page lists 31 employees but only ~12 are publicly identified. The roles and responsibilities of the other 19 are unknown."
           />
           <GapCard
-            title="28 vendor amounts undisclosed"
-            description="Of 39 treasury proposals, only 4 have confirmed ADA amounts. The remaining 28 vendors' individual contract values are not public."
+            title="Per-vendor budget granularity came late"
+            description="During the budget drafting phase (Feb-Mar 2025), individual vendor amounts were not disclosed. By the time proposals went on-chain, CIP-1694 required exact ADA amounts. However, detailed cost breakdowns within large proposals (especially IOG's) remain limited."
           />
           <GapCard
             title="Committee decisions are not binding"
             description="Despite being marketed as 'community-led,' committees can only recommend. The board can override or ignore any committee recommendation."
           />
           <GapCard
-            title="ED hired without member input"
-            description="Jack Briggs was appointed Executive Director by the board in Jan 2026. There was no member vote, and the hiring process was not disclosed."
+            title="ED appointed by board, not members"
+            description="Jack Briggs was appointed Executive Director by unanimous board decision in Jan 2026. The hiring process included open applications and stakeholder interviews, but the final decision was the board's — members had no binding vote."
           />
         </div>
       </section>

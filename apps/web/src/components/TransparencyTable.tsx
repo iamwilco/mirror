@@ -64,12 +64,12 @@ function buildCategories(): CategoryRow[] {
       sources: ["Intersect budget docs", "Sundae Treasury Portal", "Budget Committee meeting notes", "Intersect contract ledger"],
       gaps: [
         "IOG receives ~₳130M (49.3% of total) — concentration risk",
-        "Individual contract amounts for 28+ non-IOG vendors not yet public",
+        "Detailed cost breakdowns within large omnibus proposals (especially IOG's) remain limited",
         "Sundae Labs built treasury contracts AND sits on Oversight Committee — dual role",
-        "6 proposals expired without funding — no post-mortem published",
+        "2 proposals expired without funding — no post-mortem published",
         "Procurement process for vendor selection undocumented",
       ],
-      budget: `₳264M approved (33 of 39 proposals) · ₳${(committeeBudget / 1e6).toFixed(1)}M across ${committees.length} committees`,
+      budget: `₳264M approved (37 of 39 proposals) · ₳${(committeeBudget / 1e6).toFixed(1)}M across ${committees.length} committees`,
       subItems: [
         { name: "IOG — Core Development", status: "verified" as const, detail: "₳96.8M · 73.93% DRep support · Largest single allocation", source: "Intersect contract ledger", sourceUrl: "https://treasury.sundae.fi/instances/9e65e4ed7d6fd86fc4827d2b45da6d2c601fb920e8bfd794b8ecc619?projectState=Active" },
         { name: "IOG — Catalyst 2025", status: "verified" as const, detail: "₳64.3M · Community innovation fund", source: "Intersect contract ledger" },
@@ -86,7 +86,7 @@ function buildCategories(): CategoryRow[] {
             source: c.source,
             sourceUrl: (c as Record<string, unknown>).source_url as string | undefined,
           })),
-        { name: "28+ Other Vendors", status: "partial" as const, detail: "₳108M combined — individual amounts not disclosed", source: "Sundae Treasury Portal" },
+        { name: "Other Vendors", status: "partial" as const, detail: "₳108M combined — on-chain amounts specified per CIP-1694 but detailed cost breakdowns within proposals limited", source: "Sundae Treasury Portal" },
       ],
     },
     {
@@ -123,7 +123,7 @@ function buildCategories(): CategoryRow[] {
         "No salary ranges disclosed for any role",
         "Team page returns 404 — full roster unavailable",
         "Stipend details for committee leads unclear",
-        "ED hiring process not disclosed",
+        "ED hiring was publicly documented but final decision was board's alone",
         "No public org chart",
       ],
       subItems: people.map(p => ({

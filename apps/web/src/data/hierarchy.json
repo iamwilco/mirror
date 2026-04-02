@@ -1,7 +1,7 @@
 {
   "hierarchy": {
     "name": "Intersect MBO — Who Holds Power",
-    "description": "Intersect is a Wyoming nonprofit corporation (incorporated July 13, 2023) created by IOG, EMURGO, and the Cardano Foundation. The board of directors manages all corporate affairs per the bylaws. Committees are advisory — they provide recommendations but cannot make binding decisions. This chart shows documented authority, not marketing language.",
+    "description": "Intersect is a Wyoming nonprofit corporation (incorporated July 13, 2023) created by IOG and EMURGO as seed funders. The Cardano Foundation joined as a member in September 2024. The board of directors manages all corporate affairs per the bylaws. The bylaws (Article 5) grant committees 'the authority of the Board of Directors' with enumerated exceptions. However, Intersect's own communications consistently describe committees as providing 'specialized guidance and advice.' This chart shows documented authority, not marketing language.",
     "sources": [
       "Intersect Bylaws (Wyoming Nonprofit Corporation Act)",
       "Intersect Knowledge Base (docs.intersectmbo.org)",
@@ -11,7 +11,7 @@
     "power_levels": {
       "governing": "Can make binding decisions. Has legal authority over corporate affairs.",
       "executive": "Manages day-to-day operations. Appointed by governing body.",
-      "advisory": "Provides recommendations and proposals. Cannot make binding decisions. Cannot approve spending, hire/fire, or veto board decisions.",
+      "advisory": "The bylaws grant delegated board authority with enumerated exceptions, but Intersect's communications describe these bodies as providing recommendations and proposals.",
       "elected_voice": "Can elect representatives. Cannot directly approve budgets, contracts, or operational decisions."
     },
     "children": [
@@ -19,7 +19,7 @@
         "name": "Board of Directors",
         "subtitle": "Governing Body — Binding Authority",
         "power_level": "governing",
-        "details": "The board manages all affairs of the corporation per the Intersect bylaws (governed by Wyoming Nonprofit Corporation Act). The board appoints the Executive Director, sets strategic direction, authorizes contracts, and sets member dues. Board decisions are not subject to member vote. No public board meeting minutes have been released.",
+        "details": "The board manages all affairs of the corporation per the Intersect bylaws (governed by Wyoming Nonprofit Corporation Act). The board appoints the Executive Director, sets strategic direction, authorizes contracts, and sets member dues. Board decisions are not subject to member vote. Board minutes published at board.docs.intersectmbo.org (27 meetings since Dec 2023), though depth varies.",
         "what_they_can_do": [
           "Manage all corporate operations",
           "Appoint and remove the Executive Director",
@@ -34,8 +34,8 @@
           "Unilaterally amend the Cardano Constitution"
         ],
         "transparency_gaps": [
-          "No public board meeting minutes — ever",
-          "ED hiring process not disclosed publicly",
+          "Board minutes published but depth/detail inconsistent",
+          "ED hiring involved open applications and stakeholder input, but final decision was board's alone",
           "No documented cases where board decisions were challenged by members",
           "Board compensation not disclosed"
         ],
@@ -69,8 +69,8 @@
         ],
         "transparency_gaps": [
           "No salary disclosed",
-          "Hiring process was not public",
-          "No documented member input on the appointment"
+          "Hiring process was publicly documented (open applications, member polling, stakeholder interviews) but final decision was board's alone",
+          "Members had input through polling but no binding vote on the appointment"
         ],
         "members": [
           {"name": "Jack Briggs", "role": "Executive Director", "selection": "Board Appointed", "election_detail": "Permanent appointment Jan 2026 (unanimous board decision)", "paid": true}
@@ -100,9 +100,9 @@
       },
       {
         "name": "Standing Committees",
-        "subtitle": "Advisory Only — Cannot Make Binding Decisions",
+        "subtitle": "Delegated Authority Per Bylaws — Described as Advisory in Practice",
         "power_level": "advisory",
-        "details": "7 standing committees with members elected biannually (50% seats rotate per cycle). Per Intersect's own documentation, committees 'provide specialized guidance and advice to governance decision-makers.' They operate under 'terms of reference approved by the Board of Directors.' They are explicitly advisory — not governing bodies.",
+        "details": "7 standing committees with members elected biannually (50% seats rotate per cycle). The bylaws (Article 5) grant committees 'the authority of the Board of Directors' with specific enumerated exceptions. However, Intersect's own communications consistently describe committees as providing 'specialized guidance and advice to governance decision-makers.' They operate under 'terms of reference approved by the Board of Directors.' In practice, Intersect treats them as advisory bodies despite the bylaws' grant of delegated authority.",
         "what_they_can_do": [
           "Provide recommendations to the board and community",
           "Review and assess proposals (e.g., budget proposals)",
@@ -112,12 +112,11 @@
           "Provide subject matter expertise"
         ],
         "what_they_cannot_do": [
-          "Make binding decisions on treasury spending",
-          "Hire or fire staff",
-          "Veto board decisions",
-          "Amend bylaws",
-          "Authorize asset sales",
-          "Make any legally binding decision for the corporation"
+          "Amend the articles of incorporation or bylaws (Article 5 exception)",
+          "Approve mergers or plans of dissolution (Article 5 exception)",
+          "Authorize the sale of all or substantially all corporate assets (Article 5 exception)",
+          "Elect, appoint, or remove directors or fill board vacancies (Article 5 exception)",
+          "Hire or fire staff (operational authority remains with the ED/board)"
         ],
         "key_fact": "The board can create committees, define their terms of reference, and cast tie-breaking votes on committee decisions. Committees exist at the pleasure of the board.",
         "source": "Intersect Bylaws; committees.docs.intersectmbo.org/committee-overview/committees/committee-guiding-principles",
@@ -165,7 +164,7 @@
           },
           {
             "name": "Budget Committee (CBC)",
-            "details": "Budget guidance, audits, financial oversight. Advisory only — cannot approve spending.",
+            "details": "Budget guidance, audits, financial oversight. Described as advisory in practice — does not directly approve spending.",
             "budget_ada": 1900000,
             "elected_members": [
               {"name": "Nicolas Cerny", "votes": 176, "selection": "Community Elected", "affiliations": ["CF Governance Lead"]},
@@ -253,11 +252,11 @@
       }
     ],
     "key_facts": [
-      "Committees are advisory. Per Intersect's own documentation, they 'provide specialized guidance and advice' — they do not govern.",
+      "The bylaws (Article 5) grant committees delegated board authority with specific exceptions (amending bylaws, mergers, asset sales, dissolution, board elections). However, Intersect's communications consistently describe them as providing 'specialized guidance and advice.'",
       "The board manages all corporate affairs. Committees operate under 'terms of reference approved by the Board of Directors.'",
-      "The board appointed the ED (Jack Briggs) without member vote or public process.",
+      "The board appointed the ED (Jack Briggs) after a publicly documented process, but the final decision was the board's alone — members had no binding vote.",
       "For the first 2 years (Jul 2023 - Oct 2025), appointed seed-funder representatives held majority board control.",
-      "No board meeting minutes have ever been made public.",
+      "Board minutes published since Dec 2023 (27 meetings), but detail level varies across entries.",
       "Only ~20% of eligible members participate in elections.",
       "No salary or compensation data has been disclosed for any role.",
       "19 of 31 staff members are not publicly named."

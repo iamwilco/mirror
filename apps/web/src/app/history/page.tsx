@@ -15,7 +15,7 @@ const timeline: TimelineEvent[] = [
     date: "July 13, 2023",
     title: "Intersect incorporated in Wyoming",
     description:
-      "Intersect was incorporated as a Wyoming nonprofit corporation. It was created by IOG, EMURGO, and the Cardano Foundation. IOG and EMURGO were designated as \"seed funders,\" which gave them appointed seats on the board of directors.",
+      "Intersect was incorporated as a Wyoming nonprofit corporation. It was created by IOG and EMURGO, who served as 'seed funders' and received appointed board seats. The Cardano Foundation was not a seed funder and joined Intersect as a member in September 2024 — over a year after incorporation.",
     source: "Intersect Bylaws, Wyoming Nonprofit Corporation Act",
     tag: "founding",
   },
@@ -99,7 +99,7 @@ const timeline: TimelineEvent[] = [
     date: "July 2025",
     title: "2025 Budget approved (\u20B3263.6M)",
     description:
-      "39 treasury withdrawal proposals were submitted to the chain. 33 passed and 6 expired without reaching the required thresholds. IOG received 49.3% (\u20B3130.1M) of the total approved budget, making it the largest single recipient.",
+      "39 treasury withdrawal proposals were submitted to the chain. 37 passed and 2 expired without reaching the required thresholds. IOG received 49.3% (\u20B3130.1M) of the total approved budget, making it the largest single recipient.",
     source: "Sundae Treasury Portal, Intersect budget docs",
     tag: "governance",
   },
@@ -151,7 +151,7 @@ const timeline: TimelineEvent[] = [
     date: "January 2026",
     title: "Jack Briggs permanently appointed as Executive Director",
     description:
-      "The board unanimously appointed Jack Briggs as permanent Executive Director. There was no member vote or public hiring process for this role.",
+      "The board unanimously appointed Jack Briggs as permanent Executive Director. The hiring process was publicly documented — open applications (Oct 2025), member polling, 6 finalists, stakeholder interviews — but the final appointment was the board's decision, not a member vote.",
     source: "Intersect Update #94",
     tag: "governance",
   },
@@ -225,14 +225,14 @@ export default function HistoryPage() {
         <div className="rounded-[28px] border border-white/10 bg-white/5 p-6 md:p-8">
           <p className="text-sm leading-relaxed text-white/70">
             Intersect is a Wyoming nonprofit corporation created to coordinate
-            Cardano&rsquo;s off-chain governance. It was established by three
-            founding entities &mdash;{" "}
-            <span className="text-white">IOG</span>,{" "}
-            <span className="text-white">EMURGO</span>, and the{" "}
-            <span className="text-white">Cardano Foundation</span> &mdash; with
-            the stated goal of transferring governance authority from these
-            founding entities to the broader community. This page documents the
-            key events in that transition, with sources for every claim.
+            Cardano&rsquo;s off-chain governance. It was created by{" "}
+            <span className="text-white">IOG</span> and{" "}
+            <span className="text-white">EMURGO</span> as seed funders,
+            who received appointed board seats. The{" "}
+            <span className="text-white">Cardano Foundation</span> joined
+            as a member in September 2024 &mdash; over a year after incorporation.
+            This page documents the key events in Intersect&rsquo;s transition
+            toward community governance, with sources for every claim.
           </p>
         </div>
       </section>
@@ -318,10 +318,10 @@ export default function HistoryPage() {
             <li className="flex gap-3">
               <span className="mt-1 block h-1.5 w-1.5 shrink-0 rounded-full bg-violet-400" />
               <span>
-                <span className="text-white">Founded by founding entities.</span>{" "}
-                Intersect was created by IOG, EMURGO, and the Cardano
-                Foundation. IOG and EMURGO held appointed board seats as
-                &ldquo;seed funders&rdquo; from the start.
+                <span className="text-white">Founded by IOG and EMURGO.</span>{" "}
+                Intersect was created by IOG and EMURGO, who held appointed
+                board seats as &ldquo;seed funders&rdquo; from the start.
+                The Cardano Foundation joined as a member in September 2024.
               </span>
             </li>
             <li className="flex gap-3">
@@ -338,10 +338,11 @@ export default function HistoryPage() {
               <span className="mt-1 block h-1.5 w-1.5 shrink-0 rounded-full bg-amber-400" />
               <span>
                 <span className="text-white">
-                  Committees remain advisory.
+                  Committee authority is ambiguous.
                 </span>{" "}
-                Per the bylaws, committees have no binding authority. The board
-                retains final decision-making power on all matters.
+                The bylaws (Article 5) grant committees delegated board authority
+                with specific exceptions, but Intersect&rsquo;s communications
+                consistently describe them as advisory.
               </span>
             </li>
             <li className="flex gap-3">
@@ -361,7 +362,7 @@ export default function HistoryPage() {
                 <span className="text-white">
                   Key information has never been made public.
                 </span>{" "}
-                No salary data, board meeting minutes, or full staff roster has
+                No salary data or full staff roster has
                 ever been published by Intersect.
               </span>
             </li>

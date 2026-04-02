@@ -126,7 +126,7 @@ const KEY_FINDINGS: Finding[] = [
     evidence: "Fact",
   },
   {
-    problem: "3 committees have zero public meeting minutes; 1 more is unclear",
+    problem: "MCC and Oversight Committee have unclear or no public meeting minutes",
     status: "Verified via committee docs (Apr 2026)",
     evidence: "Fact",
   },
@@ -228,8 +228,8 @@ export default function OperationsPage() {
           color="rose"
         />
         <StatCard
-          value="3 of 10"
-          label="Committees have zero public meeting minutes"
+          value="2 of 10"
+          label="Committees have unclear or no public meeting minutes"
           color="rose"
         />
         <StatCard
@@ -307,12 +307,14 @@ export default function OperationsPage() {
               <Source>Intersect Bylaws</Source>
             </FindingCard>
 
-            <FindingCard title="Inconsistent documentation across committees">
+            <FindingCard title="Inconsistent documentation quality across committees">
               <p>
-                6 of 10 committees publish meeting minutes (TSC: 73 meetings, CPC: 87, CBC: 71, ISC: 59, OSC: 50, Parameter: 27).
-                But 3 committees — Civics, Growth &amp; Marketing, and Oversight — have zero public minutes.
-                MCC&apos;s page exists but contains no actual minutes. Only OSC has video recordings.
-                Parameter Committee minutes stop at Oct 2024 with no updates since.
+                8 of 10 committees publish meeting minutes — CPC (87), TSC (73), CBC (71), ISC (59),
+                GMC (53), CCC (51), OSC (50), and Parameter (27). MCC&apos;s minutes page exists but
+                has no individual entries. Oversight Committee (new for 2026) has none yet.
+                Quality varies widely: some have detailed discussion tables and action items,
+                others are sparse summaries. Only OSC has video recordings.
+                Parameter Committee minutes stop at Oct 2024.
                 There is no standardized format — each committee documents differently.
               </p>
               <Source>Verified via committees.docs.intersectmbo.org (Apr 2026)</Source>
@@ -496,19 +498,20 @@ export default function OperationsPage() {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-rose-500/20 bg-rose-500/5 p-5">
-              <p className="text-lg font-semibold text-rose-200">
-                Growth &amp; Marketing — &#x20B3;20.4M invisible
+            <div className="rounded-2xl border border-amber-500/20 bg-amber-500/5 p-5">
+              <p className="text-lg font-semibold text-amber-200">
+                Growth &amp; Marketing — &#x20B3;20.4M, limited visibility
               </p>
               <p className="mt-3 text-sm leading-relaxed text-white/50">
-                The GMC has no public meeting recordings or minutes. Their
-                decision-making is invisible to members. The AMM report
+                The GMC publishes meeting minutes (53 documented since Feb 2025),
+                but has no public video recordings. The AMM report
                 admitted they&apos;re pivoting to &ldquo;a more structured
                 approach&rdquo; — acknowledging the prior one was
-                unstructured.
+                unstructured. No public effectiveness metrics for
+                marketing spend have been published.
               </p>
               <div className="mt-4">
-                <Source>Intersect AMM 2025 Report</Source>
+                <Source>Intersect AMM 2025 Report; committees.docs.intersectmbo.org</Source>
               </div>
             </div>
           </div>

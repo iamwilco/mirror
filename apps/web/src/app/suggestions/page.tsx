@@ -70,7 +70,7 @@ const SUGGESTIONS: Suggestion[] = [
     id: 5,
     title: "Publish all meeting minutes within 7 days",
     problem:
-      "3 committees (Civics, Growth & Marketing, Oversight) have zero public meeting minutes. MCC's page exists but has no actual content. Parameter Committee minutes stopped at Oct 2024.",
+      "8 of 10 committees publish minutes, but quality varies widely. MCC and Oversight Committee have unclear or no public minutes. Parameter Committee minutes stopped at Oct 2024. Only OSC has video recordings.",
     recommendation:
       "All committees must publish meeting minutes within 7 calendar days of each meeting. Minutes must follow the standardized template. Failure to publish = flagged in public dashboard.",
     implementation:
@@ -106,9 +106,9 @@ const SUGGESTIONS: Suggestion[] = [
     id: 8,
     title: "Publish board meeting minutes",
     problem:
-      "The board of directors manages all corporate affairs but has never published meeting minutes, agendas, or vote records. This is the single largest transparency gap — the governing body operates in complete darkness.",
+      "Board meeting minutes are published at board.docs.intersectmbo.org (27 meetings since Dec 2023), but they vary in depth. Compensation decisions, vendor selection criteria, and strategic deliberations are not visible in the public record.",
     recommendation:
-      "Publish board meeting minutes within 14 days of each meeting. Redact genuinely confidential items (legal, personnel) but publish the agenda, attendance, and all non-confidential decisions.",
+      "Ensure all board minutes include a minimum standard of detail: attendees, agenda items, decisions made with vote counts, and action items. Publish within 14 days.",
     implementation:
       "Follow the TSC model — they publish minutes and a decision log. The board should do the same. If confidential items exist, publish a redacted version with clear labels explaining what was withheld and why.",
     priority: "critical",

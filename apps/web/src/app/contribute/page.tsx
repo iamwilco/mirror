@@ -28,7 +28,7 @@ export default function ContributePage() {
           <li>Salary or compensation data for any Intersect role</li>
           <li>Board meeting minutes or agendas</li>
           <li>Committee meeting recordings (especially GMC, MCC, CPC, CCC)</li>
-          <li>Individual vendor contract amounts (28 of 39 are undisclosed)</li>
+          <li>Detailed cost breakdowns within large proposals (especially IOG's omnibus proposals)</li>
           <li>Names and roles of the ~19 unnamed Intersect staff members</li>
           <li>Any official Intersect documents not already in our sources</li>
         </ul>

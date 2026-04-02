@@ -191,8 +191,7 @@ function buildScorecard(): CommitteeScore[] {
     });
 
     const hasMinutes = meetingEntry?.minutes_url != null;
-    const hasRecordings =
-      meetingEntry?.recordings != null && meetingEntry.recordings.length > 0;
+    const hasRecordings = meetingEntry?.has_recordings === true;
     const chairIdentified =
       (hierEntry && "chair" in hierEntry && !!hierEntry.chair) || false;
     const budgetAda =
@@ -989,7 +988,7 @@ export default function AccountabilityPage() {
                 <span className="mt-1 h-2 w-2 rounded-full bg-sky-400 shrink-0" />
                 <p className="text-sm text-white/70 leading-relaxed">
                   <span className="text-white font-semibold">
-                    The three founding entities (IOG, EMURGO, CF)
+                    IOG and EMURGO (as seed funders) plus CF-affiliated committee members
                   </span>{" "}
                   hold at least {totalFoundingPositions} positions across the
                   board and {cfCommittees.length} committees. Cardano Foundation
