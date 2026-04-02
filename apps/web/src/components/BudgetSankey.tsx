@@ -1,3 +1,4 @@
+// DEPRECATED: Replaced by TreasuryFlowDiagram.tsx. Kept for reference.
 "use client";
 
 import { ResponsiveContainer, Sankey, Tooltip } from "recharts";

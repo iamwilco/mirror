@@ -17,11 +17,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Intersect Mirror — Cardano Transparency Dashboard",
   description:
-    "Radical transparency dashboard for Intersect MBO. Track budgets, governance, people, and influence across the Cardano ecosystem.",
+    "Open transparency dashboard for Intersect MBO. Track budgets, governance, people, and decisions across the Cardano ecosystem.",
   openGraph: {
     title: "Intersect Mirror — Cardano Transparency Dashboard",
     description:
-      "Track ₳263M+ in treasury flows, 39 on-chain proposals, 7 board members, and 9 committees. See what is verified, what is missing.",
+      "Track ₳263M+ in treasury flows, 39 on-chain proposals, 7 board members, and 7 committees. See what is verified and where transparency can improve.",
     type: "website",
   },
 };

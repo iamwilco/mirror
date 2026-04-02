@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
-import BudgetSankey from "@/components/BudgetSankey";
+import TreasuryFlowDiagram from "@/components/TreasuryFlowDiagram";
 import budgetData from "@/data/budget-2025.json";
 import treasuryData from "@/data/treasury-proposals.json";
 
@@ -162,8 +162,8 @@ export default function BudgetPage() {
           </h1>
           <p className="max-w-3xl text-base text-white/50">
             39 on-chain proposals. ₳263.6M approved.{" "}
-            <span className="text-rose-400">
-              49.3% to a single entity family.
+            <span className="text-amber-300">
+              49.3% allocated to IOG entities.
             </span>{" "}
             Per-vendor granularity was limited during budget drafting but on-chain proposals required exact amounts. This page breaks down every
             allocation we can trace.
@@ -198,7 +198,7 @@ export default function BudgetPage() {
               key={stat.label}
               className={`rounded-2xl border px-5 py-4 ${
                 stat.highlight
-                  ? "border-rose-500/30 bg-rose-500/10"
+                  ? "border-amber-500/30 bg-amber-500/10"
                   : "border-white/10 bg-white/5"
               }`}
             >
@@ -207,7 +207,7 @@ export default function BudgetPage() {
               </p>
               <p
                 className={`mt-1 text-2xl font-semibold ${
-                  stat.highlight ? "text-rose-300" : "text-white"
+                  stat.highlight ? "text-amber-300" : "text-white"
                 }`}
               >
                 {stat.value}
@@ -315,7 +315,7 @@ export default function BudgetPage() {
             Sankey diagram showing the flow from Cardano Treasury through budget buckets to committees.
           </p>
         </div>
-        <BudgetSankey year="2025" />
+        <TreasuryFlowDiagram year="2025" />
       </section>
 
       {/* ============================================================ */}
@@ -327,7 +327,7 @@ export default function BudgetPage() {
             Vendor Concentration
           </p>
           <h2 className="mt-3 text-3xl font-semibold text-white">
-            Who gets the money?
+            Vendor allocation breakdown
           </h2>
           <p className="mt-3 max-w-3xl text-sm text-white/50">
             Of ₳263.6M approved, on-chain proposals specify exact ADA amounts per CIP-1694.
@@ -339,7 +339,7 @@ export default function BudgetPage() {
           {/* Concentration bar */}
           <div className="flex h-12 w-full overflow-hidden rounded-full">
             <div
-              className="flex items-center justify-center bg-rose-500"
+              className="flex items-center justify-center bg-amber-500"
               style={{ width: "49.3%" }}
             >
               <span className="text-[11px] font-semibold text-white">
@@ -367,11 +367,11 @@ export default function BudgetPage() {
           {/* Vendor cards */}
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {/* IOG */}
-            <div className="rounded-2xl border border-rose-500/30 bg-rose-500/10 p-4">
-              <p className="text-[11px] uppercase tracking-[0.2em] text-rose-300/60">
+            <div className="rounded-2xl border border-amber-500/30 bg-amber-500/10 p-4">
+              <p className="text-[11px] uppercase tracking-[0.2em] text-amber-300/60">
                 IOG Family
               </p>
-              <p className="mt-1 text-2xl font-semibold text-rose-300">
+              <p className="mt-1 text-2xl font-semibold text-amber-300">
                 ₳{fmt(vendor.IOG_family.total_ada)}
               </p>
               <p className="mt-0.5 text-sm text-white/50">
@@ -381,9 +381,9 @@ export default function BudgetPage() {
                 5 confirmed proposals: Core Dev, Catalyst, Research, Catalyst
                 Tech Stack, Blockfrost
               </p>
-              <div className="mt-3 rounded-lg border border-rose-500/20 bg-rose-500/10 px-3 py-2">
-                <p className="text-[11px] font-medium text-rose-300">
-                  Nearly half the treasury goes to one entity family
+              <div className="mt-3 rounded-lg border border-amber-500/20 bg-amber-500/10 px-3 py-2">
+                <p className="text-[11px] font-medium text-amber-300">
+                  Largest single vendor concentration (includes Catalyst community fund)
                 </p>
               </div>
             </div>
