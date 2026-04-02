@@ -62,7 +62,7 @@ export default function RootLayout({
               </div>
             </div>
             <div className="mt-8 border-t border-white/5 pt-6 text-[11px] text-white/25">
-              All data is sourced and verifiable. No speculation. No affiliation. Open source.
+              All data is sourced. Some analysis reflects editorial interpretation. No affiliation. Open source.
             </div>
           </div>
         </footer>

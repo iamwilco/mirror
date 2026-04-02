@@ -102,7 +102,7 @@ export default function MembersPage() {
           <h1 className="mt-3 text-3xl font-semibold">Who Works at Intersect</h1>
           <p className="mt-3 max-w-2xl text-sm text-white/50">
             Everyone we can identify at Intersect, tagged by how they got their role.
-            No salary data has been disclosed for any position.
+            No staff salary data has been disclosed. Committee stipends (500 ADA/month) are public.
           </p>
         </div>
 

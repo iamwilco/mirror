@@ -23,8 +23,8 @@ const timeline: TimelineEvent[] = [
     date: "July 2023",
     title: "First grants launched",
     description:
-      "Intersect launched its first governance tooling grants, offering up to 1.68 million ADA to support the development of governance infrastructure for the Cardano network.",
-    source: "IOG governance timeline",
+      "Intersect launched its first governance tooling grants, offering up to 1.68 million ADA to support the development of governance infrastructure for the Cardano network. (Note: exact timing and amount sourced from IOG governance timeline; Intersect was newly incorporated at this time.)",
+    source: "IOG governance timeline (unverified amount)",
     tag: "founding",
   },
   {
@@ -362,8 +362,9 @@ export default function HistoryPage() {
                 <span className="text-white">
                   Key information has never been made public.
                 </span>{" "}
-                No salary data or full staff roster has
-                ever been published by Intersect.
+                No staff salary grid or full staff roster has
+                ever been published by Intersect. Committee stipends
+                (500 ADA/month) and major programme ADA amounts are disclosed.
               </span>
             </li>
           </ul>
@@ -401,7 +402,7 @@ export default function HistoryPage() {
                 Headquarters
               </p>
               <p className="mt-1 text-sm text-white">
-                2015 Ionosphere Street, Suite 201, Longmont, CO 80504
+                2015 Ionosphere Street, Unit 201, Longmont, CO 80504
               </p>
             </div>
             <div>

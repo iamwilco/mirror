@@ -505,7 +505,7 @@
     { "id": "fact-022", "claim": "2025 Research Budget: CPC ₳27.2M", "status": "verified", "sources": ["src-023"], "date": "2025" },
     { "id": "fact-023", "claim": "2025 Governance Support: CCC ₳11.3M + CBC ₳1.9M = ₳13.2M", "status": "verified", "sources": ["src-023"], "date": "2025" },
     { "id": "fact-024", "claim": "2025 Growth & Marketing Budget: GMC ₳20.4M", "status": "verified", "sources": ["src-023"], "date": "2025" },
-    { "id": "fact-025", "claim": "2025 Innovation Budget: MCC ₳77.5M (incl. ₳75.5M Community Hubs)", "status": "verified", "sources": ["src-023"], "date": "2025" },
+    { "id": "fact-025", "claim": "2025 Innovation Budget: MCC ₳77.5M (incl. ₳75.5M Project Catalyst, ₳3.2M Community Hubs)", "status": "verified", "sources": ["src-023"], "date": "2025" },
     { "id": "fact-026", "claim": "Intersect seeks ₳20M for admin ops, replacing 5% Delivery Assurance fee", "status": "verified", "sources": ["src-023"], "date": "2025" },
     { "id": "fact-027", "claim": "6.23B ADA delegated to DReps; 68% to Abstain DRep (105.4K individuals)", "status": "verified", "sources": ["src-025", "src-032"], "date": "2025-12" },
     { "id": "fact-028", "claim": "Top 10 DReps include CF and EMURGO — governance concentration risk", "status": "verified", "sources": ["src-025"], "date": "2025-12" },

@@ -8,7 +8,7 @@ Independent transparency index for **Intersect MBO** — the Wyoming nonprofit c
 
 Intersect manages ₳263M+ in Cardano treasury funds, employs 31 people, and coordinates governance across 7 advisory committees. This platform tracks what they disclose and what they don't.
 
-Every claim is sourced. Every data point is tagged as **verified**, **partial**, or **missing**. No speculation. No assumptions. Facts only.
+Every claim is sourced. Every data point is tagged as **verified**, **partial**, or **missing**. Analysis is clearly labelled.
 
 ## Live Pages
 
@@ -27,14 +27,14 @@ Every claim is sourced. Every data point is tagged as **verified**, **partial**,
 
 ## Key Findings
 
-- **Committees are advisory only** — they cannot make binding decisions, per Intersect's own bylaws and documentation
+- **Committee authority is ambiguous** — bylaws (Article 5) grant delegated board authority with exceptions, but Intersect describes committees as advisory
 - **IOG receives 49.3%** (₳130.1M) of the total approved 2025 budget and holds an appointed board seat
 - **28 of 39 vendor amounts are undisclosed** — only 4 proposals have confirmed ADA amounts
-- **No salary data** has been disclosed for any role at Intersect
-- **No board meeting minutes** have ever been published
+- **No staff salary data** has been disclosed (committee stipends and programme budgets are public)
+- **Board meeting minutes** are published at board.docs.intersectmbo.org but vary in depth and detail
 - **19 of 31 staff members** are not publicly named
 - **~20% election turnout** — 293 of 1,510 eligible members voted in the last committee election
-- **Founding entities (IOG, EMURGO, CF)** held board majority for the first 2 years; CF-affiliated people sit on 4+ committees
+- **Founding entities (IOG, EMURGO, CF)** held 2 of 4 board seats (blocking power) until Sep 2025 expansion; CF-affiliated people (democratically elected) sit on 4+ committees
 
 ## Tech Stack
 

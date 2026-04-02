@@ -21,7 +21,7 @@
     "no_confidence_ada": 173000000,
     "active_delegation_percent": 32,
     "abstain_percent": 68,
-    "notes": "68% of delegated voting power chose Abstain DRep. Only ~32% actively delegated to autonomous DReps. Top 10 DReps include two founding entities (EMURGO and Cardano Foundation)."
+    "notes": "As of Dec 2025: 68% of delegated voting power chose Abstain DRep. Only ~32% actively delegated to autonomous DReps. Top 10 DReps include two founding entities (EMURGO and Cardano Foundation). Note: abstain rates were higher during governance bootstrapping and have been declining."
   },
   "cardano_foundation_governance": {
     "voting_record": "100% participation as DRep in 2025",

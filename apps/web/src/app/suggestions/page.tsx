@@ -118,7 +118,7 @@ const SUGGESTIONS: Suggestion[] = [
     id: 9,
     title: "Disclose all compensation",
     problem:
-      "No salary, stipend, or compensation data has been disclosed for any role at Intersect — ED, staff, board members, or committee members (beyond the 500 ADA/month stipend).",
+      "No staff salary grid or compensation ranges have been disclosed for ED, staff, or board members. Committee stipends (500 ADA/month) and major funded programme budgets with FTE counts are public.",
     recommendation:
       "Publish salary bands (not individual salaries) for all role categories: executive, director, manager, staff. Disclose total annual compensation spend as a percentage of the operational budget.",
     implementation:

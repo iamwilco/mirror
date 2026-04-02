@@ -961,8 +961,9 @@ export default function AccountabilityPage() {
                   {committeesWithRecordings === 1
                     ? `${recordingNames[0]} has`
                     : `${committeesWithRecordings} have`}{" "}
-                  public recordings. The board has never released public meeting
-                  minutes.
+                  public recordings. The board publishes meeting minutes at
+                  board.docs.intersectmbo.org (since Dec 2023), but they vary in
+                  depth and detail.
                 </p>
               </li>
               <li className="flex items-start gap-3">

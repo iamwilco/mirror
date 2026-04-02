@@ -11,8 +11,8 @@
   "total_approved_ada": 264000000,
   "on_chain_status": {
     "proposals_submitted": 39,
-    "proposals_passed": 33,
-    "proposals_expired": 6,
+    "proposals_passed": 37,
+    "proposals_expired": 2,
     "voting_threshold": "67% DRep supermajority + 5/7 ICC",
     "epoch_deadline": 576,
     "epoch_deadline_date": "2025-08-17",

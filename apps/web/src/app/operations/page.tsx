@@ -151,7 +151,7 @@ const KEY_FINDINGS: Finding[] = [
     evidence: "Fact",
   },
   {
-    problem: "75.5M ADA community hubs with no published metrics",
+    problem: "75.5M ADA Project Catalyst budget with no published metrics",
     status: "Budget docs",
     evidence: "Fact",
   },
@@ -224,7 +224,7 @@ export default function OperationsPage() {
       <section className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <StatCard
           value="0 committee KPIs"
-          label="No measurable deliverables existed until 2026"
+          label="No standardized KPI framework existed until 2026"
           color="rose"
         />
         <StatCard
@@ -239,7 +239,7 @@ export default function OperationsPage() {
         />
         <StatCard
           value="&#x20B3;75.5M"
-          label="Community hub budget with no published effectiveness metrics"
+          label="Catalyst budget (within MCC Innovation Budget) with no published effectiveness metrics"
           color="rose"
         />
       </section>
@@ -339,7 +339,7 @@ export default function OperationsPage() {
         <SectionShell
           id="staff-power"
           number={3}
-          title="Staff Run the Show, Committees React"
+          title="Staff Run the Show, Committees React (Analysis)"
           color="violet"
         >
           <div className="grid gap-4 md:grid-cols-2">
@@ -481,19 +481,20 @@ export default function OperationsPage() {
           <div className="grid gap-4 md:grid-cols-2">
             <div className="rounded-2xl border border-rose-500/20 bg-rose-500/5 p-5">
               <p className="text-lg font-semibold text-rose-200">
-                Community Hubs — &#x20B3;75.5M with no metrics
+                Project Catalyst — &#x20B3;75.5M with no metrics
               </p>
               <p className="mt-3 text-sm leading-relaxed text-white/50">
-                The MCC oversees &#x20B3;75.5M for community hubs — the
-                single largest line item after IOG core development. No
-                published effectiveness metrics, no member growth data per
-                hub, no ROI analysis. Intersect moved to &ldquo;abolish
-                uniform fixed rewards&rdquo; — implying the old model was
-                ineffective.
+                The MCC&apos;s Innovation Budget totals &#x20B3;77.5M, of which
+                &#x20B3;75.5M funds Project Catalyst (three funding rounds,
+                RetroPGF, and Catalyst operations). Only &#x20B3;3.2M is
+                allocated to Community Hubs. No published effectiveness
+                metrics, no ROI analysis for either sub-budget. Intersect
+                moved to &ldquo;abolish uniform fixed rewards&rdquo; —
+                implying the old model was ineffective.
               </p>
               <div className="mt-4">
                 <Source>
-                  committees.docs.intersectmbo.org (Innovation Budget)
+                  forum.cardano.org — Cardano Innovation Budget Proposal
                 </Source>
               </div>
             </div>

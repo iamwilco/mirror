@@ -107,7 +107,7 @@ export default function Home() {
             <p className="text-xs uppercase tracking-wider text-rose-300/70">Operational Audit</p>
             <p className="mt-2 text-3xl font-bold text-rose-300">0 KPIs</p>
             <p className="mt-2 text-sm text-white/50">
-              No committee had measurable deliverables until 2026. 5 of 10 have no public meeting records.
+              No standardized KPI framework existed until 2026. Committees produced outputs (constitution, budgets, hard forks) but without formal performance tracking.
             </p>
             <p className="mt-3 text-sm text-rose-300/50 group-hover:text-rose-300/70">See full audit &rarr;</p>
           </Link>
@@ -117,7 +117,7 @@ export default function Home() {
             <p className="text-xs uppercase tracking-wider text-white/40">Founded</p>
             <p className="mt-2 text-3xl font-bold text-white">July 2023</p>
             <p className="mt-2 text-sm text-white/50">
-              Created by IOG and EMURGO as seed funders. CF joined Sep 2024. Seed funders held board majority for 2 years.
+              Created by IOG and EMURGO as seed funders. CF joined Sep 2024. Seed funders held 2 of 4 board seats (blocking power) until Sep 2025 expansion to 7 seats (4 elected, 3 institutional).
             </p>
             <p className="mt-3 text-sm text-white/30 group-hover:text-white/50">See full timeline &rarr;</p>
           </Link>
@@ -134,8 +134,8 @@ export default function Home() {
 
         <div className="mt-6 grid gap-3 sm:grid-cols-2">
           <GapCard
-            title="No salary data — for anyone"
-            description="Not a single salary, stipend, or compensation range has been disclosed for any board member, executive, staff member, or committee participant."
+            title="No staff salary data"
+            description="No salary grid or compensation ranges have been disclosed for board members, executives, or staff. Committee stipends (500 ADA/month) and major programme budgets with FTE counts are published, but internal staff compensation remains undisclosed."
           />
           <GapCard
             title="Board minutes lack depth"

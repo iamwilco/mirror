@@ -1,27 +1,30 @@
 {
   "hierarchy": {
     "name": "Intersect MBO Hierarchy (as of Feb 2026)",
-    "description": "Marketed as community-led, but members only directly elect committee seats and 2 of 4 board seats. Board appoints ED. Founding entities (IOG, EMURGO) retain 2 appointed board seats. Committees are advisory — on-chain DReps/CC hold final ratification power.",
+    "description": "Marketed as community-led. Members elect committee seats and 4 of 7 board seats (since Sep 2025 expansion). Board appoints ED. 3 institutional seats (IOG, EMURGO, UW). Committees have delegated board authority (Article 5) with enumerated exceptions, though Intersect describes them as advisory. On-chain DReps/CC hold final ratification power.",
     "sources": ["Intersect Docs", "Election Results Oct 2025", "Updates Jan-Feb 2026"],
     "children": [
       {
         "name": "Members (1,800 paid / 2,700 associates)",
-        "details": "Vote on committee seats (biannual) and 2 of 4 board seats. Cannot elect ED, staff, or ISC members. On-chain governance (DReps) is separate from Intersect membership. 19.4% turnout in Oct 2025 election.",
-        "decision_power": "Limited — elect committees + 2 board seats only",
+        "details": "Vote on committee seats (biannual) and 4 of 7 board seats (since Sep 2025). Cannot elect ED, staff, or ISC members. On-chain governance (DReps) is separate from Intersect membership. 19.4% turnout in Oct 2025 election.",
+        "decision_power": "Limited — elect committees + 4 of 7 board seats",
         "how_work_done": "Discussions, events, proposals. Actual power is indirect: elect committees who propose, then DReps ratify on-chain.",
-        "transparency_note": "Intersect markets this as 'ultimate' power, but members do not control board composition (50% appointed), ED hiring, staff, or budget execution.",
+        "transparency_note": "Members gained board majority (4 of 7) in Sep 2025. 3 institutional seats (IOG, EMURGO, UW) remain. Members do not control ED hiring, staff, or budget execution.",
         "children": [
           {
             "name": "Board of Directors",
-            "details": "Governing body; strategic oversight, appoints ED, sets direction. Only 2 of 4 seats are member-elected. Founding entities (IOG, EMURGO) hold the other 2 seats.",
-            "decision_power": "High — appoints ED, sets strategy. 50% appointed by founding entities.",
-            "how_work_done": "Meetings, executive sessions. No public minutes. Board decisions are not subject to member vote.",
-            "transparency_note": "Claim of 'majority member-elected by 2026' is aspirational — no confirmed timeline. Current structure gives founding entities veto-level influence.",
+            "details": "Governing body; strategic oversight, appoints ED, sets direction. 7 seats since Sep 2025: 4 member-elected, 3 institutional (IOG, EMURGO, UW).",
+            "decision_power": "High — appoints ED, sets strategy. 43% institutional seats (3 of 7).",
+            "how_work_done": "Meetings, executive sessions. Minutes published at board.docs.intersectmbo.org (27+ meetings since Dec 2023), though depth varies. Board decisions are not subject to member vote.",
+            "transparency_note": "Members gained board majority (4 of 7) in Sep 2025. Institutional seats retain significant influence but no longer hold blocking power.",
             "members": [
+              {"name": "Steven Lupien", "role": "Chair (University of Wyoming education seat)", "elected": "Appointed"},
               {"name": "Nikhil Joshi", "role": "Non-Exec Director (EMURGO COO overlap)", "elected": "Appointed"},
-              {"name": "Gerard Moroney", "role": "Non-Exec Director (IOG COO overlap)", "elected": "Appointed"},
+              {"name": "Gerard Moroney", "role": "Non-Exec Director (IOG)", "elected": "Appointed"},
               {"name": "Adam Rusch", "role": "Non-Exec Director", "elected": "Member-elected"},
-              {"name": "Kavinda Kariyapperuma", "role": "Members-Elected Non-Exec Director (CoinCeylon)", "elected": "Yes"}
+              {"name": "Kavinda Kariyapperuma", "role": "Non-Exec Director (CoinCeylon)", "elected": "Member-elected"},
+              {"name": "Mercy Fordwoo", "role": "Non-Exec Director", "elected": "Member-elected"},
+              {"name": "Rand McHenry", "role": "Non-Exec Director", "elected": "Member-elected"}
             ]
           },
           {

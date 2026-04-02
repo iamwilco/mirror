@@ -24,7 +24,7 @@ export default function AboutPage() {
               on-chain proofs take priority.
             </li>
             <li>
-              <span className="text-white">Neutral tone:</span> No speculation. We show
+              <span className="text-white">Neutral tone:</span> Facts first. Analysis is clearly labelled. We show
               what is known and what is not.
             </li>
             <li>
